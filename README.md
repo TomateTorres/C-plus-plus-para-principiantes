@@ -9,4 +9,3 @@ Hay uno que se llama parecido y es de color morado, ese no es.
 
 Para poder programar en C++ con VSC hay que descargar algunas extensiones, el link para hacerlo junto con las instrucciones es el siguiente: https://code.visualstudio.com/docs/cpp/config-mingw
 
-Idealmente, el código en el repositorio está hecho para ser copiado 
