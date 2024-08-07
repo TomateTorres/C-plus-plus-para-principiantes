@@ -1,4 +1,4 @@
-Un programa produce resultados mediante la maniplación de 'datos', estos son cualquier tipo de información que puede ser procesados por la computadora.
+Un programa produce resultados mediante la maniplación de 'datos', estos son cualquier tipo de información que puede ser procesada por la computadora.
 
 Los datos con los que un programa puede trabajar pueden ser obtenidos mediante una base de datos, la red o mediante input del usuario.
 
