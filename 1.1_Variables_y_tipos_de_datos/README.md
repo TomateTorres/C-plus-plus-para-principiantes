@@ -32,14 +32,20 @@ Algunos tipos de variables que existen en C++ son:
     * De manera general, la sintaxis es: `tipo de variable nombre = valor;`. Donde `tipo de variable` es alguna de los tipos de variables de C++ (_int_ por ejemplo), `nombre` es el nombre de la variable ('volumen_de_lata' por ejemplo), `=` sirve para asignarle algún valor a la variable y `valor` es aquello que guardaremos en la variable.
         * `int latas_por_paquete = 6;` es una variable de tipo entero llamada 'latas_por_paquete' que guarda el valor 6.
         * `double decimal = 6.66;` es una variable de tipo decimal llamada 'decimal' que guarda el valor 6.66.
+    * La palabra clave `const` se utiliza para especificar que el objeto o variable no se puede modificar.
+        * `const double VOL_LATA = 0.355;` es una variable de tipo número decimal (`double`), llamada 'VOL_LATA' a la que se le asignó el valor 0.355. Le pusimos el prefijo `const` porque no la vamos a modificar más adelante.
+        * Cuando vayamos a definir a una de nuestras variables usando la palabra reservada `const`, es buena práctica escribir su nombre usando sólo mayúsculas, para poider diferenciarla de variables regulares.
 
 * Observaciones:
     * Siempre que creemos una variable es necesario que especifiquemos su tipo.
     * Una variable puede cambiar de valor tantas veces como queramos pero no puede cambiar de tipo.
     * Es común pensar que el símbolo `=` tiene el mismo significado en programación que el usual en matemáticas, esto es incorrecto. Cuando decimos que `latas_por_paquete = 6;`, estamos diciéndole al programa que guarde el valor 6 en la variable 'latas_por_paquete'; más adelante podemos incluir la línea `latas_por_paquete = 8;`, diciéndole al programa que ahora guarde el valor 8. De este modo, el símbolo `=` denota una asignación de valores en vez de una igualdad matemática.
         * Aunque se vea extraño, es perfectamente legal darle a C++ la instrucción: `latas_por_paquete = latas_por_paquete + 2;`. Esto le dice al programa que busque el valor guardado en la variable 'latas_por_paquete', le sume 2 y lo guarde en el mismo lugar.
+    * C++ también le permite al usuario crear su propio tipo de variables personalizadas, esto es parte de lo que lo hace un lenguaje tan poderoso :ok_hand:
 
-## Tipos de datos.
-Menciona brevemente qué es un entero y así.
+## Listado de programas.
+* En 'variables_comentado.cpp' viene un ejemplo de un programa en C++ que ilustra el uso de variables. Este ejemplo asume que la persona que lo está leyendo jamás ha visto en su vida un programa en C++, de modo que está lleno de comentarios que (espero) ayuden a que se entienda un poco mejor qué está pasando.
+* 'variables.cpp' tiene el mismo programa que 'variables_comentado.cpp', pero sin los comentarios.
+* 'saludo.cpp' trae un ejemplo de un programa que saluda al usuario y le pide su nombre.
 
-Llevas 33 minutos.
+
