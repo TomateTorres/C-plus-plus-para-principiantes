@@ -1,4 +1,4 @@
-# Introducción.
+# Variables y tipos de datos.
 Un programa produce resultados mediante la maniplación de _datos_, estos son cualquier tipo de información que puede ser procesada por la computadora.
 
 Los datos con los que un programa puede trabajar pueden ser obtenidos mediante una base de datos, la red o mediante input del usuario.
@@ -27,11 +27,17 @@ Algunos tipos de variables que existen en C++ son:
     * Los símbolos como '$' y '%' no se pueden usar para nombrar variables. Tampoco está permitido poner espacios dentro de los nombres de las variables. 
     * Para C++ (en general, esto es así en cualquier lenguaje de programación) las variables 'volumen_de_lata' y 'Volumen_de_lata' son distintas, esto porque distingue entre mayúsculas y minúsculas.
     * No se pueden usar _palabras reservadas_ para nombrar variables. Una palabra reservada es aquella que ya tiene un significado para el lenguaje de programación, por ejemplo en C++ no es posible llamar a una variable '`double`' porque esta palabra ya corresponde a un tipo de variable que puede almacenar valores decimales. 
+
 * Crear variables:
-    * De manera general, la sintaxis es: `tipo de variable` `nombre = valor;`.
-    Donde `tipo de variable` es alguna de los tipos de variables de C++ (_int_ por ejemplo), `nombre` es el nombre de la variable ('volumen_de_lata' por ejemplo), `=` sirve para asignarle algún valor a la variable y `valor` es aquello que guardaremos en la variable.
-* Otro(?):
+    * De manera general, la sintaxis es: `tipo de variable nombre = valor;`. Donde `tipo de variable` es alguna de los tipos de variables de C++ (_int_ por ejemplo), `nombre` es el nombre de la variable ('volumen_de_lata' por ejemplo), `=` sirve para asignarle algún valor a la variable y `valor` es aquello que guardaremos en la variable.
+        * `int latas_por_paquete = 6;` es una variable de tipo entero llamada 'latas_por_paquete' que guarda el valor 6.
+        * `double decimal = 6.66;` es una variable de tipo decimal llamada 'decimal' que guarda el valor 6.66.
+
+* Observaciones:
+    * Siempre que creemos una variable es necesario que especifiquemos su tipo.
     * Una variable puede cambiar de valor tantas veces como queramos pero no puede cambiar de tipo.
+    * Es común pensar que el símbolo `=` tiene el mismo significado en programación que el usual en matemáticas, esto es incorrecto. Cuando decimos que `latas_por_paquete = 6;`, estamos diciéndole al programa que guarde el valor 6 en la variable 'latas_por_paquete'; más adelante podemos incluir la línea `latas_por_paquete = 8;`, diciéndole al programa que ahora guarde el valor 8. De este modo, el símbolo `=` denota una asignación de valores en vez de una igualdad matemática.
+        * Aunque se vea extraño, es perfectamente legal darle a C++ la instrucción: `latas_por_paquete = latas_por_paquete + 2;`. Esto le dice al programa que busque el valor guardado en la variable 'latas_por_paquete', le sume 2 y lo guarde en el mismo lugar.
 
 ## Tipos de datos.
 Menciona brevemente qué es un entero y así.
