@@ -48,5 +48,6 @@ Algunos tipos de variables que existen en C++ son:
 * En 'variables_comentado.cpp' viene un ejemplo de un programa en C++ que ilustra el uso de variables. Este ejemplo asume que la persona que lo está leyendo jamás ha visto en su vida un programa en C++, de modo que está lleno de comentarios que (espero) ayuden a que se entienda un poco mejor qué está pasando.
 * 'variables.cpp' tiene el mismo programa que 'variables_comentado.cpp', pero sin los comentarios.
 * 'saludo.cpp' trae un ejemplo de un programa que saluda al usuario y le pide su nombre.
+* 'Comentarios.cpp' explica brevemente como funciona comentar en C++; dejar comentarios es una buena práctica al programar ya que estos sirven para que cualquiera que lea el programa (seamos nosotros en el futuro u otros compañeros de trabajo) pueda saber que está pasando.
 
 
