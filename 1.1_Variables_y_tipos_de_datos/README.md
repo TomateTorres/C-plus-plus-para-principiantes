@@ -41,6 +41,7 @@ Algunos tipos de variables que existen en C++ son:
     * Una variable puede cambiar de valor tantas veces como queramos pero no puede cambiar de tipo.
     * Es común pensar que el símbolo `=` tiene el mismo significado en programación que el usual en matemáticas, esto es incorrecto. Cuando decimos que `latas_por_paquete = 6;`, estamos diciéndole al programa que guarde el valor 6 en la variable 'latas_por_paquete'; más adelante podemos incluir la línea `latas_por_paquete = 8;`, diciéndole al programa que ahora guarde el valor 8. De este modo, el símbolo `=` denota una asignación de valores en vez de una igualdad matemática.
         * Aunque se vea extraño, es perfectamente legal darle a C++ la instrucción: `latas_por_paquete = latas_por_paquete + 2;`. Esto le dice al programa que busque el valor guardado en la variable 'latas_por_paquete', le sume 2 y lo guarde en el mismo lugar.
+        * El operador igualdad `==` es la igualdad matemática de siempre, este operador nos sirve para probar si dos operandos tienen el mismo valor.
     * C++ también le permite al usuario crear su propio tipo de variables personalizadas, esto es parte de lo que lo hace un lenguaje tan poderoso :ok_hand:
 
 ## Listado de programas.
