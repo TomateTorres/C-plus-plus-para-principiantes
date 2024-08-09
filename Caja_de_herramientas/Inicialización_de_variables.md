@@ -27,18 +27,12 @@ Se pueden inicializar varias variables en una misma línea.
 
 Esto está permitido:
 ```
-int a = 5, b = 6;          // copy initialization
-int c( 7 ), d( 8 );        // direct initialization
-int e { 9 }, f { 10 };     // direct brace initialization
-int g = { 9 }, h = { 10 }; // copy brace initialization
-int i {}, j {};            // value initialization
-```
-
-```
-git status
-git add
-git commit
+int a = 5, b = 6;          // inicialización de copia
+int c( 7 ), d( 8 );        // inicialización directa
+int e { 9 }, f { 10 };     // inicialización de corchete directa
+int g = { 9 }, h = { 10 }; // inicialización de copiado de corchete
+int i {}, j {};            // inicialización de valor
 ```
 
 Esto no:
-int a, b = 5; // wrong (a is not initialized!)
+int a, b = 5; // error (¡la variable 'a' no fue inicializada!)
