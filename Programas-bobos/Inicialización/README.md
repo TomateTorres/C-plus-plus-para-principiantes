@@ -34,5 +34,11 @@ int g = { 9 }, h = { 10 }; // copy brace initialization
 int i {}, j {};            // value initialization
 ```
 
+```
+git status
+git add
+git commit
+```
+
 Esto no:
 int a, b = 5; // wrong (a is not initialized!)
