@@ -35,4 +35,4 @@ int i {}, j {};            // inicialización de valor
 ```
 
 Esto no:
-int a, b = 5; // error (¡la variable 'a' no fue inicializada!)
+`int a, b = 5; // error (¡la variable 'a' no fue inicializada!)`
