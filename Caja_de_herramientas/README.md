@@ -8,3 +8,4 @@ La idea es que esta sección sea una 'caja de herramientas' donde el alumno pued
 * Intro_iostream.md es un archivo de texto con información sobre algunas variables y comandos básicos de la biblioteca _iostream_.
     * _cin_cout_1.cpp_ es un programa de C++ que ejemplifica el uso de la variable predefinida `std::cin` pidiéndole al usuario su signo zodiacal.
     * __cin_cout_2.cpp_ es un programa de C++ que ejemplifica el uso de `std::cin` y `std::cout` pidiéndole al usuario 3 números.
+    * _dos_num.cpp_ también le pide al usuario dos números, pero ahora le da la suma y diferencia de estos.
