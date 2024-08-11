@@ -11,7 +11,7 @@ El nombre de una función es conocido como su _identificador_.
 
 
 
-# 'Llamar' funciones
+## 'Llamar' funciones
 Un ejemplo de un programa que muestra como 'llamar' a una función en C++:
 ```
 #include <iostream> // para std::cout
@@ -74,4 +74,57 @@ int main()
 }
 ```
 
-## Llamar funciones más de una vez
+## Funciones que regresan valores
+Consideremos un programa que le pida al usuario dos números enteros y le de como resultado la suma entre ellos:
+```
+#include <iostream>
+
+int main()
+{
+    int x{}, y{}; //Los números no necesariamente son enteros.
+   
+    std::cout << "Dame tu primer número: ";
+    std::cin >> x;
+
+    std::cout << "Dame tu segundo número: ";
+    std::cin >> y;
+
+    int suma{x+y}; 
+
+    std::cout << x << " + " << y << " es: " << suma << ".\n";
+
+    return 0;
+}
+```
+Aunque este programa es sencillo y no necesitamos dividirlo en múltiples funciones, veamos un ejemplo de cómo podríamos implementar una función creada por el usuario para obtener el mismo output:
+```
+#include <iostream> 
+
+int suma()
+{
+    std::cout << "Dame tu primer número: ";
+    int x{};
+    std::cin >> x;
+
+    std::cout << "Dame tu segundo número: ";
+    int y{};
+    std::cin >> y;
+
+    return x + y;
+}
+
+//Aquí empíeza el programa ejecutable:
+int main()
+{
+    int num {suma()}; //inicializamos el valor 'num' con el 
+                      //valor regresado por suma()
+    std::cout << "La suma de los números es: " << num << ".\n";
+
+    return 0;
+}
+```
+Cuando este programa es ejecutado, `main` crea una variable entera llamada `num`. Cuando el programa inicializa `num`, ve que hemos llamado a la función `suma()`, así que va y ejecuta la función para obtener su valor de salida y guardarlo en la variable `num`. La función `suma()` hace lo mismo que el primer programa hacía (le pide al usuario dos números para sumarlos) y, si quisiéramos, podríamos usarla más de una vez dentro de `main()`.
+
+Decimos que una _función regresa un valor_ (en inglés: _value returning function_) si al terminar su ejecución devuelve algún valor de tipo distinto a `void`. Una vez que hemos definido el tipo de una función (`int`, `double`,...), el valor devuelto debe ser del mismo tipo que la función, de otro modo nuestro programa tendrá comportamientos inesperados (suponiendo que sí compile). 
+
+Una _función que devuelve valores_ sólo puede dar un sólo valor cada vez que es llamada. Hay maneras de trabajar aún con esta limitación, las veremos más adelante.
