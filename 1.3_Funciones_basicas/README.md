@@ -128,3 +128,48 @@ Cuando este programa es ejecutado, `main` crea una variable entera llamada `num`
 Decimos que una _función regresa un valor_ (en inglés: _value returning function_) si al terminar su ejecución devuelve algún valor de tipo distinto a `void`. Una vez que hemos definido el tipo de una función (`int`, `double`,...), el valor devuelto debe ser del mismo tipo que la función, de otro modo nuestro programa tendrá comportamientos inesperados (suponiendo que sí compile). 
 
 Una _función que devuelve valores_ sólo puede dar un sólo valor cada vez que es llamada. Hay maneras de trabajar aún con esta limitación, las veremos más adelante.
+
+El significado del valor devuelto por una función es determinado por el autor de ésta. Algunas funciones devuelven valores de _estados de código_ para inidicar si fueron exitosas o fallaron, algunas devuelven un valor calculado o seleccionado, algunas no devuelven nada...
+
+Considerando lo anterior, es buena práctica comentar en el código de la función para que quien sea que lo lea (que bien podemos ser nosotros mismos en el futuro), sepa qué propósito tiene el valor devuelto por la función. Por ejemplo:
+```
+// La función le pide al usuario que ingrese un valor.
+// El valor devuelto por la función es el entero ingresado por
+// el usuario mediante el teclado. 
+int obtenValorDeUsuario()
+{
+ 	std::cout << "Dame un entero: ";
+	int input{};
+	std::cin >> input;
+
+	return input; // Devuelve el valor ingresado por el usuario.
+}
+```
+
+Más atrás habíamos mencionado que es posible llamar a una función más de una vez al ejecutar un código. Veamos un ejemplo:
+```
+#include <iostream>
+
+int obtenValorDeUsuario()
+{
+    std::cout << "Dame un entero: ";
+    int input{}; // Aquí se guardará el número que nos de el usuario.
+    std::cin >> input;
+
+    return input; // Nos devuelve el valor dado por el usuario.
+}
+
+int main() // Inicia nuestro programa ejecutable.
+{
+    int x{obtenValorDeUsuario()}; // Llamamos a la función por primera
+                                  // vez para obtener el primer número.
+   
+    int y{obtenValorDeUsuario()}; // Llamamos a la función por segunda 
+                                  // vez para obtener el segundo número.
+    
+    std::cout << x << " + " << y << " = " << x + y << '\n';
+
+    return 0; // El programa ha terminado.
+}
+```
+Este programa le pide al usuario dos números enteros para darle el resultado de su suma. En él, llamamos a la función `obtenValorDeUsuario()` dos veces, una para inicializar la variable `x` y otra para inicializar la variable `y`. Esto nos ahorra copiar el código de input de usuario (reduciendo las probabilidades de que nos equivoquemos y el programa haga cosas extrañas) y evita que el programa se vuelva tedioso y complicado si en algún momento queremos sumar más números. 
