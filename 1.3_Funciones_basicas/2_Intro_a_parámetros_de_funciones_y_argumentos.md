@@ -50,7 +50,7 @@ int main()
     return 0;
 }
 ```
-La razón por la que este intento falló es que la función _imprimeSucesor()_ no sabe quién es _num_. Podríamos intentar definir a la variable _num_ dentro de la función _imprimeSucesor()_. Si hacemos esto, el programa sí va a compilar, pero no nos dará lo que queremos (de hecho, el output siempre será 'El sucesor de 0 es: 1'). Necesitamos alguna manera de pasarle la información de la variable `num` a la función `imprimeSucesor()` para que ésta pueda usar el valor y darnos el output que queremos.
+La razón por la que este intento falló es que la función `imprimeSucesor()` no sabe quién es `num`. Podríamos intentar definir a la variable `num` dentro de la función `imprimeSucesor()`. Si hacemos esto, el programa sí va a compilar, pero no nos dará lo que queremos (de hecho, el output siempre será 'El sucesor de 0 es: 1'). Necesitamos alguna manera de pasarle la información de la variable `num` a la función `imprimeSucesor()` para que ésta pueda usar el valor y darnos el output que queremos.
 
 ## Parámetros de funciones y argumentos
 Un _parámetro de una función_ es una variable utilizada en el encabezado de una función, este tipo de variable se inicializa con un valor provisto por el llamador de la función. 
@@ -86,9 +86,9 @@ int main()
 }
 ```
 Lo que está pasando es:
-* Definimos una función que nos servirá para guardar el input del usuario (la función _obtenValorDeUsuario()_).
-* En el ejecutable (de la línea _int main()_ hasta el final del código) definimos a la variable _num_ que inicializamos con lo obtenido del input del usuario.
-* Llamos a la función _imprimeSucesor()_ y la aplicamos a _num_. El argumento _num_ es copiado en el parámetro _valor_ (dentro de la función _imprimeSucesor()_) para que _imprimeSucesor()_ use el valor del parámetro _valor_ para imprimirnos en pantalla 'El sucesor de (nuestro número) es: (el número + 1)'.
+* Definimos una función que nos servirá para guardar el input del usuario (la función `obtenValorDeUsuario()`).
+* En el ejecutable (de la línea `int main()` hasta el final del código) definimos a la variable `num` que inicializamos con lo obtenido del input del usuario.
+* Llamos a la función `imprimeSucesor()` y la aplicamos a `num`. El argumento `num` es copiado en el parámetro `valor` (dentro de la función `imprimeSucesor()`) para que `imprimeSucesor()` use el valor del parámetro `valor` para imprimirnos en pantalla 'El sucesor de (nuestro número) es: (el número + 1)'.
 
 
 
