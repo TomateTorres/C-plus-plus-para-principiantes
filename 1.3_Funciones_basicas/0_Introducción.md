@@ -35,10 +35,12 @@ int main()
     return 0;
 }
 ```
-El programa (como cualquiera en C++) inicia su ejecución en la función _main_.
-Cuando 'llamamos' a la función _imprime_ debemos poner un par de paréntesis al final de su nombre, si no lo hacemos el programa no compilará y si lo hace, no llamará a la función.
+El programa (como cualquiera en C++) inicia su ejecución en la función `main()`.
+Cuando 'llamamos' a la función `ìmprime` debemos poner un par de paréntesis al final de su nombre, si no lo hacemos el programa no compilará y si lo hace, no llamará a la función.
 
-Como llamamos a una función, la ejecución de _main_ fue momentáneamente suspendida y la ejecución del programa salta hasta la línea que dice _imprime_ (más arriba en el código) y ejecuta la tarea dentro del cuerpo de la función, una vez que termina (en este caso, sólo imprime la línea: _Estamos en imprime()_), volvemos a _main_ y seguimos con las líneas que falten (en este caso, sólo se imprime la última línea: _Termina main()_).
+Como llamamos a una función, la ejecución de `main()` fue momentáneamente suspendida y la ejecución del programa salta hasta la línea que dice _imprime_ (más arriba en el código) y ejecuta la tarea dentro del cuerpo de la función, una vez que termina (en este caso, sólo imprime la línea: _Estamos en imprime()_), volvemos a `main()` y seguimos con las líneas que falten (en este caso, sólo se imprime la última línea: _Termina main()_).
+
+Como `main()` ha llamado a la función `imprime()` decimos que `main()` es el _llamador_ de `imprime()`.
 
 Las funciones también pueden ser llamadas más de una vez y podemos definir funciones que llamen a otras funciones. 
 
