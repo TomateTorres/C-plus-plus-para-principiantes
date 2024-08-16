@@ -90,6 +90,8 @@ int main()
 ```
 
 **Intenta insertar el gif de Michael Scott aquí**
+![the-office-no](https://github.com/user-attachments/assets/cba3e606-0fb5-4638-a473-6e7245b79fcd)
+
 
 Aunque el anterior código sí compila, no nos da el segundo volumen que buscamos porque intentamos volver a usar un mismo identificador (el nombre `volumen`) dentro de una misma función (en este caso la función `main()`)
 
