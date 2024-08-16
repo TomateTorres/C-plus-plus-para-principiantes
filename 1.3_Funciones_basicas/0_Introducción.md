@@ -125,7 +125,7 @@ int main()
 ```
 Cuando este programa es ejecutado, `main` crea una variable entera llamada `num`. Cuando el programa inicializa `num`, ve que hemos llamado a la función `suma()`, así que va y ejecuta la función para obtener su valor de salida y guardarlo en la variable `num`. La función `suma()` hace lo mismo que el primer programa hacía (le pide al usuario dos números para sumarlos) y, si quisiéramos, podríamos usarla más de una vez dentro de `main()`.
 
-Decimos que una _función regresa un valor_ (en inglés: _value returning function_) si al terminar su ejecución devuelve algún valor de tipo distinto a `void`. Una vez que hemos definido el tipo de una función (`int`, `double`,...), el valor devuelto debe ser del mismo tipo que la función, de otro modo nuestro programa tendrá comportamientos inesperados (suponiendo que sí compile). 
+Decimos que una _función regresa un valor_ (en inglés: _value returning function_) si al terminar su ejecución devuelve algún valor de tipo distinto a `void`. Una vez que hemos definido el tipo de una función (`int`, `double`,...), el valor devuelto (llamado: 'valor de retorno') debe ser del mismo tipo que la función, de otro modo nuestro programa tendrá comportamientos inesperados (suponiendo que sí compile). 
 
 Una _función que devuelve valores_ sólo puede dar un sólo valor cada vez que es llamada. Hay maneras de trabajar aún con esta limitación, las veremos más adelante.
 
