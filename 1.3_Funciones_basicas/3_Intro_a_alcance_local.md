@@ -89,7 +89,6 @@ int main()
 }
 ```
 
-**Intenta insertar el gif de Michael Scott aquí**
 ![the-office-no](https://github.com/user-attachments/assets/cba3e606-0fb5-4638-a473-6e7245b79fcd)
 
 
