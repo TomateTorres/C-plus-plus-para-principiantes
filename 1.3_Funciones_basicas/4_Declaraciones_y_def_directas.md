@@ -81,3 +81,33 @@ Nos aparecerá un error porque nunca definimos `doble()`, entonces el programa n
 Lo más común es usar declaraciones directas cuando se trata de funciones. Sin embargo, también las podemos usar con otros identificadores de C++ como variables y tipos, aunque para ellos la sintaxis es un poco distinta.
 
 ### Declaraciones y definiciones
+Es común que los términos 'declaración' y 'definición' sean usados de manera indistinta (es probable que yo lo haya hecho ya en este material... y probablemente lo siga haciendo), sin embargo, hay algunas diferencias sutiles entre ambos:
+
+Una **declaración** le avisa al compilador sobre la existencia de un identificador y la información asociada con éste.
+
+Una **definición** es una declaración que implementa (en el caso de funciones y tipos) o inicializa (en el caso de variables) al identificador.
+
+Por ejemplo:
+```
+int doble(int x); //es una declaración que le avisa al compilador
+                  //que existe una función llamada 'doble' que 
+                  //recibe un parámetro entero.
+
+int x;            //es una declaración que le avisa al compilador
+                  //que existe una variable entera llamada 'x'.
+
+double producto(double x, double y) //es una definición, porque declara
+                                //a la función `suma()`, pero sí la
+                                //implementa.
+{
+    double z {x*y};
+    return z;
+}
+
+int x{3}; //es una definición porque inicializa a la variable 'x'
+          //con el valor 3.
+```
+
+En C++ todas las definiciones son declaraciones, pero no todas las declaraciones son definiciones. A las declaraciones que no son definiciones les llamamos **declaraciones puras** (por ejemplo, una declaración directa de una función, es una declaraciópn pura).
+
+En el 'lenguaje coloquial', lo más común es referirnos a las declaraciones puras simplemente como 'declaraciones'.
