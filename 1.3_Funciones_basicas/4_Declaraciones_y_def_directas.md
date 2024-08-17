@@ -24,7 +24,7 @@ Sin embargo, esto no siempre es conveniente o si quiera posible:
 * Si tenemos un programa con dos funciones, digamos *f* y *g*, de manera en que *f* llama a *g* y *g* llama a *f* no existe una forma en que podamos reordenar nuestro código de manera que el compilador no se queje.
 * Puede que necesitemos llamar a una función que fue definida en otro archivo de código.
 
-En casos 'complicados' la solución es usar una **declaración directa** (en inglés: *forward declaration*). Una declaración directa es una manera de decirle al compilador sobre la existencia de una función antes de definir el cuerpo de la función. Así, cuando el compilador se encuentre con el identificador de la función, entenderá qué es lo que le estamos pidiendo que haga, aún cuando no sepa cómo o dónde está definida la función.
+En casos 'complicados' la solución es usar una **declaración directa** (en inglés: *forward declaration*). Una declaración directa es una manera de decirle al compilador sobre la existencia de un identificador antes de definirlo (en este contexto: le decimos al compilador que cierta función existe, pero no la definimos porque no le ponemos cuerpo). Así, cuando el compilador se encuentre con el identificador de la función, entenderá qué es lo que le estamos pidiendo que haga, aún cuando no sepa cómo o dónde está definida la función.
 
 Para escribir una declaración directa, usamos una **declaración de función prototipo** (o simplemente *declaración*; en inglés se encuentra como *function declaration prototype*). Una declaración de función prototipo consiste de:
 1. El tipo de retorno de la función.
@@ -111,3 +111,12 @@ int x{3}; //es una definición porque inicializa a la variable 'x'
 En C++ todas las definiciones son declaraciones, pero no todas las declaraciones son definiciones. A las declaraciones que no son definiciones les llamamos **declaraciones puras** (por ejemplo, una declaración directa de una función, es una declaraciópn pura).
 
 En el 'lenguaje coloquial', lo más común es referirnos a las declaraciones puras simplemente como 'declaraciones'.
+
+## La regla de una definición
+**The one definition rule (ODR)** es una regla bien conocida en C++:
+1. *En un mismo archivo*, cada función, variable, template (base prediseñada para estructurar el contenido de una aplicación o página web) en un cierto alcance (ver: *Intro_a_alcance_local.md*) sólo puede tener una definición. Mismas definiciones ocurriendo en diferentes alcances (ej.: Variables locales definidas en el cuerpo de distintas funciones), no rompen esta regla.
+2. *Dentro de un programa*, cada función o variable sólo puede tener una definición. Esta regla existe porque un solo programa puede estar conformado por más de un archivo.
+3. Tipos (*types*), templates, funciones en línea (*inline functions*) y variables en línea (*inline variables*) tienen permitido tener definiciones duplicadas en distintos archivos, siempre y cuando cada definición sea idéntica. 
+
+Por el momento, puede que algunas de las palabras anteriores sean algo misteriosas, estas irán apareciendo más adelante y aclarándose con el tiempo. Por el momento lo importante es saber que estas reglas existen.
+
