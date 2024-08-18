@@ -13,3 +13,4 @@ Las instrucciones y recomendaciones dadas aquí asumen que quien las está leyen
     * _dos_num.cpp_ también le pide al usuario dos números, pero ahora le da la suma y diferencia de estos.
 * *Como_abro_un_proyecto_en_VSC.md* trae una explicación de como abrir un proyecto en VSCode.
 * *Configurar_el_compilador.cpp* trae unas sugerencias de como configurar el archivo *tasks.json* de un proyecto en VSCode.
+* *Prog_con_mul_archivos.md* explica como añadir archivos a un proyecto.
