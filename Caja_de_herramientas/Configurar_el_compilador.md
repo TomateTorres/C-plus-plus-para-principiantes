@@ -59,7 +59,75 @@ En VSCode, en el archivo *tasks.json*, buscaremos la línea `${file}` en la secc
 
 ![Captura de pantalla 2024-08-17 233804](https://github.com/user-attachments/assets/f0052ffa-efd6-4de8-ad80-e7cfe6aa12d1)
 
+### Elegir un estándar de lenguaje
 
+Hay muchas versiones disponibles de C++ (C++98, C++03, C++11, C++14, C++17, C++20, C++23, etc…). De manera general, el compilador escoge una por default y se adhiere a ella (casi nunca es la versión más reciente y de hecho esto es lo recomendable porque esta suele a tener algunos errores).
+
+VSCode es compatible con C++20 (ofrece soporte experimental para C++23).
+
+Para preguntarle al compilador qué estándar de C++ está usando, podemos usar este código tomado de https://www.learncpp.com/cpp-tutorial/what-language-standard-is-my-compiler-using/:
+```
+// This program prints the C++ language standard your compiler is currently using
+// Freely redistributable, courtesy of learncpp.com (https://www.learncpp.com/cpp-tutorial/what-language-standard-is-my-compiler-using/)
+
+#include <iostream>
+
+const int numStandards = 7;
+// The C++26 stdCode is a placeholder since the exact code won't be determined until the standard is finalized
+const long stdCode[numStandards] = { 199711L, 201103L, 201402L, 201703L, 202002L, 202302L, 202612L};
+const char* stdName[numStandards] = { "Pre-C++11", "C++11", "C++14", "C++17", "C++20", "C++23", "C++26" };
+
+long getCPPStandard()
+{
+    // Visual Studio is non-conforming in support for __cplusplus (unless you set a specific compiler flag, which you probably haven't)
+    // In Visual Studio 2015 or newer we can use _MSVC_LANG instead
+    // See https://devblogs.microsoft.com/cppblog/msvc-now-correctly-reports-__cplusplus/
+#if defined (_MSVC_LANG)
+    return _MSVC_LANG;
+#elif defined (_MSC_VER)
+    // If we're using an older version of Visual Studio, bail out
+    return -1;
+#else
+    // __cplusplus is the intended way to query the language standard code (as defined by the language standards)
+    return __cplusplus;
+#endif
+}
+
+int main()
+{
+    long standard = getCPPStandard();
+
+    if (standard == -1)
+    {
+        std::cout << "Error: Unable to determine your language standard.  Sorry.\n";
+        return 0;
+    }
+
+    for (int i = 0; i < numStandards; ++i)
+    {
+        // If the reported version is one of the finalized standard codes
+        // then we know exactly what version the compiler is running
+        if (standard == stdCode[i])
+        {
+            std::cout << "Your compiler is using " << stdName[i]
+                << " (language standard code " << standard << "L)\n";
+            break;
+        }
+
+        // If the reported version is between two finalized standard codes,
+        // this must be a preview / experimental support for the next upcoming version.
+        if (standard < stdCode[i])
+        {
+            std::cout << "Your compiler is using a preview/pre-release of " << stdName[i]
+                << " (language standard code " << standard << "L)\n";
+            break;
+        }
+    }
+
+    return 0;
+}
+```
+Lo único que tenemos que hacer es hacer un archivo nuevo en nuestra carpeta madre (en mi caso es 'prueba0') con terminación *.cpp* (para avisarle al compilador que es un archivo de C++), copiar, pegar y correr el código anterior. 
 
 **Nota:** Cada vez que se inicie un proyecto nuevo (es decir, si quieres trabajar en otra 'carpeta madre') se tienen que volver a aplicar las configuraciones modificadas anteriormente. Otra opción es crear una plantilla con la configuración que más te guste y usarla para crear proyectos nuevos.
 
