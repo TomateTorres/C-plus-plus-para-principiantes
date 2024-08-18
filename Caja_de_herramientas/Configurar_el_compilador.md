@@ -129,5 +129,8 @@ int main()
 ```
 Lo único que tenemos que hacer es hacer un archivo nuevo en nuestra carpeta madre (en mi caso es 'prueba0') con terminación *.cpp* (para avisarle al compilador que es un archivo de C++), copiar, pegar y correr el código anterior. 
 
+![Captura de pantalla 2024-08-17 235231](https://github.com/user-attachments/assets/ff224851-4899-487e-8059-94c2ca81e9c5)
+
+
 **Nota:** Cada vez que se inicie un proyecto nuevo (es decir, si quieres trabajar en otra 'carpeta madre') se tienen que volver a aplicar las configuraciones modificadas anteriormente. Otra opción es crear una plantilla con la configuración que más te guste y usarla para crear proyectos nuevos.
 
