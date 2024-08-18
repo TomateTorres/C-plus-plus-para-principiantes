@@ -139,5 +139,11 @@ Para ello abrimos *tasks.json* y encima de la línea `"${file}"` escribimos el c
 
 Luego, en el archivo *settings.json* cambiamos o añadimos la siguiente línea de código `"C_Cpp.default.cppStandard": "c++20",`
 
+Para encontrar *settings.json* seguimos la siguiente ruta: *File > Preferences > Settings*.
+
+![Captura de pantalla 2024-08-18 000608](https://github.com/user-attachments/assets/4937b2e3-0025-4dfd-ab85-3734cd3faa2c)
+
+
+
 **Nota:** Cada vez que se inicie un proyecto nuevo (es decir, si quieres trabajar en otra 'carpeta madre') se tienen que volver a aplicar las configuraciones modificadas anteriormente. Otra opción es crear una plantilla con la configuración que más te guste y usarla para crear proyectos nuevos.
 
