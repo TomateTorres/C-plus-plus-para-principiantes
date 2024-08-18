@@ -143,7 +143,13 @@ Para encontrar *settings.json* seguimos la siguiente ruta: *File > Preferences >
 
 ![Captura de pantalla 2024-08-18 000608](https://github.com/user-attachments/assets/4937b2e3-0025-4dfd-ab85-3734cd3faa2c)
 
+En el lado superior derecho, elegimos *Open Settings (JSON)*
 
+![Captura de pantalla 2024-08-18 000908](https://github.com/user-attachments/assets/95b996fb-ca12-4458-a39b-5cd4f3edc394)
+
+Una vez que estemos dentro del archivo, ahora sí agregamos o cambiamos la línea de código `"C_Cpp.default.cppStandard": "c++20",`
+
+![Captura de pantalla 2024-08-18 001210](https://github.com/user-attachments/assets/ccbad7e1-c4ce-4961-a4d0-f836ce0f9664)
 
 **Nota:** Cada vez que se inicie un proyecto nuevo (es decir, si quieres trabajar en otra 'carpeta madre') se tienen que volver a aplicar las configuraciones modificadas anteriormente. Otra opción es crear una plantilla con la configuración que más te guste y usarla para crear proyectos nuevos.
 
