@@ -18,6 +18,11 @@ La configuración de depuración es la que usualmente se usa cuando estamos escr
 
 Cuando en un proyecto se corre un programa (de C++) por primera vez, en la carpeta *.vscode* del proyecto se crea un archivo llamado *tasks.json*.
 
-![Captura de pantalla 2024-08-17 190359](https://github.com/user-attachments/assets/2fa2b2de-c289-4485-b00a-0c534f32c628)
+Buscaremos la línea *${file}* en la sección *"args"*. Encima de *${file}* agregaremos el comando `"-ggdb",` (este nos servirá para la configuración de depuración). Cuando querramos usar la configuración de lanzamiento, borramos `"-ggdb",` y encima de *${file}* pegamos (en orden):
+* `"-O2",` y luego
+* `"-DNDEBUG",`
+
+![Captura de pantalla 2024-08-17 190826](https://github.com/user-attachments/assets/cdf85869-ad99-4f14-9f6f-40abb720db56)
+
 
 
