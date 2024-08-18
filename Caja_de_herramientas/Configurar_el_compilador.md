@@ -51,6 +51,13 @@ En el caso de VSCode lo que haremos es (como en las veces anteriores) abrir el a
 
 ![Captura de pantalla 2024-08-17 233031](https://github.com/user-attachments/assets/4cd759c5-0a0a-4160-b5b4-f8663aeccf77)
 
+También es posible pedirle al compilador que trate las advertencias como errores. Los errores detienen la compilación del programa, las advertencias aparecen cuando el programa puede compilar a pesar de que algo en él viola alguna regla de C++.
+
+Este paso es totalmente opcional (y **no** lo recomiendo para programadores experimentados), pero considerando que estamos aprendiendo y los programas que haremos (al menos en principio) son sencillos y con la finalidad de acostumbrarnos a las buenas prácticas, yo sugiero activar la opción de "Tratar advertencias como errores".
+
+En VSCode, en el archivo *tasks.json*, buscaremos la línea `${file}` en la sección `"args"`. Encima de `${file}` agregaremos el comando `"-Werror",`.
+
+
 
 **Nota:** Cada vez que se inicie un proyecto nuevo (es decir, si quieres trabajar en otra 'carpeta madre') se tienen que volver a aplicar las configuraciones modificadas anteriormente. Otra opción es crear una plantilla con la configuración que más te guste y usarla para crear proyectos nuevos.
 
