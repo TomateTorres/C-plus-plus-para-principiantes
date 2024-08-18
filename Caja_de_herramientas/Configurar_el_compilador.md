@@ -31,3 +31,8 @@ Si escribimos nuestros programas haciendo uso de una extensión de compilador (e
 La mayoría de estas extensiones están activas por default, pero no es muy difícil quitarlas.
 
 En el caso de VSCode lo que tenemos que hacer es buscar la línea `${file}` en la sección `"args"`. Encima de `${file}` agregaremos el comando `"-pedantic-errors",`.
+
+![Captura de pantalla 2024-08-17 231136](https://github.com/user-attachments/assets/96e397ea-57ea-46d5-a221-942f104c40ae)
+
+
+
