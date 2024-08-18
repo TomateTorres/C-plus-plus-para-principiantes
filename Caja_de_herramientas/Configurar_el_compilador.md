@@ -18,11 +18,16 @@ La configuración de depuración es la que usualmente se usa cuando estamos escr
 
 Cuando en un proyecto se corre un programa (de C++) por primera vez, en la carpeta *.vscode* del proyecto se crea un archivo llamado *tasks.json*.
 
-Buscaremos la línea *${file}* en la sección *"args"*. Encima de *${file}* agregaremos el comando `"-ggdb",` (este nos servirá para la configuración de depuración). Cuando querramos usar la configuración de lanzamiento, borramos `"-ggdb",` y encima de *${file}* pegamos (en orden):
+Buscaremos la línea `${file}` en la sección `"args"`. Encima de `${file}` agregaremos el comando `"-ggdb",` (este nos servirá para la configuración de depuración). Cuando querramos usar la configuración de lanzamiento, borramos `"-ggdb",` y encima de *${file}* pegamos (en orden):
 * `"-O2",` y luego
 * `"-DNDEBUG",`
 
 ![Captura de pantalla 2024-08-17 190826](https://github.com/user-attachments/assets/cdf85869-ad99-4f14-9f6f-40abb720db56)
 
+El estándar de C++ define reglas sobre como los programas deben de comportarse en circunstancias específicas. En la mayoría de los casos, los compiladores siguen estas reglas. Sin embargo, muchos compiladores (entre ellos VSCode) implementan cambios al lenguaje, usualmente para mejorar la compatibilidad con otras versiones del lenguaje. Este tipo de comportamientos se llaman **extensiones de compilador**.
 
+Si escribimos nuestros programas haciendo uso de una extensión de compilador (esta puede ser no-estándar), puede ocurrir que estos no compilen si cambiamos de compilador o si lo hacen, puede que no lo hagan de la forma correcta.
 
+La mayoría de estas extensiones están activas por default, pero no es muy difícil quitarlas.
+
+En el caso de VSCode lo que tenemos que hacer es buscar la línea `${file}` en la sección `"args"`. Encima de `${file}` agregaremos el comando `"-pedantic-errors",`.
