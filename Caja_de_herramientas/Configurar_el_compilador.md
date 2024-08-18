@@ -137,6 +137,7 @@ Para ello abrimos *tasks.json* y encima de la línea `"${file}"` escribimos el c
 
 ![Captura de pantalla 2024-08-17 235804](https://github.com/user-attachments/assets/7a7bc3fb-14a6-4753-869f-6692f2232fc7)
 
+Luego, en el archivo *settings.json* cambiamos o añadimos la siguiente línea de código `"C_Cpp.default.cppStandard": "c++20",`
 
 **Nota:** Cada vez que se inicie un proyecto nuevo (es decir, si quieres trabajar en otra 'carpeta madre') se tienen que volver a aplicar las configuraciones modificadas anteriormente. Otra opción es crear una plantilla con la configuración que más te guste y usarla para crear proyectos nuevos.
 
