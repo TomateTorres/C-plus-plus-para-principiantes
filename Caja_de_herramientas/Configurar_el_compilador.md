@@ -49,5 +49,8 @@ En el caso de VSCode lo que haremos es (como en las veces anteriores) abrir el a
 * `"-Wconversion",`
 * `"-Wsign-conversion",`
 
+![Captura de pantalla 2024-08-17 233031](https://github.com/user-attachments/assets/4cd759c5-0a0a-4160-b5b4-f8663aeccf77)
+
+
 **Nota:** Cada vez que se inicie un proyecto nuevo (es decir, si quieres trabajar en otra 'carpeta madre') se tienen que volver a aplicar las configuraciones modificadas anteriormente. Otra opción es crear una plantilla con la configuración que más te guste y usarla para crear proyectos nuevos.
 
