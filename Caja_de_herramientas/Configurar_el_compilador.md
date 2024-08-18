@@ -131,6 +131,11 @@ Lo único que tenemos que hacer es hacer un archivo nuevo en nuestra carpeta mad
 
 ![Captura de pantalla 2024-08-17 235231](https://github.com/user-attachments/assets/ff224851-4899-487e-8059-94c2ca81e9c5)
 
+Por default VSCode usa C++17. En vista de que es compatible con C++20, vamos a pedirle que mejor use esta versión.
+
+Para ello abrimos *tasks.json* y encima de la línea `"${file}"` escribimos el comando `"-std=c++20",`.
+
+
 
 **Nota:** Cada vez que se inicie un proyecto nuevo (es decir, si quieres trabajar en otra 'carpeta madre') se tienen que volver a aplicar las configuraciones modificadas anteriormente. Otra opción es crear una plantilla con la configuración que más te guste y usarla para crear proyectos nuevos.
 
