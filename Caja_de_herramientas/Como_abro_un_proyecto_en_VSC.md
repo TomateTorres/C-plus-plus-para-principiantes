@@ -33,7 +33,11 @@ Siempre que tengamos un archivo de la forma **.cpp* sabremos que tenemos un arch
 
 Si acabamos de abrir VSCode, se desplegará un mensaje muy largo en la terminal de abajo y será necesario volver a elegir la misma opción. Lo mejor es elegir *Debug C/C++ File* la primera vez que correremos el programa para verificar que funciona antes de *Run C/C++ File*.
 
-Si nos da a elegir alguna otra opción antes de ejecutar la instrucción *Debug C/C++ File*, deberemos elegir la opción que contenga '*().g++.()*'.
+Si nos da a elegir alguna otra opción antes de ejecutar la instrucción *Debug C/C++ File*, deberemos elegir la opción que contenga '**.g++.**'.
+
+Ya con esto hemos abierto nuestro primer proyecto en VSCode, ¡yupi!
+
+![watch-a-fat-cat-dance-an-american-dance-girlfriend](https://github.com/user-attachments/assets/ac7a5827-5c5b-411b-a77e-3adf28426780)
 
 
 
