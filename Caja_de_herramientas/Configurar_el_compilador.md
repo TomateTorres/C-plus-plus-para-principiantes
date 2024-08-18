@@ -34,5 +34,20 @@ En el caso de VSCode lo que tenemos que hacer es buscar la línea `${file}` en l
 
 ![Captura de pantalla 2024-08-17 231136](https://github.com/user-attachments/assets/96e397ea-57ea-46d5-a221-942f104c40ae)
 
+Al agregar la línea anterior le estamos pidiendo a VSCode que agrege una línea nueva al final de archivos de código que no la tienen (esto es requerido por el estándar de C++).
 
+### Aumentar niveles de advertencia
+
+Cuando hacemos algo que no es debido (si rompimos alguna regla de C++), de manera normal el compilador nos dará un aviso. La mayoría de los compiladores sólo nos generarán una advertencia concerniendo a los problemas más evidentes. Pero le podemos pedir al compilador que sea más asertivo al proveernos con advertencias de cosas que encuentre raras.
+
+Como apenas estamos aprendiendo a programar en C++, lo mejor es elevar los niveles de advertencia al máximo, para identificar posibles errores.
+
+En el caso de VSCode lo que haremos es (como en las veces anteriores) abrir el archivo *tasks.json*, buscar la línea `${file}` en la sección `"args"`. Encima de `${file}` agregaremos las siguientes líneas de comando (un comando por línea):
+* `"-Wall",`
+* `"-Weffc++",`
+* `"-Wextra",`
+* `"-Wconversion",`
+* `"-Wsign-conversion",`
+
+**Nota:** Cada vez que se inicie un proyecto nuevo (es decir, si quieres trabajar en otra 'carpeta madre') se tienen que volver a aplicar las configuraciones modificadas anteriormente. Otra opción es crear una plantilla con la configuración que más te guste y usarla para crear proyectos nuevos.
 
