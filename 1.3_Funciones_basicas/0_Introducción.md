@@ -9,6 +9,9 @@ Tipo_de_output Nombre_de_la_función() // Este es el encabezado de la función (
 ```
 El nombre de una función es conocido como su _identificador_.
 
+En el encabezado de la función tenemos: `Tipo_de_output Nombre_de_la_función()`. A las funciones podemos ponerles el nombre que más nos guste (respetando las mismas reglas que teníamos para nombrar variables, ver: [Enlace a Intro.md](../1.1_Variables_y_tipos_de_datos/0_Introducción.md)
+)
+
 
 
 ## 'Llamar' funciones
