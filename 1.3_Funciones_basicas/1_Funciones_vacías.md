@@ -118,3 +118,7 @@ void diHola()
 ```
 no va a resolver nuestros problemas, sólo agregará otro error a nuestro programa.
 
+La razón por la que no es necesario pedirle a la función 'que regrese' algo es porque ella misma ya imprime el mensaje.
+
+Hasta ahora podría parecer que las funciones tipo `void` sólo sirven para imprimir mensajes, esto no es cierto. Otra aplicación útil de este tipo de funciones es que pueden ser útiles para hacer operaciones con tipos complicados de variables donde devolver el resultado sería complicado o ineficiente (por ejemplo, si estamos haciendo alguna operación con vectores o matrices).
+

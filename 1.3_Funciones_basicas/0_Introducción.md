@@ -9,8 +9,8 @@ Tipo_de_output Nombre_de_la_función() // Este es el encabezado de la función (
 ```
 El nombre de una función es conocido como su _identificador_.
 
-En el encabezado de la función tenemos: `Tipo_de_output Nombre_de_la_función()`. A las funciones podemos ponerles el nombre que más nos guste (respetando las mismas reglas que teníamos para nombrar variables, ver: [Reglas importantes.](../1.1_Variables_y_tipos_de_datos/0_Introducción.md)
-)
+En el encabezado de la función tenemos: `Tipo_de_output Nombre_de_la_función()`. A las funciones podemos ponerles el nombre que más nos guste (respetando las reglas para nombrar variables, ver: [Reglas importantes.](../1.1_Variables_y_tipos_de_datos/0_Introducción.md)
+), pero idealmente se espera que este nos de información sobre lo que la función hace. Cuando definimos una función tenemos que saber qué tipo de output nos devolverá; por ejemplo, una función que suma enteros nos debe devolver un entero, entonces un posible encabezado sería `int suma()`, el nombre es libre, pero el `Tipo_de_output` no puede ser distinto de `int`. 
 
 
 
@@ -132,7 +132,16 @@ Cuando este programa es ejecutado, `main` crea una variable entera llamada `num`
 
 Decimos que una _función regresa un valor_ (en inglés: _value returning function_) si al terminar su ejecución devuelve algún valor de tipo distinto a `void`. Una vez que hemos definido el tipo de una función (`int`, `double`,...), el valor devuelto (llamado: 'valor de retorno') debe ser del mismo tipo que la función, de otro modo nuestro programa tendrá comportamientos inesperados (suponiendo que sí compile). 
 
-Una _función que devuelve valores_ sólo puede dar un sólo valor cada vez que es llamada. Hay maneras de trabajar aún con esta limitación, las veremos más adelante.
+Una _función que devuelve valores_ sólo puede dar un sólo valor cada vez que es llamada. Por ejemplo:
+```
+int suma()
+{
+    return 3 + 4;
+}
+```
+La función suma sólo devuelve un valor a través de `return` (la suma de 3 y 4). 
+
+El hecho de que, en principio, una función sólo pueda devolvernos un valor, es una limitación porque a veces puede sernos útil que una función devuelva múltiples resultados a la vez (por ejemplo, si queremos codificar una función de $f:\mathbb{R}^2 \to \mathbb{R}^2$ no podemos hacerlo con un solo `return`). Hay maneras de trabajar aún con esta limitación, las veremos más adelante.
 
 El significado del valor devuelto por una función es determinado por el autor de ésta. Algunas funciones devuelven valores de _estados de código_ para inidicar si fueron exitosas o fallaron, algunas devuelven un valor calculado o seleccionado, algunas no devuelven nada...
 
