@@ -4,7 +4,8 @@ En nuestros cursos de álgebra solemos tener nuestros primeros encuentros con la
 * *Ojalá hoy no llueva.* No es una proposición porque no podemos asignarle un valor de verdad.
 * *Los burritos son alimento.* Es una proposición (porque podemos asignarle un valor de verdad) verdadera.
 
-[Los burritos son alimento]
+![images](https://github.com/user-attachments/assets/fa0131ec-9e52-4546-ba83-fc87f2969393)
+
 
 Las proposiciones también aparecen en el mundo de la programación, de hecho son tan comunes que muchos lenguajes de programación incluyen un tipo (*type*) especial para lidiar con ellas, este tipo de dato se llama **booleano**.
 
