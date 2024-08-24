@@ -38,7 +38,7 @@ Una vez que el usuario ha dado un entero, la condición entre paréntesis `x==0`
 
 **Nota:** Por sí solas, las declaraciones `if` solamente ejecutan una sola declaración una vez que su condicional se cumple. Más adelante veremos como dar condicionales de manera en que se ejecuten múltiples declaraciones una vez que se satisfaga una declaración. Es por esta razón que en los ejemplos de esta sección, sólo hay una posible instrucción ejecutable inmediatamente después de `if` o (próximamente) `else`.
 
-## if-else
+## `if`-`else`
 
 Dado el ejemplo anterior, puede que el usuario se desconcierte un poco si inmediatamente después de que introduce un entero distinto del cero, el programa termine sin más aviso.
 
@@ -94,7 +94,7 @@ else
 ```
 **Nota:** Nuevamente, el indentado de `declaración_verdadera` (así como el de `declaración_falsa`) tendremos que ponerlo nosotros de forma manual.
 
-Si la `condición` es evaluada al valor booleano `true`, la `declaración_verdadera` se ejecuta, en otro caso el programa salta a la `declaración_falsa` y ejecuta ésta en lugar.
+Si la `condición` es evaluada al valor booleano `true`, la `declaración_verdadera` se ejecuta, en otro caso el programa salta a la `declaración_falsa` y ejecuta ésta en su lugar.
 
 Arreglemos nuestro ejemplo usando `if-else`:
 ```
@@ -118,7 +118,7 @@ int main()
 
 ## Encadenamiento de condiciones `if`
 
-A veces queremos evaluar el valor de verdad de varios enunciados en una secuencia. Esto lo podemos hacer encadenando una declaración `if` (o una `if-else`) a una `if` (o `if-else`) anterior. Por ejemplo:
+A veces queremos evaluar el valor de verdad de varios enunciados en una secuencia. Esto lo podemos hacer encadenando una declaración `if` (o una `if-else`) a una `if` anterior. Por ejemplo:
 ```
 #include <iostream>
 
