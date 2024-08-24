@@ -208,3 +208,60 @@ Es mayor que 5.
 ```
 
 ## Declaraciones `if` y devoluciones anticipadas.
+
+Como ya vimos en [la sección sobre funciones](../1.3_Funciones_basicas/0_Introducción.md), usualmente, una declaración `return` es la última instrucción de una función; a una declaración `return` que no es la última instrucción de una función la llamamos **devolución anticipada** (*early return*). Una declaración de este tipo hara que la función vuelva a su llamador una vez que lleguemos a la línea donde está `return` aún si después de esta hay más instrucciones.
+
+Una *devolución anticipada* sin un condicional no es de mucha utilidad:
+```
+#include <iostream>
+
+void print()
+{
+    std::cout << "A" << '\n';
+
+    return; 
+    // Como la función es de tipo `void` no es necesario decirle
+    // de que tipo es la variable que esperamos que nos devuelva,
+    // porque este tipo de funciones no devuelven variables de 
+    // ningún tipo.
+    
+    // Aquí estamos haciendo una devolución anticipada, ya que toda
+    // línea después de `return` no se ejecutará nunca porque la
+    // función volverá a su llamador, que en este caso es `main`
+
+    std::cout << "B" << '\n'; // esta línea nunca se va a imprimir.
+}
+
+int main()
+{
+    print(); // `main` llama a `print`
+    return 0;
+}
+```
+La línea `std::cout << "B" << '\n';` jamás se va a ejecutar, bien podríamos borrarla. Si lo hacemos, nuestra declaración `return` ya no será anticipada (pues será la última instrucción de la función).
+
+Por sí solas, las devoluciones anticipadas no se ven muy útiles, pero si las combinamos con las declaraciones `if` podemos condicionalizar el valor de retorno de nuestras funciones:
+```
+#include <iostream>
+
+// devuelve el valor absoluto de un entero `x`
+int abs(int x)
+{
+    if (x < 0)
+        return -x; // devolución anticipada sólo si x<0.
+
+    return x; // si la condición anterior no se verificó (si x>=0),
+              // esta instrucción sí se ejecuta.
+}
+
+int main()
+{
+    std::cout << abs(4) << '\n'; // imprime 4
+    std::cout << abs(-3) << '\n'; // imprime 3
+
+    return 0;
+}
+```
+Cuando llamamos a la función `abs()` y le damos como parámetro al `4`, la condición `x < 0` es falsa, entonces la devolución anticipada no se ejecuta y la función salta a `return x;` y vuelve al llamador.
+
+Cuando llamamos a la función `abs()` y le damos como parámetro al `-3`, la condición `x < 0` es verdadera, entonces la devolución anticipada sí se ejecuta. La función nos devuelve `-x` y vuelve al llamador.
