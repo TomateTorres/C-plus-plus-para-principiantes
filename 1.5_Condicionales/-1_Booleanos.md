@@ -99,7 +99,9 @@ int main()
     std::cout << std::boolalpha; 
     // `std::boolalpha` manipula a `std::cout` para que imprima
     // 'true' o 'false' en vez de '1' ó '0'
-    // para apagar `std::boolalpha` usamos `std::noboolalpha`
+    // para apagar `std::boolalpha` (en caso de que más adelante
+    // en el código querramos volver a imprimir 0s y 1s) usamos
+    // `std::noboolalpha`
 
     std::cout << x << " y " << y << " ¿son iguales? ";
     
