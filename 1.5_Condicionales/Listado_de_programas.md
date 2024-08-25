@@ -38,4 +38,4 @@ if (condición)
 else
   return false;
 ```
-Lo anterior siempre puede ser reemplazado por la instrucción: `return condición` (como podemos al comparar el código anterior y el propuesto en 'cambio.cpp').
+Lo anterior siempre puede ser reemplazado por la instrucción: `return condición` (como podemos ver al comparar el código anterior y el propuesto en 'cambio.cpp').
