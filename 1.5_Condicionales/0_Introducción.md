@@ -1,4 +1,4 @@
-En C++ **las condicionales** se usan para tomar decisiones basados en el valor de una expresión booleana (ver: [el archivo de texto anterior](-1_Booleanos.md)).
+En C++ **las condicionales** se usan para tomar decisiones basadas en el valor de una expresión booleana (ver: [el archivo de texto anterior](-1_Booleanos.md)).
 
 La estructura básica de una condicional es el uso de la **declaración `if`** que nos permite ejecutar una (o más) línea de código sólo si una condición es verdadera.
 

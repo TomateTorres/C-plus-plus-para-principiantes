@@ -71,7 +71,7 @@ El programa anterior corre aún cuando el usuario da un input distinto a `0` ó 
 Dame un valor booleano: -98
 Tu input fue: 1
 ```
-Lo anterior es más una curiosidad que algo realmente importante.
+Lo anterior ocurre porque de manera general, en C++ **un entero se convierte en booleano automáticamente** cuando se utiliza en contextos donde se espera un valor booleano, como en condiciones (`if`, `while`), operadores lógicos y retornos de funciones booleanas. La regla es que **0 se convierte en `false`** y **cualquier otro valor se convierte en `true`**.
 
 ## Valores de retorno booleanos
 
