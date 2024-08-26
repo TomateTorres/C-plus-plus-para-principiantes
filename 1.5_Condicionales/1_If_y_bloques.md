@@ -123,7 +123,7 @@ if (condición)
 
 else
 {
-    lo_que_pasa_si_condición_no_se_cumple
+    lo_que_pasa_si_(condición)_no_se_cumple
 }
 ```
 como nuestra forma 'canónica' para las declaraciones `if`-`else`.
