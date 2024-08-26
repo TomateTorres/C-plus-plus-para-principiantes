@@ -36,7 +36,7 @@ Una vez que el usuario ha dado un entero, la condición entre paréntesis `x==0`
 * Si se cumple (o sea, si el número que el usuario dio es 0) el operador `==` devuelve el valor `true` y se ejecuta la declaración subsecuente (`std::cout << "El valor es cero\n";`).
 * Si no se cumple (o sea, si el número que el usuario dio es distinto de 0) el operador `==` devuelve el valor `false` y la declaración inmediata después de la condicional (`std::cout << "El valor es cero\n";`) es omitida.
 
-**Nota:** Por sí solas, las declaraciones `if` solamente ejecutan una sola declaración una vez que su condicional se cumple. Más adelante veremos como dar condicionales de manera en que se ejecuten múltiples declaraciones una vez que se satisfaga una declaración. Es por esta razón que en los ejemplos de esta sección, sólo hay una posible instrucción ejecutable inmediatamente después de `if` o (próximamente) `else`.
+**Nota:** Por sí solas, las declaraciones `if` solamente ejecutan una sola declaración (la inmediata posterior) una vez que su condicional se cumple. Más adelante veremos como dar condicionales de manera en que se ejecuten múltiples declaraciones una vez que se satisfaga una declaración. Es por esta razón que en los ejemplos de esta sección, sólo hay una posible instrucción ejecutable inmediatamente después de `if` o (próximamente) `else`.
 
 ## `if`-`else`
 
