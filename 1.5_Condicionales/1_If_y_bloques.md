@@ -95,5 +95,36 @@ Aunque en la [introducción de este capítulo](/1.5_Condicionales/0_Introducció
 
 2. Supongamos que tenemos un programa al que estamos depurando:
 ```
+if (edad >= mayoriaEdad)
+    agregaPistoACarrito(); // esta línea sólo se ejecuta si se 
+                           // cumple la condición.
 
+pagaEnCaja(); // esta línea se ejecuta siempre
 ```
+Y tenemos la sospecha de que hay un error en la función `agregaPistoACarrito()`, entonces la comentamos para ver si el resto del programa corre bien sin ella (esto confirmaría que en efecto hay un problema en esa función).
+```
+if (edad >= mayoriaEdad)
+    /*agregaPistoACarrito(); // esta línea ya no se ejecuta, es 
+                             // un comentario
+    */
+
+pagaEnCaja(); // ahora se ejecuta sólo si se cumple el condicional
+```
+Aunque el indentado nos pueda engañar, la llamada a la función `pagaEnCaja()` es la declaración inmediata posterior después de `if`, así que esta es ahora la que se ejecutará sólo si la condicional se cumple.
+
+3. Al menos en VSCode (probablemente esto también sea así en otros IDE) si usamos bloques al escribir condicionales, ya no tenemos que preocuparnos por poner el indentado de forma manual. Aunque indentar nuestro código no es necesario para que el compilador lo entienda, hacerlo es muy útil para que nosotros los humanos podamos leerlo con mayor facilidad.
+
+Así que la recomendación es considerar a:
+```
+if (condición)
+{    
+    declaración_verdadera
+}
+
+else
+{
+    lo_que_pasa_si_condición_no_se_cumple
+}
+```
+como nuestra forma 'canónica' para las declaraciones `if`-`else`.
+
