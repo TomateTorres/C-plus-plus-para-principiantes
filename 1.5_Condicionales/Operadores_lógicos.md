@@ -32,7 +32,8 @@ Es importante mencionar que el *no lógico* tiene un nivel de precedencia muy al
 ```
 #include <iostream>
 
-int main() {
+int main()
+{
     int a{3};
     int b{5};
     bool resultado{};
@@ -62,11 +63,15 @@ int main()
     int y{ 7 };
 
     if (!x > y) // Se evalúa (!x) > y
+    {
     // `!x` es 0, y `0 > 7` es `false`, así se ejecuta la instrucción en `else`
         std::cout << x << " no es mayor que " << y << '\n';
+    }
    
     else
+    {
         std::cout << x << " es mayor que " << y << '\n';
+    }
 
     return 0;
 }
@@ -74,7 +79,7 @@ int main()
 
 **Notas:**
 * Los códigos anteriores no compilarán si usamos la configuración sugerida en la [Caja de herramientas](../Caja_de_herramientas/Configurar_el_compilador.md). Pero si la configuración es más permisiva, sucede lo que se menciona en los comentarios.
-* De manera general, en C++ [un entero se convierte en booleano automáticamente](-1_Booleanos.md) cuando se utiliza en contextos donde se espera un valor booleano, como en operadores lógicos. De ahí que `!a` sea igual a `0` (como `a` es un entero distinto de `1`, al evaluarlo como booleano le es asignado el valor de `1` en la memoria).
+* De manera general, en C++ [un entero se convierte en booleano automáticamente](-1_Booleanos.md) cuando se utiliza en contextos donde se espera un valor booleano, como en operadores lógicos. De ahí que `!a` sea igual a `0` (como `a` es un entero distinto de `0`, al evaluarlo como booleano le es asignado el valor de `1` en la memoria).
 
 Lo mejor es usar paréntesis para indicarle al compilador cómo queremos que evalúe nuestras expresiones. Usos simples del *no lógico* (del estilo `if (!bool)`) no necesitan del uso de parántesis porque aquí la precedencia del operador por encima de otros no importa.
 
@@ -105,7 +110,7 @@ int main()
     return 0;
 }
 ```
-Usamos el *o lógico* para verificar si la condición de la izquierda (`valor == 0`) o la de la derecha (`valor == 1`) se cumplen. Si alguna es cierta, `||` se evalúa como `true`, lo que quiere decir que se ejecuta la declaración `if` y en pantalla se imprime `Elegiste 0 ó 1`. Si ninguna es cierta, `||` se evalúa como `false` y se ejecta `else` y en pantalla se imprime `No elegiste 0 ó 1`
+Usamos el *o lógico* para verificar si la condición de la izquierda (`valor == 0`) o la de la derecha (`valor == 1`) se cumplen. Si alguna es cierta, `||` se evalúa como `true`, lo que quiere decir que se ejecuta la declaración `if` y en pantalla se imprime `Elegiste 0 ó 1`. Si ninguna es cierta, `||` se evalúa como `false` y se ejecuta `else` y en pantalla se imprime `No elegiste 0 ó 1`
 
 Es posible encadenar múltiples declaraciones *o lógicas*:
 ```
@@ -168,7 +173,7 @@ Para que el operador **y lógico**
 
 ## Combinar `&&`s y `||`s
 
-Podemos encadenar combinar declaraciones *y lógicas* y *o lógicas*:
+Podemos encadenar y combinar declaraciones `y lógicas` y `o lógicas`:
 ```
 #include <iostream>
 
