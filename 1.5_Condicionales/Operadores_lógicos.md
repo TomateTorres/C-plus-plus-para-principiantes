@@ -153,7 +153,7 @@ int main()
 
 ## Combinar `&&`s y `||`s
 
-Podemos encadenar combinar declaraciones *y lógicas* y *o lógicas*:
+Podemos encadenar y combinar declaraciones *y lógicas* y *o lógicas*:
 ```
 #include <iostream>
 
