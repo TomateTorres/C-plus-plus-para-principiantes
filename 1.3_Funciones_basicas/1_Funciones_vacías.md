@@ -6,7 +6,7 @@ Tipo_de_output Nombre_de_la_función() // Este es el encabezado de la función (
 }
 ```
 
-Aunque mencionamos la existencia de funciones tipo `void` y vimos un ejemplo, no hemos dicho que significa esto. Vamos a explorar a este tipo de funciones.
+Aunque mencionamos la existencia de funciones tipo `void` y vimos un ejemplo, no hemos dicho qué significa esto. Vamos a explorar a este tipo de funciones.
 
 **Ojo:** El que una función sea de tipo `void` no significa que ésta no hace nada, sólo quiere decir que para efectos de C++, lo que sea que está haciendo no se guarda en una variable de ningún tipo.
 
@@ -120,5 +120,5 @@ no va a resolver nuestros problemas, sólo agregará otro error a nuestro progra
 
 La razón por la que no es necesario pedirle a la función 'que regrese algo' es porque ella misma ya imprime el mensaje.
 
-Hasta ahora podría parecer que las funciones tipo `void` sólo sirven para imprimir mensajes, esto no es cierto. Otra aplicación útil de este tipo de funciones es que pueden ser útiles para hacer operaciones con tipos complicados de variables donde devolver el resultado sería complicado o ineficiente (por ejemplo, si estamos haciendo alguna operación con vectores o matrices).
+Hasta ahora podría parecer que las funciones tipo `void` sólo sirven para imprimir mensajes, esto no es cierto. Otra aplicación útil de este tipo de funciones es que pueden servir para hacer operaciones con tipos complicados de variables donde devolver el resultado sería complicado o ineficiente (por ejemplo, si estamos haciendo alguna operación con vectores o matrices).
 
