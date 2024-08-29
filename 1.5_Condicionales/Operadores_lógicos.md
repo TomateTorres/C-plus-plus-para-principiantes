@@ -168,7 +168,7 @@ Si todas las condiciones se verifican, la declaración `if` se ejecutará y si c
 
 ## Evaluación de cortocircuito
 
-Para que el operador **y lógico**
+Para que el operador **y lógico** (`&&`) devuelva `true`, ambos operandos deben valer `true`. Si el operando de la izquierda es evaluado como `false`, entonces el operador sabe que debe devolver el valor `false` sin importar el valor de verdad del operando de la derecha. En este caso, el operador 
 
 
 ## Combinar `&&`s y `||`s
