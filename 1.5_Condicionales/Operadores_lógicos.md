@@ -168,8 +168,59 @@ Si todas las condiciones se verifican, la declaración `if` se ejecutará y si c
 
 ## Evaluación de cortocircuito
 
-Para que el operador **y lógico** (`&&`) devuelva `true`, ambos operandos deben valer `true`. Si el operando de la izquierda es evaluado como `false`, entonces el operador sabe que debe devolver el valor `false` sin importar el valor de verdad del operando de la derecha. En este caso, el operador 
+Para que el operador **y lógico** (`&&`) devuelva `true`, ambos operandos deben valer `true`. Si el operando de la izquierda es evaluado como `false`, entonces el operador sabe que debe devolver el valor `false` sin importar el valor de verdad del operando de la derecha. En este caso, el operador `&&` regresará `false` inmediatamente sin haber evaluado el operando de la derecha. A este comportamiento se le llama **evaluación de cortocircuito**(*short circuit evaluation*) y se hace principalmente con fines de optimización.
 
+Similarmente, si el operando izquierdo del operador **o lógico** (`||`) vale `true`, entonces `||` devuelve automáticamente `true` sin evaluar el operando de la derecha.
+
+Esto último hace que usar el operador `||` en expresiones complejas puede ser problemático si se depende de los efectos secundarios de una función o expresión. Veamos un ejemplo para explicar a qué nos referimos:
+```
+#include <iostream>
+
+bool esMayorQueCero(int n) 
+{
+    std::cout << "Verificando si " << n << " es mayor que cero.\n";
+    return n > 0; // Condición que nos da `true` o `false`
+}
+
+bool mostrarMensaje(int n) 
+{
+    std::cout << "Procesando el número: " << n << "\n";
+    return true; // Esta función solo imprime un mensaje y siempre devuelve `true`
+}
+
+int main() 
+{
+    int a = 3;
+    int b = -5;
+
+    // Evaluación de corto circuito con funciones que tienen efectos secundarios
+    if (esMayorQueCero(a) || mostrarMensaje(b)) 
+    {
+        std::cout << "Al menos uno de los números es positivo o ha sido procesado.\n";
+    } 
+    
+    else 
+    {
+        std::cout << "Ningún número es positivo y no se procesaron ambos números.\n";
+    }
+
+    return 0;
+}
+```
+
+Lo esperado sería que (dado que `mostrarMensaje(b)` también vale `true`) se nos imprimera en pantalla lo siguiente:
+```
+Verificando si 3 es mayor que cero.
+Procesando el número: -5
+Al menos uno de los números es positivo o ha sido procesado.
+```
+Pero, como `esMayorQueCero(a)` ya vale `true`, el operador `||` ya no se molesta en evaluar el segundo operando, por lo que éste nunca se ejecuta y el output obtenido es:
+```
+Verificando si 3 es mayor que cero.
+Al menos uno de los números es positivo o ha sido procesado.
+```
+
+La moraleja de todo esto es: Evita usar expresiones con efectos secundarios en el segundo operando de `||` y `&&` ya que siempre existe la posibilidad de que estos operadores no lleguen al segundo operando antes de ser evaluados como `true` o `false`.
 
 ## Combinar `&&`s y `||`s
 
@@ -196,5 +247,11 @@ int main()
     
     return 0;
 }
+```
+Es muy importante ser cuidadosos en indicarle al compilador con ayuda de paréntesis `()` como queremos que se evalúen nuestras expresiones ya que `valor1 || valor2 && valor3` se evalúa en automático como `valor1 || (valor2 && valor3)` porque `&&` tiene mayor precedencia que `||`. Además, el uso de paréntesis hace que otros humanos encuentren nuestro código más fácil de leer.
 
+Es probable que para este punto las lectoras y lectores ya se hayan encontrado con las **leyes de De Morgan** en sus cursos de Álgebra, estas leyes nos dicen como el operador `!` es distribuido con la conjunción y disyunción:
+```
+!(x && y) es equivalente a !x || !y
+!(x || y) es equivalente a !x && !y
 ```
