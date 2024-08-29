@@ -32,7 +32,8 @@ Es importante mencionar que el *no lógico* tiene un nivel de precedencia muy al
 ```
 #include <iostream>
 
-int main() {
+int main()
+{
     int a{3};
     int b{5};
     bool resultado{};
