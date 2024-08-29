@@ -79,7 +79,7 @@ int main()
 
 **Notas:**
 * Los códigos anteriores no compilarán si usamos la configuración sugerida en la [Caja de herramientas](../Caja_de_herramientas/Configurar_el_compilador.md). Pero si la configuración es más permisiva, sucede lo que se menciona en los comentarios.
-* De manera general, en C++ [un entero se convierte en booleano automáticamente](-1_Booleanos.md) cuando se utiliza en contextos donde se espera un valor booleano, como en operadores lógicos. De ahí que `!a` sea igual a `0` (como `a` es un entero distinto de `1`, al evaluarlo como booleano le es asignado el valor de `1` en la memoria).
+* De manera general, en C++ [un entero se convierte en booleano automáticamente](-1_Booleanos.md) cuando se utiliza en contextos donde se espera un valor booleano, como en operadores lógicos. De ahí que `!a` sea igual a `0` (como `a` es un entero distinto de `0`, al evaluarlo como booleano le es asignado el valor de `1` en la memoria).
 
 Lo mejor es usar paréntesis para indicarle al compilador cómo queremos que evalúe nuestras expresiones. Usos simples del *no lógico* (del estilo `if (!bool)`) no necesitan del uso de parántesis porque aquí la precedencia del operador por encima de otros no importa.
 
