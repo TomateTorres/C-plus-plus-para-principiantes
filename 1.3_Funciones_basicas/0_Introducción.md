@@ -10,7 +10,7 @@ Tipo_de_output Nombre_de_la_función() // Este es el encabezado de la función (
 El nombre de una función es conocido como su _identificador_.
 
 En el encabezado de la función tenemos: `Tipo_de_output Nombre_de_la_función()`. A las funciones podemos ponerles el nombre que más nos guste (respetando las reglas para nombrar variables, ver: [Reglas importantes.](../1.1_Variables_y_tipos_de_datos/0_Introducción.md)
-), pero idealmente se espera que este nos de información sobre lo que la función hace. Cuando definimos una función tenemos que saber qué tipo de output nos devolverá; por ejemplo, una función que suma enteros nos debe devolver un entero, entonces un posible encabezado sería `int suma()`, el nombre es libre, pero el `Tipo_de_output` no puede ser distinto de `int`. 
+), pero idealmente se espera que éste nos de información sobre lo que la función hace. Cuando definimos una función tenemos que saber qué tipo de output nos devolverá; por ejemplo, una función que suma enteros nos debe devolver un entero, entonces un posible encabezado sería `int suma()`, el nombre es libre, pero el `Tipo_de_output` no puede ser distinto de `int`. 
 
 
 
@@ -118,7 +118,7 @@ int suma()
     return x + y;
 }
 
-//Aquí empíeza el programa ejecutable:
+//Aquí empieza el programa ejecutable:
 int main()
 {
     int num {suma()}; //inicializamos el valor 'num' con el 
