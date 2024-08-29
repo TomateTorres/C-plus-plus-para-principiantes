@@ -63,11 +63,15 @@ int main()
     int y{ 7 };
 
     if (!x > y) // Se evalúa (!x) > y
+    {
     // `!x` es 0, y `0 > 7` es `false`, así se ejecuta la instrucción en `else`
         std::cout << x << " no es mayor que " << y << '\n';
+    }
    
     else
+    {
         std::cout << x << " es mayor que " << y << '\n';
+    }
 
     return 0;
 }
