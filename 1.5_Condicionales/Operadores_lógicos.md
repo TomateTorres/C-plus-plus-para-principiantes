@@ -85,7 +85,7 @@ Lo mejor es usar paréntesis para indicarle al compilador cómo queremos que eva
 
 ## O lógico
 
-El **operador de disyunción lógica** (también llamado *o lógico*) para verificar si una (o ambas) condición de dos se verifica. `||` nos dará `false` sólo en el caso donde ambos operandos se evalúen como `false`, en cualquier otro caso `||` nos dará `true`.
+El **operador de disyunción lógica** (también llamado *o lógico*) sirve para verificar si una (o ambas) condición de dos se verifica. `||` nos dará `false` sólo en el caso donde ambos operandos se evalúen como `false`, en cualquier otro caso `||` nos dará `true`.
 
 Por ejemplo, en el siguiente programa:
 ```
