@@ -59,7 +59,7 @@ int main()
 ```
 Así es más claro ver por qué la línea '`Lo siento, pequeño amigo Lannister.`' se imprime sin importar la estatura en cm. 
 
-Para poder ejecutar varias declaraciones basadas en alguna condición, necesitaremos usar una **declaración compuesta** o **bloque** (éstas, aunque nunca las hemos llamado por este nombre, ya las hemos visto antes; ya que el cuerpo de una función es un bloque).
+Para poder ejecutar varias declaraciones basadas en alguna condición, necesitaremos usar una **declaración compuesta** o **bloque** (éstas, ya las hemos visto antes; ya que el cuerpo de una función es un bloque).
 
 Un **bloque** en C++ es un conjunto de declaraciones agrupadas por llaves `{}` que se tratan como una sola unidad.
 
@@ -190,3 +190,67 @@ int main()
 }
 ```
 En este contexto, la variable `x` tiene alcance sólo dentro de cada bloque donde es definida y es destruida al final de éste (en [1.3](../1.3_Funciones_basicas/3_Intro_a_alcance_local.md) ya hablamos un poco sobre qué es el alcance de una variable). Para cuando llegamos a la línea `std::cout << x << '\n';` la variable `x` ya no existe y el programa no tiene nada para imprimir en pantalla.
+
+
+## Declaraciones `if` anidadas
+
+En C++ está permitido hacer declaraciones `if` dentro de declaraciones `if`:
+```
+/*
+Supongamos que queremos clasificar a una persona según su edad:
+1. Si es menor de edad.
+2. Si es adulto: tiene entre 18 y 64 años
+3. Si es de la tercera edad.
+
+Además, en caso de que la persona sea adulta, queremos saber si
+es adulto joven (tiene entre 18 y 40) o está en la mediana edad
+(tiene entre 41 y 64)
+*/
+
+#include <iostream>
+
+int pideEdad() // Las edades son números enteros
+{
+    int edad{};
+    std::cout << "Introduce tu edad: ";
+    std::cin >> edad;
+    return edad;
+}
+
+int main()
+{
+    int edad{pideEdad()}; // La edad del usuario
+
+    if (edad < 18) // Primera declaración `if`-`else`
+    {
+        std::cout << "Eres menor de edad.\n";
+    }
+
+    else // La persona es mayor de edad
+    {
+        // Segunda declaración `if`-`else`
+        if (edad < 65) 
+        {
+            // Tercera declaración `if`-`else`
+            if (edad <= 40)
+            {
+                std::cout << "Eres un adulto joven.\n";
+            }
+
+            else 
+            {
+                std::cout << "Estás en la mediana edad.\n";
+            }
+        }
+
+        else // La edad es mayor o igual a 65.
+        {
+            std::cout << "Estás en la tercera edad.\n";
+        }
+    }
+
+    return 0;
+}
+```
+
+**Nota:** Dentro de los condicionales, el operador que debemos usar si queremos verificar que una variable tiene asignado cierto valor es el operador `==`. En C++ (y en muchos lenguajes de programación) el operador `=` sirve para asignarle un valor nuevo a una variable, no para verificar una igualdad.
