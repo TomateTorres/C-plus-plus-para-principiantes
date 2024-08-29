@@ -145,6 +145,26 @@ int main()
 }
 ```
 
+Al igual que con las declaraciones *o lógicas*, es posible encadenar múltiples *y lógicas*:
+```
+// Supongamos que tenemos un `valor` y queremos verificar si está
+// en (10, 20) pero no es igual a 16.
+
+if (valor > 10 && valor < 20 && valor != 16)
+{
+    // hacemos algo
+}
+else
+{
+    // hacemos algo diferente
+}
+```
+Si todas las condiciones se verifican, la declaración `if` se ejecutará y si cualquiera de las condiciones es `false`, se ejecutará la declaración `else`.
+
+## Evaluación de cortocircuito
+
+Para que el operador **y lógico**
+
 
 ## Combinar `&&`s y `||`s
 
