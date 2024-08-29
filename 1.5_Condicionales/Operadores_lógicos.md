@@ -110,7 +110,7 @@ int main()
     return 0;
 }
 ```
-Usamos el *o lógico* para verificar si la condición de la izquierda (`valor == 0`) o la de la derecha (`valor == 1`) se cumplen. Si alguna es cierta, `||` se evalúa como `true`, lo que quiere decir que se ejecuta la declaración `if` y en pantalla se imprime `Elegiste 0 ó 1`. Si ninguna es cierta, `||` se evalúa como `false` y se ejecuta `else` y en pantalla se imprime `No elegiste 0 ó 1`
+Usamos el *o lógico* para verificar si la condición de la izquierda (`valor == 0`) o la de la derecha (`valor == 1`) se cumplen. Si alguna es cierta, `||` se evalúa como `true`, lo que quiere decir que se ejecuta la declaración `if` y en pantalla se imprime `Elegiste 0 ó 1`. Si ninguna es cierta, `||` se evalúa como `false`, se ejecuta `else` y en pantalla se imprime `No elegiste 0 ó 1`
 
 Es posible encadenar múltiples declaraciones *o lógicas*:
 ```
