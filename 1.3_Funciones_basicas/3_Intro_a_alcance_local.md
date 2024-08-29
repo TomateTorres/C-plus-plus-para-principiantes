@@ -4,7 +4,7 @@ Recordemos que un parámetro de una función es una variable definida dentro de 
 
 Como ya hemos visto (ver el ejemplo: *funcion_producto.cpp*) es posible definir diferentes variables con un mismo nombre, el truco para que esto sea legal, es tener cuidado (en unos momentos veremos a qué nos referimos)
 
-El **alcance local** de un **identificador** (un identificador es el nombre de una variable, por ejemplo `x`) determina donde este puede ser visto y usado dentro del código fuente. Cuando éste puede ser visto y usado, decimos que *está en alcance*, en caso contrario decimos que está *fuera de alcance*. Tratar de usar un identificador fuera de alcance nos producirá un error al compilar.
+El **alcance local** de un **identificador** (un identificador es el nombre de una variable, por ejemplo `x`) determina donde éste puede ser visto y usado dentro del código fuente. Cuando éste puede ser visto y usado, decimos que *está en alcance*, en caso contrario decimos que está *fuera de alcance*. Tratar de usar un identificador fuera de alcance nos producirá un error al compilar.
 
 El alcance de una variable local empieza en el momento en el que la definimos dentro de la función (en el cuerpo o dentro del paréntesis después del nombre de ésta) y termina en el corchete final (`}`) de dicha función.
 
@@ -31,7 +31,7 @@ int main()
              // el mismo nombre, esta `x` es distinta a la de la
              // función `doble()`). Le vamos a decir 'x de main()'.
     std::cin >> x; // En 'x de main()' es en donde guardaremos en 
-                 // input del usuario.
+                   // input del usuario.
 
     std::cout << "El doble de " << x << " es: " << doble(x) << '\n'; 
     // Metemos a 'x de main()' como parámetro en la
@@ -45,7 +45,7 @@ int main()
 }
 ```
 
-Más arriba mencionamos que en un mismo código podemos definir variables con el mismo código 'siempre que lo hagamos con cuidado'. EL anterior, es un ejemplo de como esto **sí** se puede hacer, veamos un ejemplo de como **no** se puede usar el mismo nombre para definir variables distintas en un mismo código:
+Más arriba mencionamos que en un mismo código podemos definir variables con el mismo nombre 'siempre que lo hagamos con cuidado'. EL anterior, es un ejemplo de como esto **sí** se puede hacer, veamos un ejemplo de como **no** se puede usar el mismo nombre para definir variables distintas en un mismo código:
 
 Supongamos que queremos calcular el volumen de un cubo de lado 2, podríamos hacerlo así:
 ```
