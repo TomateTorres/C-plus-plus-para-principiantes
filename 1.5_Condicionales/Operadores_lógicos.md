@@ -123,7 +123,7 @@ if (valor == 0 || valor == 1 || valor == 2 || valor == 3)
 
 ## Y lógico
 
-El **operador de conjunción lógica** (también llamado *y lógico*) es usado para verificar si ambos operandos son verdaderos. Si ambos operandos son verdaderos, `||` nos da `true` y nos da `false` en cualquier otro caso.
+El **operador de conjunción lógica** (también llamado *y lógico*) es usado para verificar si ambos operandos son verdaderos. Si ambos operandos son verdaderos, `&&` nos da `true` y nos da `false` en cualquier otro caso.
 
 Por ejemplo, podríamos querer evaluar si una variable `x` está en cierto intervalo, digamos entre $\(0, 6\)$. Necesitamos verificar dos condiciones: Necesitamos verificar que `0 < x` y `x < 6`.
 ```
