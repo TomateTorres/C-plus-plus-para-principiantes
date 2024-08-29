@@ -168,7 +168,7 @@ Si todas las condiciones se verifican, la declaración `if` se ejecutará y si c
 
 ## Evaluación de cortocircuito
 
-Para que el operador **y lógico** (`&&`) devuelva `true`, ambos operandos deben valer `true`. Si el operando de la izquierda es evaluado como `false`, entonces el operador sabe que debe devolver el valor `false` sin importar el valor de verdad del operando de la derecha. En este caso, el operador `&&` regresará `false` inmediatamente sin haber evaluado el operando de la derecha. A este comportamiento se le llama **evaluación de cortocircuito**(*short circuit evaluation*) y se hace principalmente con fines de optimización.
+Para que el operador **y lógico** (`&&`) devuelva `true`, ambos operandos deben valer `true`. Si el operando de la izquierda es evaluado como `false`, entonces el operador sabe que debe devolver el valor `false` sin importar el valor de verdad del operando de la derecha. En este caso, el operador `&&` regresará `false` inmediatamente sin haber evaluado el operando de la derecha. A este comportamiento se le llama **evaluación de cortocircuito** (*short circuit evaluation*) y se hace principalmente con fines de optimización.
 
 Similarmente, si el operando izquierdo del operador **o lógico** (`||`) vale `true`, entonces `||` devuelve automáticamente `true` sin evaluar el operando de la derecha.
 
