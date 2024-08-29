@@ -172,7 +172,7 @@ Para que el operador **y lógico** (`&&`) devuelva `true`, ambos operandos deben
 
 Similarmente, si el operando izquierdo del operador **o lógico** (`||`) vale `true`, entonces `||` devuelve automáticamente `true` sin evaluar el operando de la derecha.
 
-Esto último hace que usar el operador `||` en expresiones complejas puede ser problemático si se depende de los efectos secundarios de una función o expresión. Veamos un ejemplo para explicar a qué nos referimos:
+Esto último hace que usar el operador `||` o el operador `&&` en expresiones complejas puede ser problemático si se depende de los efectos secundarios de una función o expresión. Veamos un ejemplo para explicar a qué nos referimos:
 ```
 #include <iostream>
 
