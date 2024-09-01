@@ -66,7 +66,7 @@ int main()
 ```
 El programa anterior corre aún cuando el usuario da un input distinto a `0` ó `1`, lo que sucede es que:
 * Cuando damos un input no válido (digamos un string o combinación de números o letras), `std::cin` falla silenciosamente y la inicialización que se queda para nuestra variable booleana es la que está por default, o sea `false`.
-* Cuando introducimos un entero (aunque éste no sea 1), éste pasa a la memoria como `true` y es por ello que podemos tener outputs del estilo:
+* Cuando introducimos un entero distinto de 0 (aunque éste no sea 1), éste pasa a la memoria como `true` y es por ello que podemos tener outputs del estilo:
 ```
 Dame un valor booleano: -98
 Tu input fue: 1
