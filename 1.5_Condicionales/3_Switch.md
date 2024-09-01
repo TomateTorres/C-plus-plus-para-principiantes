@@ -205,7 +205,7 @@ void imprimeNombreDigito(int x)
         std::cout << "Uno";
         return;
     case 2: // Como `x=2` se ejecutan las instrucciones que
-            // que corrresponden a esta etiqueta.
+            // que corresponden a esta etiqueta.
         std::cout << "Dos"; // La ejecución empieza aquí
         return; // Regresamos al llamador (en este caso, `main`)
     case 3:
