@@ -386,3 +386,5 @@ int main()
 Imprime: `Tres    Hola ( ͡° ͜ʖ ͡°)`
 
 Lo mejor es utilizar `break` en vez de `return` a menos que deliberadamente querramos salir de la función y volver a su llamador.
+
+**Nota:** Todo lo que puede hacer una declaración `switch` puede ser replicado por una declaración `if`-`else`. `if`-`else` es mucho más flexible, así que (aunque `switch` puede llegar a ser más eficiente en ciertos casos) para evitar confusiones me parece que lo más recomendable es usar `if`-`else` en principio y posteriormente modificar el código a una declaración `switch` si es necesario o conveniente por alguna razón.
