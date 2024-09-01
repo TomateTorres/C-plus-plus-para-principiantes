@@ -69,25 +69,25 @@ void imprimeNombreDeNum(int x) {
             return;
         case 5:
             std::cout << "tōma";
-            break;
+            return;
         case 6:
             std::cout << "bȳre";
-            break;
+            return;
         case 7:
             std::cout << "sīkuda";
-            break;
+            return;
         case 8:
             std::cout << "jēnqa";
-            break;
+            return;
         case 9:
             std::cout << "vōre";
-            break;
+            return;
         case 10:
             std::cout << "ampa";
-            break;
+            return;
         default:
             std::cout << "No sé, es demasiado conocimiento para mí.";
-            break;
+            return;
     }
 }
 
