@@ -19,3 +19,13 @@ Las principales referencias usadas para este material son:
 * https://www.learncpp.com/ 
 
 Ambos recursos son de libre acceso. En particular este material se basa fuertemente en el segundo.
+
+En algunas de las carpetas hay archivos .cpp y pedazos de código dentro de los archivos de texto. Lo más recomendable es que los interesados en revisar con detenimiento los códigos, los copien en el IDE de su preferencia (recomiendo Visual Studio Code) y allí sea donde los analicen y ejecuten. La recomendación es porque en un IDE es significativamente más fácil distinguir pedazos de código de comentarios, además de verificar si hay errores, el código está bien indentado, nos faltó algún paréntesis o corchete...
+
+Como referencia, así se ve un código de C++ dentro de Visual Studio Code:
+
+![Captura de pantalla 2024-08-31 190714](https://github.com/user-attachments/assets/766d4f0e-e456-402f-95be-59a5956e5297)
+
+Y así se ve un código de C++ dentro
+
+
