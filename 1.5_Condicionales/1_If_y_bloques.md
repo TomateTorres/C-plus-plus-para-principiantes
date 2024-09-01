@@ -84,7 +84,6 @@ int main()
     {
         std::cout << "No tienes la estatura sufiente para subir.\n";
         std::cout << "Lo siento, pequeño amigo Lannister.\n"; 
-        // Prestémosle atención a la última línea.
     }
 
     return 0;
