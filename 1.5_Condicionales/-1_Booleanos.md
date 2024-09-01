@@ -31,7 +31,7 @@ bool p1{!true};  //p1 es inicializado como `false`
 bool p2{!false}; //p2 es inicializado como `true`
 ```
 
-Los valores booleanos (`true` y `false`) no se guardan en las variables booleanas como palabras, en su lugar, son guardadas como valores enteros: `true` se guarda como `1` y `false` se guarda como `0`. De la misma forma, cuando valores booleanos son evaluados, no lo son como `true` y `false` sino como `1` y `0` respectivamente. Es por ello que al imprimirlas en pantalla, aparecen los valores enteros asociados al valor de verdad.
+Los valores booleanos (`true` y `false`) no se guardan en las variables booleanas como palabras, en su lugar, son guardadas como valores enteros: `true` se guarda como `1` y `false` se guarda como `0`. De la misma forma, cuando valores booleanos son evaluados, no lo son como `true` y `false` sino como `1` y `0` respectivamente. Es por ello que al imprimirlos en pantalla, aparecen los valores enteros asociados al valor de verdad.
 ```
 #include <iostream>
 
