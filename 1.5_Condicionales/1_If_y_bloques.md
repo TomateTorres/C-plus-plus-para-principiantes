@@ -59,6 +59,9 @@ int main()
 ```
 Así es más claro ver por qué la línea '`Lo siento, pequeño amigo Lannister.`' se imprime sin importar la estatura en cm. 
 
+![Captura de pantalla 2024-09-01 150022](https://github.com/user-attachments/assets/1ac000d2-6dbe-4520-9498-063b9e1fd5af)
+
+
 Para poder ejecutar varias declaraciones basadas en alguna condición, necesitaremos usar una **declaración compuesta** o **bloque** (éstas, ya las hemos visto antes; ya que el cuerpo de una función es un bloque).
 
 Un **bloque** en C++ es un conjunto de declaraciones agrupadas por llaves `{}` que se tratan como una sola unidad.
