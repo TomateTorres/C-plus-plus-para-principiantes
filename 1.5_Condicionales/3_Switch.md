@@ -134,10 +134,10 @@ enum Dia { Lunes, Martes, Miércoles, Jueves, Viernes, Sábado, Domingo };
 ```
 
 En este ejemplo, hemos definido un `enum` llamado `Dia` que contiene constantes con nombre (`Lunes`, `Martes`, `Miércoles`, ...) que (para nosotros los humanos) representan los días de la semana. Internamente (para la máquina), cada constante de `enum` está asociada con un valor entero, empezando por el `0`. De esta forma:
-*. `Lunes` es `0` 
-*. `Martes` es `1`
+* `Lunes` es `0` 
+* `Martes` es `1`
 ...
-*. `Domingo` es `6`
+* `Domingo` es `6`
 
 En vista de que más arriba ya vimos un ejemplo de una declaración `switch` que utiliza un tipo de dato entero, veamos uno con enumeraciones:
 ```
