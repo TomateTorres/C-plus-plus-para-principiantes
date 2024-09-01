@@ -148,7 +148,7 @@ int main()
 }
 ```
 
-Ambos códigos hacen en esencia lo mismo, pero el segundo tiene más líneas de código y complejidad que podemos evitar si usamos el primero.
+Ambos códigos hacen en esencia lo mismo, pero el segundo tiene más líneas de código (recordemos que los comentarios no son líneas de código) y complejidad que podemos evitar si usamos el primero.
 
 ## Uso de paréntesis en el operador condicional
 
