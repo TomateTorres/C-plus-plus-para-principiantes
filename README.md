@@ -26,6 +26,6 @@ Como referencia, así se ve un código de C++ dentro de Visual Studio Code:
 
 ![Captura de pantalla 2024-08-31 190714](https://github.com/user-attachments/assets/766d4f0e-e456-402f-95be-59a5956e5297)
 
-Y así se ve un código de C++ dentro
+Y así se ve uno de los códigos de C++ en un archivo de texto dentro de GitHub:
 
-
+![Captura de pantalla 2024-08-31 191254](https://github.com/user-attachments/assets/67e25d6e-444f-4e80-90f8-97a546490b0f)
