@@ -9,7 +9,7 @@ Un primer intento (con base en lo que sabemos hasta ahora), podría verse así:
 ```
 #include <iostream>
 
-int minEstaturaCM { 140 }; // la estatura mínima para subir a
+int minEstaturaCM { 140 }; // La estatura mínima para subir a
                            // la atracción.
 
 int main()
