@@ -9,7 +9,7 @@ if (condición) declaración_verdadera;
 Para que sea más fácil para nosotros los humanos leer lo anterior (sobre todo cuando la `declaración_verdadera` es muy larga), es mejor escribirla así:
 ```
 if (condición)
-    declaración_verdadera
+    declaración_verdadera;
 ```
 
 Una **condición** (también llamada **expresión condicional**) es una expresión que es evaluada a un valor booleano. Si la *condición* de una declaración `if` es evaluada al valor booleano `true`, entonces la `declaración_verdadera` se ejecuta. Si la condición es evaluada al valor booleano `false`, entonces la `declaración_verdadera` es omitida por el programa.
