@@ -191,4 +191,198 @@ Después de `switch(expresión_válida_a_evaluar)`, declaramos un bloque `{}` y 
 
 La etiqueta `case` es declarada usando la palabra clave `case` seguida de una expresión constante. El tipo de expresión constante debe ser del mismo tipo que la condición (ya sea de tipo `int` o `enum`).
 
-Si el valor de la expresión
+Si el valor de la expresión condicional es igual al de la expresión después de la etiqueta `case`, se ejecutan las instrucciones correspondientes a dicha etiqueta de manera secuencial (o sea, en el orden en que las pusimos).
+
+Veamos un ejemplo:
+```
+#include <iostream>
+
+void imprimeNombreDigito(int x)
+{
+    switch (x) // x es evaluada para producir el valor 2
+    {
+    case 1:
+        std::cout << "Uno";
+        return;
+    case 2: // Como `x=2` se ejecutan las instrucciones que
+            // que corrresponden a esta etiqueta.
+        std::cout << "Dos"; // La ejecución empieza aquí
+        return; // Regresamos al llamador (en este caso, `main`)
+    case 3:
+        std::cout << "Tres";
+        return;
+    default:
+        std::cout << "No sé :(";
+        return;
+    }
+}
+
+int main()
+{
+    imprimeNombreDigito(2); // Se imprime en terminal "Dos"
+    
+    return 0;
+}
+```
+`x` es evaluada para producir el valor `2`. Como hay una etiqueta `case` con el valor `2`, la ejecución salta a la instrucción posterior inmediata a `case 2:`. El programa imprime `Dos` y luego se ejecuta la instrucción `return` que nos manda de vuelta al llamador de la función, que en este caso es `main`.
+
+No hay un límite en cuanto al número de etiquetas `case` que podemos usar, el único requisito es que cada etiqueta debe ser única. O sea:
+```
+switch (x)
+{
+case 54:
+case 54:  // ¡error! ya usamos el valor 54
+}
+```
+**no** se vale.
+
+### Etiqueta `default`
+
+Esta etiqueta es declarada al usar la palabra clave `default` y hace las veces de `else` en las declaraciones `switch`. Lo anterior ya que, si la expresión condicional no coincide con ninguna etiqueta `case` y existe una etiqueta `default`, la ejecución empieza en la instrucción inmediata posterior a la etiqueta `default`.
+
+Veamos un ejemplo:
+```
+#include <iostream>
+
+void imprimeNombreDigito(int x)
+{
+    switch (x) // `x` es evaluado para producir el valor 5
+    {
+    case 1:
+        std::cout << "Uno";
+        return;
+    case 2:
+        std::cout << "Dos";
+        return;
+    case 3:
+        std::cout << "Tres";
+        return;
+    default: // `x=5` no coincide con ninguno de los valores de
+             // las etiquetas `case`
+        std::cout << "No sé :("; // Entonces, la ejecución empieza aquí
+        return; // Y luego volvemos al llamador (en este caso, `main`)
+    }
+}
+
+int main()
+{
+    imprimeNombreDigito(5);
+    
+    return 0;
+}
+```
+El código anterior imprime `No sé :(`.
+
+La etiqueta `default` es opcional y sólo puede haber una por cada declaración `switch` (podemos tener tantos `case` como querramos pero sólo un `default`). Por convención, la etiqueta `default` va al final de la declaración `switch`.
+
+En caso de que hayamos decidido no poner una etiqueta `default` y tengamos una expresión que no coincida con ninguna de las etiquetas `case`, entonces no se ejecuta ninguna de las instrucciones dentro de `switch` y la ejecución continúa después del paréntesis de cierre (`}`) del bloque `switch`.
+```
+#include <iostream>
+
+void imprimeNombreDigito(int x)
+{
+    switch (x) // `x` es evaluado para producir el valor 5
+    {
+    case 1:
+        std::cout << "Uno";
+        return;
+    case 2:
+        std::cout << "Dos";
+        return;
+    case 3:
+        std::cout << "Tres";
+        return;
+    // `x` no es igual a 1, 2 ó 3 y no tenemos un caso `default`
+    } 
+
+    // Entonces la ejecución continúa aquí
+    std::cout << "Hola ( ͡° ͜ʖ ͡°)\n";
+}
+
+int main()
+{
+    imprimeNombreDigito(5);
+
+    return 0;
+}
+```
+
+### `return` vs. `break`
+
+En los ejemplos anteriores, hemos estado usando declaraciones `return` para detener la ejecución de instrucciones depués de nuestras etiquetas. Sin embargo, [como ya vimos en la sección sobre funciones](../1.3_Funciones_basicas/0_Introducción.md), al usar `return` salimos de la función y volvemos al llamador de ésta.
+
+Una **declaración `break`**, le dice al compilador que hemos terminado de ejecutar las instrucciones dentro de la declaración `switch` y que la ejecución debe continuar con la instrucción inmediata posterior al corchete de cierre (`}`) del bloque `switch`. Esto nos permite salir de dicho bloque sin salir de la función completa.
+
+Veamos un ejemplo para entender la diferencia entre usar `return` y `break`
+```
+#include <iostream>
+
+void imprimeNombreDigito(int x)
+{
+    switch (x) // `x` es evaluado para producir el valor 3
+    {
+    case 1:
+        std::cout << "Uno";
+        return;
+    case 2:
+        std::cout << "Dos";
+        return;
+    case 3:
+        std::cout << "Tres"; // la ejecución inicia aquí porque
+                             // x = 3
+        return; // Salimos de la función y volvemos a `main`
+    } 
+
+    // Esta línea no se ejecuta
+    std::cout << "Hola ( ͡° ͜ʖ ͡°)\n";
+}
+
+int main()
+{
+    imprimeNombreDigito(3);
+
+    return 0;
+}
+```
+El código anterior imprime: `Tres`
+
+Por otro lado:
+```
+#include <iostream>
+
+void imprimeNombreDigito(int x)
+{
+    switch (x) // `x` es evaluado para producir el valor 3
+    {
+    case 1:
+        std::cout << "Uno";
+        break;
+    case 2:
+        std::cout << "Dos";
+        break;
+    case 3:
+        std::cout << "Tres"; // la ejecución inicia aquí porque
+                             // x = 3
+        break; // Salimos del bloque `switch` y continuamos con
+               // la ejecución de las instrucciones siguientes 
+               // dentro de la función
+    } 
+
+    // Esta línea ahora sí se ejecuta
+    std::cout << "\tHola ( ͡° ͜ʖ ͡°)\n"; // `\t` es para que haya 
+                                      // un espacio (obtenido de
+                                      // presionar una vez la tecla
+                                      // Tab) entre "Tres" y
+                                      // "Hola ( ͡° ͜ʖ ͡°)"
+}
+
+int main()
+{
+    imprimeNombreDigito(3);
+
+    return 0;
+}
+```
+Imprime: `Tres    Hola ( ͡° ͜ʖ ͡°)`
+
+Lo mejor es utilizar `break` en vez de `return` a menos que deliberadamente querramos salir de la función y volver a su llamador.
