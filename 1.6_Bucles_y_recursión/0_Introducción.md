@@ -18,3 +18,11 @@ Siempre que querramos definir una función recursiva, necesitaremos definir:
 * **Paso recursivo:** La función se llama así misma con un conjunto de datos más pequeño o reducido (en el ejemplo del factorial, el paso recursivo es pasar de $n!$ a $n \cdot (n-1)!$).
 
 Los bucles y la recursión están relacionados en el sentido de que ambos son métodos para repetir la ejecución de un cierto bloque de código. Sin embargo, tienen algunas diferencias:
+
+| Aspecto     | Bucles | Recursión | 
+| ----------- | ------- | ------- |
+| Estructura  | Control iterativo (`for`, `while`, `do-while`)   | Función que se llama a sí misma |
+| Memoria     |   Uso más eficiente de la memoria    | Mayor uso de memoria debido a la pila de llamadas  |
+| Legibilidad |   Más legible para iteraciones simples    |  Más legible para problemas de descomposición | 
+| Complejidad |   Ideal para tareas repetitivas simples    |  Ideal para problemas recursivos como el cálculo de factorial, Fibonacci, etc. | 
+| Riesgo      |  Bucles infinitos si la condición nunca se vuelve falsa    |  Desbordamiento de pila si la recursión no termina correctamente | 
