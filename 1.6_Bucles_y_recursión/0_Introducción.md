@@ -26,3 +26,7 @@ Los bucles y la recursión están relacionados en el sentido de que ambos son m�
 | Legibilidad |   Más legible para iteraciones simples    |  Más legible para problemas de descomposición | 
 | Complejidad |   Ideal para tareas repetitivas simples    |  Ideal para problemas recursivos como el cálculo de factorial, Fibonacci, etc. | 
 | Riesgo      |  Bucles infinitos si la condición nunca se vuelve falsa    |  Desbordamiento de pila si la recursión no termina correctamente | 
+
+El **desbordamiento de pila** (en inglés: *stack overflow*) es un error que ocurre cuando un programa consume más espacio en la **pila de llamadas** (o sólo *pila*, en inglés: *stack*) de lo que tiene disponible. La pila es una estructura de datos de tamaño finito que se utiliza para almacenar información sobre las funciones activas de un programa, como variables locales, direcciones de retorno, y otros datos necesarios para el control de la ejecución.
+
+Un desbordamiento de pila ocurre a menudo debido a **recursión infinita**, donde una función sigue llamándose a sí misma sin un caso base que termine la recursión. 
