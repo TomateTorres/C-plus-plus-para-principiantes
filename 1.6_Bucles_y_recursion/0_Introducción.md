@@ -41,5 +41,32 @@ Dado que el objetivo de esta sección no es explicar a detalle el funcionamiento
 
 1. El **operador pre-incremento (`++i`):** Dada una variable entera `i`, `++i` incrementa el valor de `i` en 1 antes de que sea utilizada en cualquier otra operación.
 ```
+#include <iostream>
 
+int main()
+{
+    int x { 5 }; // Definimos la variable `x` y la inicializamos con valor 5
+    ++x; // `x` es incrementada en 1
+
+    std::cout << "La variable vale " << x << '\n'; // El valor de `x` es ahora 6
+    return 0;
+}
 ```
+En el ejemplo anterior, la variable `x` fue incrementada antes de ser impresa en consola.
+
+2. El **operador pre-decremento (`--i`):** De manera muy similar a `++i`, dada una variable entera `i`, `--i` decrementa el valor de `i` en 1 antes de que sea utilizada en cualquier otra operación.
+```
+#include <iostream>
+
+int main() {
+    int a{10}; // `a` es definida e inicializada con valor 10
+    int b{--a};  // Primero decrementa `a` a 9, luego asigna 9 a `b`
+
+    std::cout << "a: " << a << '\n';  // `a` es 9
+    std::cout << "b: " << b << '\n';  // `b` también es 9
+
+    return 0;
+}
+```
+
+En el contexto de bucles, los operadores pre-incremento y pre-decremento se utilizan principalmente para manejar contadores, pero también pueden tener usos en la manipulación de índices, parámetros y condiciones.
