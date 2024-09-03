@@ -2,10 +2,19 @@ Un **ciclo** (*loop*) es una estructura de control que permite que una sección 
 
 Una **estructura de control C++** es una construcción del lenguaje que permite controlar el flujo de ejecución de un programa. stas estructuras permiten tomar decisiones, repetir bloques de código, y ejecutar diferentes partes del código basándose en condiciones. En esencia, determinan cómo y en qué orden se ejecutan las instrucciones de un programa. Por ejemplo, [los condicionales](../1.5_Condicionales/0_Introducción.md) son estructuras de control que permiten tomar decisiones y ejecutar (o no) bloques de código basados en condiciones.
 
+En C++ existen esencialmente tres tipos de bucles:
+1. **Bucle `for`:** Se utiliza cuando sabemos el número exacto de veces que queremos repetir un bloque de código.
+2. **Bucle `while`:** Se utiliza cuando no sabemos cuántas veces se debe repetir un bloque de código, pero sabemos que debe continuar hasta que una condición se vuelva falsa. Como `while` evalúa la condición antes de ejecutar el bloque de código, si la condición dada es falsa desde el inicio, el bloque de código no se ejecuta ni una sola vez.
+3. **Bucle `do-while`:** Es similar al `while`, pero **se ejecuta al menos una vez** aún si la condición es falsa desde el principio porque ejecuta primero el bloque de código y luego evalúa la condición.
+
+Los veremos con detenimiento más adelante.
+
 La **recursión** en programación es una técnica donde una función se llama a sí misma para resolver un problema más grande descomponiéndolo en problemas más pequeños del mismo tipo. Un ejemplo clásico de una función recursiva es *el factorial* ya que: dado $n \in \mathbb{N}$...
 1. $n! = 1$, si $n=0$
 2. $n! = n \cdot (n-1)!$, si $n\geq 1$
 
 Siempre que querramos definir una función recursiva, necesitaremos definir:
 * **Caso base:** Este es el punto donde el problema deja de reducirse y podemos resolverlo directamente (en el ejemplo del factorial, el caso base es $n=0$).
-* **Paso recursivo:** La función se llama así misma con un conjunto de datos más pequeño o reducido (en el ejemplo del factorial, el paso recursivo es pasar de $n!$ a $n \cdot (n-1)!$)
+* **Paso recursivo:** La función se llama así misma con un conjunto de datos más pequeño o reducido (en el ejemplo del factorial, el paso recursivo es pasar de $n!$ a $n \cdot (n-1)!$).
+
+Los bucles y la recursión están relacionados en el sentido de que ambos son métodos para repetir la ejecución de un cierto bloque de código. Sin embargo, tienen algunas diferencias:
