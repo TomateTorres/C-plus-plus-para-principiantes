@@ -1,6 +1,6 @@
 Un **ciclo** (*loop*) es una estructura de control que permite que una sección de código sea ejecutada repetidamente hasta que se cumpla alguna condición. 
 
-Una **estructura de control C++** es una construcción del lenguaje que permite controlar el flujo de ejecución de un programa. stas estructuras permiten tomar decisiones, repetir bloques de código, y ejecutar diferentes partes del código basándose en condiciones. En esencia, determinan cómo y en qué orden se ejecutan las instrucciones de un programa. Por ejemplo, [los condicionales](../1.5_Condicionales/0_Introducción.md) son estructuras de control que permiten tomar decisiones y ejecutar (o no) bloques de código basados en condiciones.
+Una **estructura de control en C++** es una construcción del lenguaje que permite controlar el flujo de ejecución de un programa. estas estructuras permiten tomar decisiones, repetir bloques de código, y ejecutar diferentes partes del código basándose en condiciones. En esencia, determinan cómo y en qué orden se ejecutan las instrucciones de un programa. Por ejemplo, [los condicionales](../1.5_Condicionales/0_Introducción.md) son estructuras de control que permiten tomar decisiones y ejecutar (o no) bloques de código basados en condiciones.
 
 En C++ existen esencialmente tres tipos de bucles:
 1. **Bucle `for`:** Se utiliza cuando sabemos el número exacto de veces que queremos repetir un bloque de código.
