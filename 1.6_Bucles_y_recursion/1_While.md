@@ -136,4 +136,52 @@ Los **ciclos infinitos intencionales** son bastante comunes en ciertos tipos de 
 
 ## Nombrar variables en bucles
 
-Una **variable de bucle** es una variable que sirve
+Una **variable de bucle** (*loop variable*) es una variable que sirve para controlar cuántas veces un ciclo es ejecutado. En uno de los ejemplos, la variable `contador` cumplía esta función, de este modo `contador` es una variable de bucle. Lo más común es que este tipo de variables sean de tipo `int`, pero no es inusual encontrarnos con otros tipos (como `char`).
+
+Con frecuencia se usan nombres simples para las variables de bucle (siendo `i`, `j`, `k` los nombres más comunes). Sin embargo, es mejor nombrar a nuestras variables de bucle de manera en que sea más o menos claro cuál es su función (esto es buena práctica para todo tipo de variable); por ejemplo, si necesitamos una variable de bucle que nos ayude a movernos por los índices de una lista, lo más adecuado sería ponerle un nombre como `indice` o `index`.
+
+Las variables de bucle más comunes son aquellas que sirven de contadores (la variable `contador` en algunos de los ejemplos anteriores cumplía esta función), ya que estas nos permiten mantener un registro de las veces que se ha ejecutado nuestro ciclo.
+
+## Hacer algo cada `N` iteraciones
+Cada vez que un ciclo se ejecuta, decimos que iteró una vez.
+
+A menudo, queremos hacer algo cada 2, 3, 4 ó N iteraciones. Esto se puede hacer mediante el uso del operador residuo (`%`) aplicado a nuestro contador:
+```
+#include <iostream>
+
+// Vamos a iterar por todos los enteros del 1 al 50
+int main()
+{
+    int contador{ 1 }; // Empezamos en 1
+    while (contador <= 50) // Iteramos hasta llegar al 50
+    {
+    
+        if (contador < 10) // Del 1 al 9
+        {
+            std::cout << '0'; // Imprimimos primero un '0'
+        }
+
+        std::cout << contador << ' '; // El número y un en el que
+                                      // vamos y un espacio ' '
+
+        if (contador % 10 == 0) //Si el número en el que vamos es 
+                                // divisible entre 10,
+        {
+            std::cout << '\n'; // Hacemos un salto de línea
+        }
+
+        // Incrementamos en 1 al `contador`
+        ++contador;
+    }
+
+    return 0;
+}
+```
+En el programa anterior, usamos el operador `%` para hacer un salto de línea cada 10 números, de este modo en terminal se imprime:
+```
+01 02 03 04 05 06 07 08 09 10 
+11 12 13 14 15 16 17 18 19 20
+21 22 23 24 25 26 27 28 29 30
+31 32 33 34 35 36 37 38 39 40
+41 42 43 44 45 46 47 48 49 50
+```
