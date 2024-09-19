@@ -185,3 +185,73 @@ En el programa anterior, usamos el operador `%` para hacer un salto de línea ca
 31 32 33 34 35 36 37 38 39 40
 41 42 43 44 45 46 47 48 49 50
 ```
+
+## Bucles anidados
+Al igual que en funciones y declaraciones condicionales, es posible anidar bucles.
+
+Veamos un ejemplo de un programa que imprime la carita `ლ(́◉◞౪◟◉‵ლ)` en forma de un rectángulo de medidas dadas por el usuario:
+```
+#include <iostream>
+
+int main() 
+{
+    int filas{}, columnas{}; // Esta es una manera más compacta
+                             // de declarar dos (o más) variables
+                             // de un mismo tipo.
+
+    // Pedimos al usuario las dimensiones del cuadrado
+    std::cout << "Introduce el número de filas: ";
+    std::cin >> filas;
+    std::cout << "Introduce el número de columnas: ";
+    std::cin >> columnas;
+
+    int contFilas {1};  // Inicializamos el contador de filas
+
+    // Ciclo para las filas
+    while (contFilas <= filas) 
+    {
+        int contColumnas {1};  // Inicializamos el contador de 
+                               // columnas
+                               // NOTA: Esta variable se crea al
+                               // inicio de cada iteración del
+                               // ciclo exterior y se destruye al
+                               // final de ésta.
+
+        // Bucle para las columnas
+        while (contColumnas <= columnas) 
+        {
+            // Imprimir carita
+            std::cout << " ლ(́◉◞౪◟◉‵ლ) ";
+            ++contColumnas;  // Incrementamos el contador de columnas
+        }
+
+        // Salto de línea después de cada fila
+        std::cout << '\n';
+        ++contFilas;  // Incrementamos el contador de filas
+    } // `contColumnas` es destruida aquí, eso permite que conforme 
+      // bajamos por las filas, podamos imprimir el número de columnas
+      // deseado.
+
+    return 0;
+}
+```
+
+Supongamos que los datos dados por el usuario son: `filas == 5` y `columnas == 3`.
+1. Primero, tenemos un ciclo exterior (`contFilas` es su variable de bucle) que iterará un total de 5 veces (pues queremos 5 filas de caritas). 
+2. En la primera iteración del ciclo exterior, `contFilas == 1`. Al ejecutar e ciclo exterior, entramos a su cuerpo y en él nos encontramos con un segundo ciclo `while` con variable de bucle `contColumnas`  (que ya fue definida e inicializada con valor 1 para cuando entramos al segundo bucle).
+3. Dentro del segundo ciclo pasa lo siguiente: Se imprime la carita ` ლ(́◉◞౪◟◉‵ლ) ` y se incrementa en uno a la variable `contColumnas`. De este modo, se imprimen tantas caritas como el número de columnas deseado (en este caso 3).
+4. Salimos del segundo ciclo (el que controla las columnas), se imprime un salto de línea y se incrementa en uno a `contFilas`. Así, hemos terminado con la primer línea de caritas y nos movemos a la segunda. Para este momento, la variable `contColumnas` ha sido destruida pues llegamos al final del bloque de código donde fue definida (el del primer ciclo).
+5. En la segunda iteración del ciclo exterior, `contFilas == 2`. La variable `contColumnas` es (nuevamente) creada e inicializada con el valor 1.
+6. Se vuelven a imprimir las 3 caritas correspondientes.
+7. El proceso se repite hasta terminar con las 5 filas.
+
+El output obtenido es:
+```
+Introduce el número de filas: 5
+Introduce el número de columnas: 3
+ ლ(́◉◞౪◟◉‵ლ)  ლ(́◉◞౪◟◉‵ლ)  ლ(́◉◞౪◟◉‵ლ)
+ ლ(́◉◞౪◟◉‵ლ)  ლ(́◉◞౪◟◉‵ლ)  ლ(́◉◞౪◟◉‵ლ)
+ ლ(́◉◞౪◟◉‵ლ)  ლ(́◉◞౪◟◉‵ლ)  ლ(́◉◞౪◟◉‵ლ)
+ ლ(́◉◞౪◟◉‵ლ)  ლ(́◉◞౪◟◉‵ლ)  ლ(́◉◞౪◟◉‵ლ)
+ ლ(́◉◞౪◟◉‵ლ)  ლ(́◉◞౪◟◉‵ლ)  ლ(́◉◞౪◟◉‵ლ)
+```
