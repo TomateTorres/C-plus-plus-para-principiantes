@@ -65,7 +65,7 @@ Lo único que nuestro programa habría impreso en terminal es: `¡listo!`.
 
 Lo anterior es porque, si la condición desde el inicio es evaluada como `false`, el bloque asociado no se ejecuta nunca. Entonces, es posible hacer declaraciones `while` que nunca ejecutan sus bloques de código.
 
-Así como es posible hacer 'ciclos nulos' (que nunca se ejecutan), también es posible hacer ciclos `while` infinitos.
+Así como es posible hacer 'ciclos nulos' (que nunca se ejecutan), también es posible hacer ciclos infinitos.
 
 Si dentro de la condición del `while` damos una expresión que siempre es evaluada como `true`, entonces el ciclo es ejecutado *para siempre*. A este tipo de ciclos se les llama **ciclos infinitos**.
 
