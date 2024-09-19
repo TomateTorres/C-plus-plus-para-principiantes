@@ -138,7 +138,7 @@ Los **ciclos infinitos intencionales** son bastante comunes en ciertos tipos de 
 
 ## Nombrar variables en bucles
 
-Una **variable de bucle** (*loop variable*) es una variable que sirve para controlar cuántas veces un ciclo es ejecutado. En uno de los ejemplos, la variable `contador` cumplía esta función, de este modo `contador` es una variable de bucle. Lo más común es que este tipo de variables sean de tipo `int`, pero no es inusual encontrarnos con otros tipos (como `char`).
+Una **variable de bucle** (*loop variable*) es una variable que sirve para controlar cuántas veces un ciclo es ejecutado. En uno de los ejemplos anteriores, la variable `contador` cumplía esta función, de este modo `contador` es una variable de bucle. Lo más común es que este tipo de variables sean de tipo `int`, pero no es inusual encontrarnos con otros tipos (como `char`).
 
 Con frecuencia se usan nombres simples para las variables de bucle (siendo `i`, `j`, `k` los nombres más comunes). Sin embargo, es mejor nombrar a nuestras variables de bucle de manera en que sea más o menos claro cuál es su función (esto es buena práctica para todo tipo de variable); por ejemplo, si necesitamos una variable de bucle que nos ayude a movernos por los índices de una lista, lo más adecuado sería ponerle un nombre como `indice` o `index`.
 
