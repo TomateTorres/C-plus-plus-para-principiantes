@@ -240,7 +240,7 @@ int main()
 
 Supongamos que los datos dados por el usuario son: `filas == 5` y `columnas == 3`.
 1. Primero, tenemos un ciclo exterior (`contFilas` es su variable de bucle) que iterará un total de 5 veces (pues queremos 5 filas de caritas). 
-2. En la primera iteración del ciclo exterior, `contFilas == 1`. Al ejecutar e ciclo exterior, entramos a su cuerpo y en él nos encontramos con un segundo ciclo `while` con variable de bucle `contColumnas`  (que ya fue definida e inicializada con valor 1 para cuando entramos al segundo bucle).
+2. En la primera iteración del ciclo exterior, `contFilas == 1`. Al ejecutar el ciclo exterior, entramos a su cuerpo y en él nos encontramos con un segundo ciclo `while` con variable de bucle `contColumnas`  (que ya fue definida e inicializada con valor 1 para cuando entramos al segundo bucle).
 3. Dentro del segundo ciclo pasa lo siguiente: Se imprime la carita ` ლ(́◉◞౪◟◉‵ლ) ` y se incrementa en uno a la variable `contColumnas`. De este modo, se imprimen tantas caritas como el número de columnas deseado (en este caso 3).
 4. Salimos del segundo ciclo (el que controla las columnas), se imprime un salto de línea y se incrementa en uno a `contFilas`. Así, hemos terminado con la primer línea de caritas y nos movemos a la segunda. Para este momento, la variable `contColumnas` ha sido destruida pues llegamos al final del bloque de código donde fue definida (el del primer ciclo).
 5. En la segunda iteración del ciclo exterior, `contFilas == 2`. La variable `contColumnas` es (nuevamente) creada e inicializada con el valor 1.
