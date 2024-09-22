@@ -152,4 +152,36 @@ int main()
 
 ## Ciclos `for` con múltiples contadores
 
-Aunque por lo general los ciclos `for` iteran sobre una sola variable, a veces 
+Aunque por lo general los ciclos `for` iteran sobre una sola variable, a veces es necesario definir un ciclo `for` que trabaje con múltiples variables. Para ello, se definen las variables que se van a usar en la `inicialización` (separadas por comas) y la forma en que vamos a modificarlas en cada iteración en la `expresión-final` (nuevamente, separadas por comas). 
+
+Por ejemplo:
+```
+#include <iostream>
+
+int main()
+{
+    for (int i{ 0 }, j{ 9 }; i < 10; ++i, --j) {
+    std::cout << i << " " << j << '\n';
+    }
+
+    return 0;
+} 
+```
+Este ciclo define e inicializa a dos variables enteras: `i` (con valor 0) y `j` (con valor 9). `i` itera sobre el rango de 0 a 9 y después de cada iteración `i` es incrementada en una unidad, mientras que `j` es decrementada en una unidad.
+
+En consola se imprime:
+```
+0 9
+1 8
+2 7
+3 6
+4 5
+5 4
+6 3
+7 2
+8 1
+9 0
+```
+
+## Ciclos `for` anidados
+
