@@ -185,3 +185,25 @@ En consola se imprime:
 
 ## Ciclos `for` anidados
 
+Así como en otros tipos de ciclos, es posible hacer ciclos `for` anidados. 
+
+Por ejemplo:
+```
+#include <iostream>
+
+int main() {
+    int filas{5};  // Número de filas para el triángulo
+
+    for (int i{1}; i <= filas; ++i) { // Controla las filas
+        for (int j = 1; j <= i; ++j) { // Controla los números 
+                                       // en cada fila.
+            std::cout << j << " "; // Imprime los números de 1 a 
+                                   // i.
+        }
+        std::cout << '\n'; // Salto de línea después de cada fila
+    }
+
+    return 0;
+}
+```
+En este ejemplo, usamos dos ciclos `for` anidados para generar un triángulo de números, donde en la fila `i` hay `i` números consecutivos.
