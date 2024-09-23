@@ -69,7 +69,7 @@ int main()
     std::cout << '\n';
 
     return 0;
-} // Imprimimos los pares des 0 al 10.
+} // Imprimimos los pares del 0 al 10.
 ```
 
 Y en este decrementamos en pasos de 3:
@@ -78,7 +78,7 @@ Y en este decrementamos en pasos de 3:
 
 int main() {
     for (int i{10}; i >= 0; i -= 3) {  // Decremento en pasos 
-                                        // de 3
+                                       // de 3
         std::cout << "i: " << i << '\n';
     }
     return 0;
