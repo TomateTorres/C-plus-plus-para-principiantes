@@ -135,7 +135,7 @@ El programa se ejecutará una y otra vez hasta que el usuario de `n` como input.
 Los **ciclos infinitos intencionales** son bastante comunes en ciertos tipos de programas, especialmente aquellos que deben esperar eventos, realizar tareas continuamente o manejar la lógica de un sistema en tiempo real. Por ejemplo, en los videojuegos, el motor gráfico suele usar un ciclo infinito que actualiza el estado del juego y renderiza la pantalla repetidamente. Este ciclo se ejecuta hasta que el jugador cierra el juego.
 
 ![Elden-Ring-a-lair-genial-en-15-minutes-daction-de](https://github.com/user-attachments/assets/6938d61f-c1fb-4679-9b94-435a2d8a9c79)
-*FromSoft referencia*
+*Ah, que bonito es Elden Ring.*
 
 ## Nombrar variables en bucles
 
@@ -164,10 +164,10 @@ int main()
             std::cout << '0'; // Imprimimos primero un '0'
         }
 
-        std::cout << contador << ' '; // El número y un en el que
+        std::cout << contador << ' '; // El número en el que
                                       // vamos y un espacio ' '
 
-        if (contador % 10 == 0) //Si el número en el que vamos es 
+        if (contador % 10 == 0) // Si el número en el que vamos es 
                                 // divisible entre 10,
         {
             std::cout << '\n'; // Hacemos un salto de línea
