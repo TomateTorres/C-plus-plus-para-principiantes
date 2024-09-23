@@ -62,7 +62,7 @@ En C++ (y en el mundo de la programación en general) incrementar o decrementar 
 
 Hay 2 formas de usar al operador `++`: **pre-incremento** y **post-incremento**. De manera análoga tenemos el **pre-decremento** y **post-decremento** para `--`.
 
-Dado que el objetivo de esta sección no es explicar a detalle el funcionamiento de estos dos operadores, vamos a centrarnos solamente en el **pre-incremento (`++i`) y pre-decremento (`--i`)**, que son las variantes relevantes para bucles.
+Dado que el objetivo de esta sección no es explicar a detalle el funcionamiento de estos dos operadores, vamos a centrarnos solamente en el **pre-incremento (`++i`) y pre-decremento (`--i`)**, que son las variantes más relevantes para bucles.
 
 1. El **operador pre-incremento (`++i`):** Dada una variable entera `i`, `++i` incrementa el valor de `i` en 1 antes de que sea utilizada en cualquier otra operación.
 ```
