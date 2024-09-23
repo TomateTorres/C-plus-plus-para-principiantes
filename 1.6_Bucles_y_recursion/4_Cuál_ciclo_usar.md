@@ -1,5 +1,7 @@
 Después de habernos familiarizado un poco con los ciclos en C++, la pregunta natural es: *¿Cuál ciclo debería usar?*
 
+![confused-confusion](https://github.com/user-attachments/assets/31cc511d-3bbf-4c63-b415-5d9d83f5e274)
+
 El uso de un ciclo `for`, `while` o `do-while` en C++ depende en gran medida del contexto del problema y del estilo de programación. Cada tipo de ciclo tiene sus ventajas, elegir entre ellos no suele estar relacionado con diferencias en eficiencia computacional significativa, sino más bien con claridad y legibilidad del código.
 
 ### Usamos un ciclo `for`:
