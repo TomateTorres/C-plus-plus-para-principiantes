@@ -1,4 +1,4 @@
-El **ciclo `while`** (también llamado **declaración `while`**)es el más sencillo de los tres tipos de ciclos que tenemos en C++. 
+El **ciclo `while`** (también llamado **declaración `while`**) es el más sencillo de los tres tipos de ciclos que tenemos en C++. 
 
 Su definición es bastante similar a la de una declaración `if`:
 ```
@@ -135,6 +135,7 @@ El programa se ejecutará una y otra vez hasta que el usuario de `n` como input.
 Los **ciclos infinitos intencionales** son bastante comunes en ciertos tipos de programas, especialmente aquellos que deben esperar eventos, realizar tareas continuamente o manejar la lógica de un sistema en tiempo real. Por ejemplo, en los videojuegos, el motor gráfico suele usar un ciclo infinito que actualiza el estado del juego y renderiza la pantalla repetidamente. Este ciclo se ejecuta hasta que el jugador cierra el juego.
 
 ![Elden-Ring-a-lair-genial-en-15-minutes-daction-de](https://github.com/user-attachments/assets/6938d61f-c1fb-4679-9b94-435a2d8a9c79)
+*FromSoft referencia*
 
 ## Nombrar variables en bucles
 
