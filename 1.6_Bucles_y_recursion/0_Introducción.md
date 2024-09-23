@@ -19,6 +19,29 @@ Siempre que querramos definir una función recursiva, necesitaremos definir:
 * **Caso base:** Este es el punto donde el problema deja de reducirse y podemos resolverlo directamente (en el ejemplo del factorial, el caso base es $n=0$).
 * **Paso recursivo:** La función se llama así misma con un conjunto de datos más pequeño o reducido (en el ejemplo del factorial, el paso recursivo es pasar de $n!$ a $n \cdot (n-1)!$).
 
+Un programa que nos ayude a calcular el factorial de un número podría verse así:
+```
+#include <iostream>
+
+// Función recursiva para calcular el factorial de un número
+int factorial(int n) {
+    // Caso base: si n es 0 o 1, el factorial es 1
+    if (n <= 1) {
+        return 1;
+    }
+    // Llamada recursiva: n * factorial de (n-1)
+    return n * factorial(n - 1);
+}
+
+int main() {
+    int num{5}; // Supongamos que queremos calcular el factorial de
+                // 5.
+    std::cout << "El factorial de " << num << " es: " 
+              << factorial(num) << '\n';
+    return 0;
+}
+```
+
 Los bucles y la recursión están relacionados en el sentido de que ambos son métodos para repetir la ejecución de un cierto bloque de código. Sin embargo, tienen algunas diferencias:
 
 | Aspecto     | Bucles | Recursión | 
