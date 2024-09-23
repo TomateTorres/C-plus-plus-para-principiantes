@@ -1,6 +1,6 @@
 Un **ciclo** (*loop*) es una estructura de control que permite que una sección de código sea ejecutada repetidamente hasta que se cumpla alguna condición. 
 
-Una **estructura de control en C++** es una construcción del lenguaje que permite controlar el flujo de ejecución de un programa. estas estructuras permiten tomar decisiones, repetir bloques de código, y ejecutar diferentes partes del código basándose en condiciones. En esencia, determinan cómo y en qué orden se ejecutan las instrucciones de un programa. Por ejemplo, [los condicionales](../1.5_Condicionales/0_Introducción.md) son estructuras de control que permiten tomar decisiones y ejecutar (o no) bloques de código basados en condiciones.
+Una **estructura de control en C++** es una construcción del lenguaje que permite controlar el flujo de ejecución de un programa. estas estructuras permiten tomar decisiones, repetir bloques de código, y ejecutar diferentes partes de éste basándose en condiciones. En esencia, determinan cómo y en qué orden se ejecutan las instrucciones de un programa. Por ejemplo, [los condicionales](../1.5_Condicionales/0_Introducción.md) son estructuras de control que permiten tomar decisiones y ejecutar (o no) bloques de código basados en condiciones.
 
 En C++ existen esencialmente tres tipos de bucles:
 1. **Bucle `for`:** Se utiliza cuando sabemos el número exacto de veces que queremos repetir un bloque de código.
@@ -8,6 +8,8 @@ En C++ existen esencialmente tres tipos de bucles:
 3. **Bucle `do-while`:** Es similar al `while`, pero **se ejecuta al menos una vez** aún si la condición es falsa desde el principio porque ejecuta primero el bloque de código y luego evalúa la condición.
 
 Los veremos con detenimiento más adelante.
+
+## Un breve interludio sobre recursión
 
 La **recursión** en programación es una técnica donde una función se llama a sí misma para resolver un problema más grande descomponiéndolo en problemas más pequeños del mismo tipo. Un ejemplo clásico de una función recursiva es *el factorial* ya que: dado $n \in \mathbb{N}$...
 1. $n! = 1$, si $n=0$
