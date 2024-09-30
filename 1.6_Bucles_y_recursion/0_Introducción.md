@@ -96,7 +96,7 @@ int main() {
 
 En el contexto de bucles, los operadores pre-incremento y pre-decremento se utilizan principalmente para manejar contadores, pero también pueden tener usos en la manipulación de índices, parámetros y condiciones.
 
-En algunos casos, nos veremos en la necesidad de usar a los operadores **post-incremento** `i++` y **post-decremento** `i--`. Esros operadores incrementan o decrementan una variable, respectivamente, después de usar su valor actual en una expresión. Por ejemplo:
+En algunos casos, nos veremos en la necesidad de usar a los operadores **post-incremento** `i++` y **post-decremento** `i--`. Estos operadores incrementan o decrementan una variable, respectivamente, después de usar su valor actual en una expresión. Por ejemplo:
 ```
 int i{5}; // i es definida e inicializada con el valor 5
 int x{i++};  // x = 5, luego i se convierte en 6
