@@ -197,7 +197,9 @@ El valor de `residuo` sería `1`, porque al dividir `10` entre `3`, el cociente 
 
 Este operador:
 * Solo funciona con **números enteros.**
-* El signo del resultado depende del dividendo (el número a la izquierda del `%`), mientras que el divisor (el número a la derecha del `%`) sólo afecta el cálculo del módulo, pero no su signo.
+* El signo del resultado depende del dividendo (el número a la izquierda del `%`), mientras que el divisor (el número a la derecha del `%`) sólo afecta el cálculo del residuo, pero no su signo.
+
+Por ejemplo: `int residuo{-10 % 3};` y `int residuo{-10 % -3};` definen e inicializan con el valor `-1` a `residuo`. Pero `int residuo{10 % -3};` define e inicializa con el valor `1` a `residuo` porque el signo negativo en el divisor (`-3`) no afecta el resultado.
 
 ## Bucles anidados
 Al igual que en funciones y declaraciones condicionales, es posible anidar bucles.
