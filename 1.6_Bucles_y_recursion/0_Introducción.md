@@ -17,7 +17,7 @@ La **recursión** en programación es una técnica donde una función se llama a
 
 Siempre que querramos definir una función recursiva, necesitaremos definir:
 * **Caso base:** Este es el punto donde el problema deja de reducirse y podemos resolverlo directamente (en el ejemplo del factorial, el caso base es $n=0$).
-* **Paso recursivo:** La función se llama así misma con un conjunto de datos más pequeño o reducido (en el ejemplo del factorial, el paso recursivo es pasar de $n!$ a $n \cdot (n-1)!$).
+* **Paso recursivo:** La función se llama a sí misma con un conjunto de datos más pequeño o reducido (en el ejemplo del factorial, el paso recursivo es pasar de $n!$ a $n \cdot (n-1)!$).
 
 Un programa que nos ayude a calcular el factorial de un número podría verse así:
 ```
@@ -95,3 +95,11 @@ int main() {
 ```
 
 En el contexto de bucles, los operadores pre-incremento y pre-decremento se utilizan principalmente para manejar contadores, pero también pueden tener usos en la manipulación de índices, parámetros y condiciones.
+
+En algunos casos, nos veremos en la necesidad de usar a los operadores **post-incremento** `i++` y **post-decremento** `i--`. Esros operadores incrementan o decrementan una variable, respectivamente, después de usar su valor actual en una expresión. Por ejemplo:
+```
+int i{5}; // i es definida e inicializada con el valor 5
+int x{i++};  // x = 5, luego i se convierte en 6
+```
+
+A menos que deliberadamente necesitemos incrementar o decrementar una variable después de usar su valor actual en una expresión, lo mejor es usar los operadores **pre-incremento** `++i` y **pre-decremento** `--i`.
