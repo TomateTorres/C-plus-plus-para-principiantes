@@ -102,4 +102,8 @@ int i{5}; // i es definida e inicializada con el valor 5
 int x{i++};  // x = 5, luego i se convierte en 6
 ```
 
-A menos que deliberadamente necesitemos incrementar o decrementar una variable después de usar su valor actual en una expresión, lo mejor es usar los operadores **pre-incremento** `++i` y **pre-decremento** `--i`.
+A menos que deliberadamente necesitemos incrementar o decrementar una variable después de usar su valor actual en una expresión, lo mejor es usar los operadores **pre-incremento** `++i` y **pre-decremento** `--i` porque:
+* En el **pre-incremento/decremento** (`++i`/`--i`), la variable se incrementa o decrementa inmediatamente, y ese valor se devuelve. No se necesita crear una copia temporal de la variable.
+* En el **post-incremento/decremento** (`i++`/`i--`), se devuelve una copia temporal del valor original antes de incrementar/decrementar, lo que implica una sobrecarga de rendimiento (aunque mínima para tipos simples como `int`, puede ser considerable para tipos más complejos).
+
+Aún si estamos en estructuras simples, es buena práctica preferir `++i`/`--i`.
