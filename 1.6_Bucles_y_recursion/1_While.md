@@ -148,7 +148,7 @@ Las variables de bucle más comunes son aquellas que sirven de contadores (la va
 ## Hacer algo cada `N` iteraciones
 Cada vez que un ciclo se ejecuta, decimos que iteró una vez.
 
-A menudo, queremos hacer algo cada 2, 3, 4 ó N iteraciones. Esto se puede hacer mediante el uso del operador residuo (`%`) aplicado a nuestro contador:
+A menudo, queremos hacer algo cada 2, 3, 4 ó N iteraciones. Esto se puede hacer mediante el uso del operador residuo (`%`, también llamado módulo) aplicado a nuestro contador:
 ```
 #include <iostream>
 
@@ -188,6 +188,16 @@ En el programa anterior, usamos el operador `%` para hacer un salto de línea ca
 31 32 33 34 35 36 37 38 39 40
 41 42 43 44 45 46 47 48 49 50
 ```
+
+El operador `%` se usa para obtener el residuo de una división entre dos números enteros. Por ejemplo, si hacemos:
+```
+int residuo{10 % 3};
+```
+El valor de `residuo` sería `1`, porque al dividir `10` entre `3`, el cociente es `3` y el **residuo** es `1`.
+
+Este operador:
+* Solo funciona con **números enteros.**
+* El signo del resultado depende del dividendo (el número a la izquierda del `%`), mientras que el divisor (el número a la derecha del `%`) sólo afecta el cálculo del módulo, pero no su signo.
 
 ## Bucles anidados
 Al igual que en funciones y declaraciones condicionales, es posible anidar bucles.
