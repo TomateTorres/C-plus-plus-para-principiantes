@@ -30,6 +30,18 @@ Cada vez que necesitemos modificar el código, estamos en riesgo de cometer alg�
 
 Afortunadamente, en C++ tenemos tipos de datos que pueden almacenar múltiples elementos, estos se llaman **contenedores**. Los **contenedores** almacenan múltiples elementos de un mismo tipo. Los podemos imaginar como una "caja" donde podemos poner varios objetos (datos) y, dependiendo del tipo de contenedor, podemos acceder, añadir, eliminar o reorganizar estos elementos de diferentes maneras.
 
-En C++, los contenedores más utilizados son `std::vector` y `std::array`. Ambos permiten gestionar colecciones de elementos de manera eficiente, aunque se diferencian principalmente en cómo manejan el tamaño y la asignación de memoria:
+En C++, los contenedores más utilizados son `std::vector` y `std::array`. Las otras clases de contenedores normalmente sólo se usan en situaciones muy específiicas, así que no los mencionaremos aquí.
 
+## Introducción a arrays
 
+Un **array** es un tipo de dato que guarda una secuencia de variables de forma contigua (esto quiere decir que cada elemento se coloca en una ubicación de memoria adyacente, sin espacios). Los arrays permiten acceder de forma rápida y directa a cualquiera de sus elementos. Conceptualmente son sencillos de entender y fáciles de usar, esto los hace **la** opción cuando necesitamos trabajar con un conjunto de datos que se relacionan entre sí (como en el ejemplo de las calificaciones).
+
+En C++ hay 3 tipos de arrays principales: (C-style) arrays, `std::vector` y `std::array`.
+
+Los **(C-style) arrays** son heredados de C. El estándar de C++ los llama "arrays", pero en C++ moderno a menudo se les llama **C arrays** o **C-style arrays** para diferenciarlos de los `std::array`.
+
+Para los estándares modernos, los C-style arrays se comportan de manera extraña y pueden ser preligrosos. Más adelante veremos por qué.
+
+El más flexible y sencillo de usar de los 3 tipos de arrays es `std::vector`. Además de que tiene un montón de capacidades útiles que los otros tipos de array no tienen.
+
+Los `std::array` fueron introducidos en C++11 (la versión de C++ publicada en 2011) con la intención de reemplazar a los C-style arrays. Los `std::array` son más limitados que los `std::vector`, pero suelen ser más eficientes, sobre todo en arrays pequeños.
