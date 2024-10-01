@@ -32,7 +32,7 @@ Afortunadamente, en C++ tenemos tipos de datos que pueden almacenar múltiples e
 
 En C++, los contenedores más utilizados son `std::vector` y `std::array`. Las otras clases de contenedores normalmente sólo se usan en situaciones muy específiicas, así que no los mencionaremos aquí.
 
-## Introducción a arrays
+## Introducción a los arrays
 
 Un **array** es un tipo de dato que guarda una secuencia de variables de forma contigua (esto quiere decir que cada elemento se coloca en una ubicación de memoria adyacente, sin espacios). Los arrays permiten acceder de forma rápida y directa a cualquiera de sus elementos. Conceptualmente son sencillos de entender y fáciles de usar, esto los hace **la** opción cuando necesitamos trabajar con un conjunto de datos que se relacionan entre sí (como en el ejemplo de las calificaciones).
 
