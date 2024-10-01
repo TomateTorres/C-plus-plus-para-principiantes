@@ -24,13 +24,9 @@ Hacer el programa de esta manera no es una buena idea por varias razones:
 
 Cada vez que necesitemos modificar el código, estamos en riesgo de cometer algún error y estropearlo todo.
 
-![download](https://github.com/user-attachments/assets/efecaccf-8375-461c-b0a9-9a54b336a5e2)
-
+![elmo-satan](https://github.com/user-attachments/assets/425fddd8-4fc5-4384-8297-88a03007cd50)
 
 ... Y esto fue sólo con 56 variables, si nos ponemos a pensar en programas más sofisticados, tendremos que pensar en situaciones en las que estaremos trabajando con cientos o miles de objetos. Cuando necesitamos trabajar con más de unos pocos objetos del mismo tipo (como en el caso de las calificaciones de los alumnos por parcial, donde todos los objetos eran tipo `double`), definir múltiples variables individuales simplemente no escala.
-
-![5kgvwh](https://github.com/user-attachments/assets/258e0657-77e8-4768-9294-5ab3c2928b63)
-
 
 Afortunadamente, en C++ tenemos tipos de datos que pueden almacenar múltiples elementos (como vectores y matrices), estos se llaman **contenedores**. Los **contenedores** almacenan múltiples elementos de un mismo tipo. Los podemos imaginar como una "caja" donde podemos poner varios objetos (datos) y, dependiendo del tipo de contenedor, podemos acceder, añadir, eliminar o reorganizar estos elementos de diferentes maneras.
 
