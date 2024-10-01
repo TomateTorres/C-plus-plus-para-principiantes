@@ -40,7 +40,7 @@ En C++ hay 3 tipos de arrays principales: (C-style) arrays, `std::vector` y `std
 
 Los **(C-style) arrays** son heredados de C. El estándar de C++ los llama "arrays", pero en C++ moderno a menudo se les llama **C arrays** o **C-style arrays** para diferenciarlos de los `std::array`.
 
-Para los estándares modernos, los C-style arrays se comportan de manera extraña y pueden ser preligrosos. Más adelante veremos por qué.
+Para los estándares modernos, los C-style arrays se comportan de manera extraña y pueden ser peligrosos. Más adelante veremos por qué.
 
 El más flexible y sencillo de usar de los 3 tipos de arrays es `std::vector`. Además de que tiene un montón de capacidades útiles que los otros tipos de array no tienen.
 
