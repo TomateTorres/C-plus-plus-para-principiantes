@@ -29,6 +29,9 @@ Cada vez que necesitemos modificar el código, estamos en riesgo de cometer alg�
 
 ... Y esto fue sólo con 56 variables, si nos ponemos a pensar en programas más sofisticados, tendremos que pensar en situaciones en las que estaremos trabajando con cientos o miles de objetos. Cuando necesitamos trabajar con más de unos pocos objetos del mismo tipo (como en el caso de las calificaciones de los alumnos por parcial, donde todos los objetos eran tipo `double`), definir múltiples variables individuales simplemente no escala.
 
+![5kgvwh](https://github.com/user-attachments/assets/258e0657-77e8-4768-9294-5ab3c2928b63)
+
+
 Afortunadamente, en C++ tenemos tipos de datos que pueden almacenar múltiples elementos (como vectores y matrices), estos se llaman **contenedores**. Los **contenedores** almacenan múltiples elementos de un mismo tipo. Los podemos imaginar como una "caja" donde podemos poner varios objetos (datos) y, dependiendo del tipo de contenedor, podemos acceder, añadir, eliminar o reorganizar estos elementos de diferentes maneras.
 
 En C++, los contenedores más utilizados para la implementación de vectores y matrices son `std::vector` y `std::array`. Ambos permiten gestionar colecciones de elementos de manera eficiente, aunque se diferencian principalmente en cómo manejan el tamaño y la asignación de memoria:
