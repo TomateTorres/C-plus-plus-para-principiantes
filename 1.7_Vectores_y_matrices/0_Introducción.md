@@ -45,3 +45,9 @@ Para los estándares modernos, los C-style arrays se comportan de manera extrañ
 El más flexible y sencillo de usar de los 3 tipos de arrays es `std::vector`. Además de que tiene un montón de capacidades útiles que los otros tipos de array no tienen.
 
 Los `std::array` fueron introducidos en C++11 (la versión de C++ publicada en 2011) con la intención de reemplazar a los C-style arrays. Los `std::array` son más limitados que los `std::vector`, pero suelen ser más eficientes, sobre todo en arrays pequeños.
+
+Nos interesa aprender a utilizar estos distintos tipos de arrays ya que son útiles para implementar vectores y matrices (como conceptos matemáticos) en C++.
+
+Algo interesante de los arrays en C++ es que, a pesar de sus diferencias, comparten algunas características similares que facilitan el trabajo con ellos una vez que se entiende el uso de uno de los tipos.
+
+Nosotros empezaremos con `std::vector`.
