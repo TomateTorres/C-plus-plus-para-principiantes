@@ -1,182 +1,92 @@
-ESTO VA DESPUÉS DE [ESTO](1.0_Intro_a_stdvector.md)
+ESTO VA DESPUÉS DE [ESTO](1.1_stdvector__longitud_e_índices.md)
 
 
-# `std::vector` y el problema de la longitud e índices sin signo
+Recordatorio: [Paso por referencia](../1.3_Funciones_basicas/2.5_Paso_por_referencia.md)
 
-**AHORA ESTÁS TOMANDO DE:** https://www.learncpp.com/cpp-tutorial/stdvector-and-the-unsigned-length-and-subscript-problem/
+**TOMADO DE:** https://www.learncpp.com/cpp-tutorial/passing-stdvector/
 
-## Obtener la cantidad de elementos en un `std::vector`
+Cuando usamos un `std::vector` como parámetro de una función, tenemos que especificar el `<tipo>` de dicho vector.
 
-Podemos obtener la longitud (cantidad de elementos) en un `std::vector` usando `size()`:
+Como ya hemos visto, los `std::vector`es son objetos que tienen una cierta estructura y pueden llegar a tener muchos elementos. Aún cuando se trate de vectores pequeños, si pretendemos
+
+En la sección sobre [funciones](../1.3_Funciones_basicas/), ya habíamos hablado sobre el [paso por valor](../1.3_Funciones_basicas/2.0_Intro_a_parámetros_de_funciones_y_argumentos.md) y el [paso por referencia](../1.3_Funciones_basicas/2.5_Paso_por_referencia.md) de argumentos.
+
+A estos conceptos agregaremos uno nuevo antes de meternos de lleno a cómo pasar vectores como argumentos de funciones: el **paso por referencia constante `const &`**.
+
+Recordemos que:
+1. Cuando **pasamos un argumento por valor**, se crea una copia del argumento. Esto significa que los cambios que hagamos dentro de la función no afectarán al objeto original fuera de la función.
 ```
-#include <iostream>
 #include <vector>
+#include <iostream>
+#include <string>
+
+void TeHeFalladoAnakin(std::vector<std::string> v)
+{ // La función `TeHeFalladoAnakin` pasa el argumento que le 
+  // demos por valor. Se crea una copia local de `v`
+
+    v[2] = "Vader"; // Se modifica el elemento con índice 2 del
+                    // vector `v`.
+
+} // La copia local del vector `v` es destruida.
 
 int main()
 {
-    std::vector primos { 2, 3, 5, 7, 11 };
-    std::cout << "Tienes " << primos.size() << " números primos"
-              << " en el vector." <<'\n'; 
-    // OJO: `primos.size()` no es un entero (en el sentido de 
-    //      que no es de tipo `int`). El uso de .size() retorna
-    //      un dato de tipo `size_type`, que es un tipo de 
-    //      entero sin signo (unsigned).        
-    
-    return 0;
+	std::vector<std::string> dosJedisYmedio{ "Ahsoka", "Obi-Wan", 
+                                             "Anakin" }; 
+
+    TeHeFalladoAnakin(dosJedisYmedio);
+    // Pasamos una copia de `dosJedisYMedio`, los cambios que 
+    // hace la función, sólo se aplican a esa copia local.
+
+    std::cout << dosJedisYmedio[2]; 
+    // Se imprime el elemento con índice 2 de `dosJedisYMedio`
+    // que definimos dentro de `main`. O sea, Anakin no se
+    // convirtió en Vader.
+                                                                          
+	return 0;
 }
 ```
 
-En este contexto `size_type` es un alias para `std::size_t`, lo que significa que aunque estrictamente no son lo mismo, en el contexto de ciertas clases o bibliotecas, usar `size_type` es lo mismo que usar `std::size_t`. Por ejemplo, aquí en `std::vector`.
-
-Lo que nos interesa sobre el hecho de que `primos.size()` sea de tipo `size_type` es que si intentamos utilizar `primos.size()` en un contexto donde el programa espera un entero con signo (algo de tipo `int` propiamente).  
-
-Por ejemplo, si intentamos comparar `primos.size()` con un valor negativo o usarlo como argumento de una función que espera un `int` como parámetro, podríamos tener resultados no deseados o advertencias del compilador debido a la conversión implícita entre tipos con y sin signo.
-
-Aquí se nos generaría un problema:
+2. Cuando **pasamos un argumento por referencia**, estamos permitiendo que la función pueda modificar el contenido original del vector.
 ```
-#include <iostream>
 #include <vector>
-
-int main() {
-    std::vector<int> vecA { 1, 2, 3, 4, 5 };
-    std::vector<int> vecB { 1, 2, 3 };
-
-    // Queremos calcular la diferencia en tamaños de nuestros
-    // vectores.
-    int diferencia {vecB.size() - vecA.size()}; 
-    // vecA tiene 5 elementos, vecB tiene 3
-
-    if (diferencia < 0){ // Si obtuvimos un número negativo.
-        diferencia = -diferencia;
-    }
-    
-    std::cout << "Diferencia de tamaños: " << diferencia << '\n';
-
-    return 0;
-}
-```
-
-Uno podría esperar que la diferencia sea $2$, porque $3 - 5 = 2$ y $-(-2) = 2$.
-
-Pero en realidad pasa una de dos cosas:
-* El código no compila si nuestra configuración del compilador es restrictiva (la advertencia mostrada en VSCode empieza: `narrowing conversion of...`)
-* En caso de que el código sí compile, obtendremos un número grande como 4294967294 (dependiendo del sistema), ya que el sistema interpreta a los números sin signo de manera distinta a los enteros de tipo `int`, de modo que la resta de números sin signo no genera valores negativos y, en cambio, se comporta de manera inesperada. 
-
-Para arreglar este problema, deberemos convertir explícitamente a `vecA.size()` y `vecB.size()` en un tipo con signo (en este caso, `int`):
-
-```
 #include <iostream>
-#include <vector>
+#include <string>
 
-int main() {
-    std::vector<int> vecA { 1, 2, 3, 4, 5 };
-    std::vector<int> vecB { 1, 2, 3 };
+void TeHeFalladoAnakin(std::vector<std::string>& v)
+{ // La función `TeHeFalladoAnakin` pasa el argumento que le 
+  // demos por referencia. Estamos trabajando directamente con
+  // el vector `v`.
 
-    // Queremos calcular la diferencia en tamaños de nuestros
-    // vectores.
-    int diferencia {static_cast<int>(vecB.size())  
-                    - static_cast<int>(vecA.size())}; 
-    // vecA tiene 5 elementos, vecB tiene 3.
+    v[2] = "Vader"; // Se modifica el elemento con índice 2 del
+                    // vector `v`.
 
-    if (diferencia < 0){ // Si obtuvimos un número negativo.
-        diferencia = -diferencia;
-    }
-    
-    std::cout << "Diferencia de tamaños: " << diferencia << '\n';
-
-    return 0;
 }
-```
-`static_cast <tipo_después_de_conversión>( valor )` es un operador que recibe un `valor` (o una expresión) de algún tipo (en nuestro ejemplo, `size_type`) y devuelve el mismo valor, pero ahora del `tipo_después_de_conversión` (en nuestro ejemplo, `int`). No todas las conversiones entre distintos tipos son posibles utilizando este operador.
-
-De manera general, hacer conversiones mediante `static_cast` entre tipos de datos "parecidos" (por ejemplo, de `int` a `float` o de `float` a `int`, con la posible pérdida de lo que esté después del punto decimal) es posible en C++.
-
-Aunque hay más opciones además de `.size()` para obtener el número de elementos en un `std::vector`, en C++, no hay una forma directa de obtener dicho valor como tipo `int`. Así que sin importar la herramienta que utilicemos, nos veremos obligados a usar `static_cast` o alguna herramienta similar si queremos el tamaño de nuestros vectores como tipo `int`.
-
-## Los índices pueden ser un dolor de cabeza
-
-Si intentamos:
-```
-int main()
-{
-    std::vector primos{ 2, 3, 5, 7, 11 };
-
-    int indice { 3 }; // `indice` es de tipo `int`, o sea es un
-                      // número entero con signo.
-    std::cout << primos[indice] << '\n'; 
-    // En VScode se genera una advertencia: 
-    // "... [-Werror=sign-conversion]"
-
-    return 0;
-}
-```
-
-`indice` es de tipo `int` (un entero con signo).
-
-El operador `[]` definido dentro de `std::vector` que utilizamos para acceder a los índices recibe tipo `size_type` (el mismo tipo que obtenemos al hacer `vector.size()`). Así, cuando llamamos `primos[indice]`, el código deberá convertir `indice` a `size_type` (un entero sin signo).
-
-Esta conversión en principio no es peligrosa porque los índices de un vector son números positivos (los problemas al convertir `int` a tipos sin signo realmente aparecen con números negativos). Pero al correr el programa, el compilador muy probablemente nos advertirá sobre una conversión no segura (VSCode nos da la siguiente advertencia: `... [-Werror=sign-conversion]`).
-
-Si nuestra conversión para el compilador es estricta, nuestro programa no correrá.
-
-Hay varias formas de evitar este problema cuando definamos índices (por ejemplo, podemos usar `static_cast`):
-```
-#include <iostream>
-#include <vector>
 
 int main()
 {
-    std::vector primos{ 2, 3, 5, 7, 11 };
+	std::vector<std::string> dosJedisYmedio{ "Ahsoka", "Obi-Wan", 
+                                             "Anakin" }; 
 
-    int indice { 3 }; // `indice` es de tipo `int`, o sea es un
-                      // número entero con signo.
+    TeHeFalladoAnakin(dosJedisYmedio);
+    // Pasamos `dosJedisYMedio`, los cambios que hace la 
+    // función, se aplican directamente a `dosJedisYMedio`.
 
-    
-    std::cout << "El elemento con índice 3 es: " 
-              << primos[static_cast<std::size_t>(indice)] 
-              << '\n'; 
-    // Pasamos de `int` a `size_type` dentro de `[]`. Recordemos
-    // que `size_type` es un alias para `std::size_t`. 
-
-    return 0;
+    std::cout << dosJedisYmedio[2]; 
+    // Se imprime el elemento con índice 2 de `dosJedisYMedio`
+    // después de ser modificado por `TeHeFalladoAnakin`. O sea,
+    // Anakin se convirtió en lo que juró destruir.
+                                                                          
+	return 0;
 }
 ```
-Pero esto en realidad no es lo más conveniente porque si pensamos en muchos índices, eventualmente tendremos un código que se verá saturado (en particular tendríamos que repetir la línea `primos[static_cast<std::size_t>(indice)]` tantas veces como índices tengamos). 
 
-Lo más sencillo es definir a nuestros índices usando tipo `std::size_t` y no usar estas variables para nada más que indexar (o si queremos usarla para algo más, sólo hacer las conversiones necesarias que el compilador nos exija):
-```
-#include <iostream>
-#include <vector>
+3. Cuando **pasamos un vector por referencia constante**,
 
-int main()
-{
-    std::vector primos{ 2, 3, 5, 7, 11 };
 
-    std::size_t indice1 { 3 }; 
-    // `indice1` es de tipo `size_type`
 
-    std::size_t indice2 { 4 }; 
-    // `indice2` es de tipo `size_type`
-
-    std::size_t indice3 { }; 
-    // `indice3` es de tipo `size_type`
-
-    std::cout << "Dame un índice de 0 a 4: ";
-    std::cin >> indice3;
-
-    
-    std::cout << "El elemento con índice 3 es: " 
-              << primos[indice1] 
-              << '\n'; 
-    std::cout << "El elemento con índice 4 es: " 
-              << primos[indice2] 
-              << '\n';
-
-    std::cout << "El elemento con índice " << indice3 <<" es: " 
-              << primos[indice3] 
-              << '\n';
-    // Podemos imprimir `indice3` sin ningún problema.    
-
-    return 0;
-}
-```
+| Forma de pasar el vector                          | ¿Crea copia? | ¿Se puede modificar?       | Eficiencia  |
+| ------------------------------------------------- | ------------ | -------------------------- | ----------- |
+| Por valor (`std::vector v`)                       |        Sí    | Sí (pero la copia local)   | Baja        |
+| Por referencia (`std::vector& v`)                 |        No    | Sí (el original)           | Alta        |
+| Por referencia constante (`const std::vector& v`) |         No   |  No                        | Alta        |
