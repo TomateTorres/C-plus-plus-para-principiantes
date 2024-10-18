@@ -48,6 +48,6 @@ Los `std::array` fueron introducidos en C++11 (la versión de C++ publicada en 2
 
 Nos interesa aprender a utilizar estos distintos tipos de arrays ya que son útiles para implementar vectores y matrices (como conceptos matemáticos) en C++.
 
-Algo interesante de los arrays en C++ es que, a pesar de sus diferencias, comparten algunas características similares que facilitan el trabajo con ellos una vez que se entiende el uso de uno de los tipos.
+Algo interesante de los arrays en C++ es que, a pesar de sus diferencias, comparten algunas características similares que facilitan el trabajo con ellos una vez que se entiende el uso de uno de los tipos. De aquí que ocasionalmente usemos la palabra "array" en vez de `std::vector`, `std::array` o C-style array.
 
 Nosotros empezaremos con `std::vector`.
