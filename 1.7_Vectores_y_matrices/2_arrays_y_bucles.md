@@ -247,15 +247,3 @@ int main()
   return 0;
 }
 ```
-
-
-
-https://www.learncpp.com/cpp-tutorial/range-based-for-loops-for-each/
-
-
-Conviene que hables de:
-* Cómo rellenar un `std::array` mediante un ciclo.
-* Cómo operar con tu `std::array` dentro del ciclo (sacar promedios por ejemplo)
-* Ciclos `for` basados en rango.
-* Limitaciones de los ciclos `for` basados en rango.
-* Ejemplos (al menos 3) de programas donde uses ciclos `for` no basados en rango.
