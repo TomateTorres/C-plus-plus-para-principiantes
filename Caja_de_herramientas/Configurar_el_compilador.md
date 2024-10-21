@@ -1,6 +1,6 @@
-Una **configuración de compilado** es una colección de configuracines de proyecto que determinan como el IDE (para nosotros, VSCode) va a construir nuestros proyectos.
+Una **configuración de compilado** es una colección de configuraciones de proyecto que determinan como el IDE (para nosotros, VSCode) va a construir nuestros proyectos.
 
-Una configuaración de compilado típicamente incluye cosas como:
+Una configuración de compilado típicamente incluye cosas como:
 * Como se llamarán los archivos ejecutables (ej.: .exe).
 * En qué directorios (carpetas) el IDE buscará código y archivos.
 * Que tanto el compilador optimizará el programa.
@@ -10,7 +10,7 @@ De manera general, aquí se aplica la regla de 'si no le sabes, no le muevas'. E
 
 Cuando se crea un proyecto nuevo, la mayoría de los IDEs ofrecen dos configuraciones de compilado: **Una configuración de lanzamiento** (release configuration) y una **configuración de depuración** (debug configuration).
 
-La configuración de lanzamiento está designada para cuando tengamos pensado liberar nuestros programas al público. Esta versión está típicamente optimizada para que nuestros archivos pesen poco y los ejecutables sean más veloces. Pero no inluye información de depuración.
+La configuración de lanzamiento está designada para cuando tengamos pensado liberar nuestros programas al público. Esta versión está típicamente optimizada para que nuestros archivos pesen poco y los ejecutables sean más veloces. Pero no incluye información de depuración.
 
 La configuración de depuración es la que usualmente se usa cuando estamos escribiendo nuestros programas, esta nos ayuda a identificar y remover errores. Esta es la configuración recomendable en principio, una vez que estemos seguros de que nuestros programas funcionan, podemos cambiarla a la de lanzamiento para hacer que nuestros archivos sean menos pesados.
 
@@ -18,7 +18,7 @@ La configuración de depuración es la que usualmente se usa cuando estamos escr
 
 Cuando en un proyecto se corre un programa (de C++) por primera vez, en la carpeta *.vscode* del proyecto se crea un archivo llamado *tasks.json*.
 
-Buscaremos la línea `${file}` en la sección `"args"`. Encima de `${file}` agregaremos el comando `"-ggdb",` (este nos servirá para la configuración de depuración). Cuando querramos usar la configuración de lanzamiento, borramos `"-ggdb",` y encima de *${file}* pegamos (en orden):
+Buscaremos la línea `${file}` en la sección `"args"`. Encima de `${file}` agregaremos el comando `"-ggdb",` (este nos servirá para la configuración de depuración). Cuando queramos usar la configuración de lanzamiento, borramos `"-ggdb",` y encima de *${file}* pegamos (en orden):
 * `"-O2",` y luego
 * `"-DNDEBUG",`
 
@@ -34,7 +34,7 @@ En el caso de VSCode lo que tenemos que hacer es buscar la línea `${file}` en l
 
 ![Captura de pantalla 2024-08-17 231136](https://github.com/user-attachments/assets/96e397ea-57ea-46d5-a221-942f104c40ae)
 
-Al agregar la línea anterior le estamos pidiendo a VSCode que agrege una línea nueva al final de archivos de código que no la tienen (esto es requerido por el estándar de C++).
+Al agregar la línea anterior le estamos pidiendo a VSCode que agregue una línea nueva al final de archivos de código que no la tienen (esto es requerido por el estándar de C++).
 
 ### Aumentar niveles de advertencia
 
@@ -151,5 +151,7 @@ Una vez que estemos dentro del archivo, ahora sí agregamos o cambiamos la líne
 
 ![Captura de pantalla 2024-08-18 001210](https://github.com/user-attachments/assets/ccbad7e1-c4ce-4961-a4d0-f836ce0f9664)
 
-**Nota:** Cada vez que se inicie un proyecto nuevo (es decir, si quieres trabajar en otra 'carpeta madre') se tienen que volver a aplicar las configuraciones modificadas anteriormente. Otra opción es crear una plantilla con la configuración que más te guste y usarla para crear proyectos nuevos.
+**Nota 1:** Cada vez que se inicie un proyecto nuevo (es decir, si quieres trabajar en otra 'carpeta madre') se tienen que volver a aplicar las configuraciones modificadas anteriormente. Otra opción es crear una plantilla con la configuración que más te guste y usarla para crear proyectos nuevos.
+
+**Nota 2:** A lo largo de este material hay algunos ejemplos (generalmente donde se explora que NO hay que hacer) que no compilan con la configuración sugerida. Aquellas personas aventureras que quieran explorar configuraciones menos quejumbrosas o que quieran ver en sus propias computadoras estos "no-ejemplos", solamente tienen que borrar las líneas que empiezan con `-W...`. 
 
