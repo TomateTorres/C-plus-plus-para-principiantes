@@ -42,7 +42,7 @@ Los **(C-style) arrays** son heredados de C. El estándar de C++ los llama "arra
 
 Para los estándares modernos, los C-style arrays se comportan de manera extraña y pueden ser peligrosos. Más adelante veremos por qué.
 
-El más flexible y sencillo de usar de los 3 tipos de arrays es `std::vector`. Además de que tiene un montón de capacidades útiles que los otros tipos de array no tienen.
+El más flexible y sencillo de usar de los 3 tipos de arrays es `std::vector`. Además de que tiene varias capacidades útiles que los otros tipos de array no tienen.
 
 Los `std::array` fueron introducidos en C++11 (la versión de C++ publicada en 2011) con la intención de reemplazar a los C-style arrays. Los `std::array` son más limitados que los `std::vector`, pero suelen ser más eficientes, sobre todo en arrays pequeños.
 
