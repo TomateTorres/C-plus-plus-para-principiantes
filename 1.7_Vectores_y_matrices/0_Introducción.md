@@ -20,7 +20,7 @@ double promedio {(califAlumno1 + califAlumno2 + califAlumno3
 
 Hacer el programa de esta manera no es una buena idea por varias razones:
 * Tenemos muchas variables que debemos de introducir de manera manual, lo que hace que sea fácil cometer algún error a la hora de escribir y no darnos cuenta hasta que el programa haga cosas extrañas (o directamente no compile).
-* En los cursos de Cálculo es muy común que el tamaño de los grupos se reduzca conforme avanza el semestre. Así que cada vez que querramos calcular el promedio del grupo tendremos que eliminar manualmente a los alumnos que hayan abandonado el curso (o añadirlos nuevamente si es que regresan en un parcial posterior) y cambiar el número total de alumnos para calcular el promedio.
+* En los cursos de Cálculo es muy común que el tamaño de los grupos se reduzca conforme avanza el semestre. Así que cada vez que queramos calcular el promedio del grupo tendremos que eliminar manualmente a los alumnos que hayan abandonado el curso (o añadirlos nuevamente si es que regresan en un parcial posterior) y cambiar el número total de alumnos para calcular el promedio.
 
 Cada vez que necesitemos modificar el código, estamos en riesgo de cometer algún error y estropearlo todo.
 
@@ -30,7 +30,7 @@ Cada vez que necesitemos modificar el código, estamos en riesgo de cometer alg�
 
 Afortunadamente, en C++ tenemos tipos de datos que pueden almacenar múltiples elementos, estos se llaman **contenedores**. Los **contenedores** almacenan múltiples elementos de un mismo tipo. Los podemos imaginar como una "caja" donde podemos poner varios objetos (datos) y, dependiendo del tipo de contenedor, podemos acceder, añadir, eliminar o reorganizar estos elementos de diferentes maneras.
 
-En C++, los contenedores más utilizados son `std::vector` y `std::array`. Las otras clases de contenedores normalmente sólo se usan en situaciones muy específiicas, así que no los mencionaremos aquí.
+En C++, los contenedores más utilizados son `std::vector` y `std::array`. Las otras clases de contenedores normalmente sólo se usan en situaciones muy específicas, así que no los mencionaremos aquí.
 
 ## Introducción a los arrays
 
