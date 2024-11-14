@@ -1,7 +1,7 @@
 El **ciclo `while`** (también llamado **declaración `while`**) es el más sencillo de los tres tipos de ciclos que tenemos en C++. 
 
 Su definición es bastante similar a la de una declaración `if`:
-```
+```c++
 while (condición)
 {
     declaración;
@@ -13,7 +13,7 @@ Cuando ejecutamos un `while`, la `condición` es evaluada. Si la `condición` es
 Una vez que la `declaración` ha sido ejecutada, el control vuelve a la parte superior de la declaración `while` y el proceso se repite. Esto quiere decir que mientras la `condición` evalúe a `true`, la declaración `while` seguirá repitiéndose.
 
 Veamos el ejemplo de un programa que imprime todos los enteros del 1 al 10:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -44,7 +44,7 @@ En este programa:
 ## Ciclos `while` que se ejecutan infinitas veces
 
 Observemos que, si en vez de inicializar la variable `contador` como `1`, la hubiéramos inicializado con un valor mayor que `10` (digamos `24`): 
-```
+```c++
 #include <iostream>
 
 int main()
@@ -70,7 +70,7 @@ Así como es posible hacer 'ciclos nulos' (que nunca se ejecutan), también es p
 Si dentro de la condición del `while` damos una expresión que siempre es evaluada como `true`, entonces el ciclo es ejecutado *para siempre*. A este tipo de ciclos se les llama **ciclos infinitos**.
 
 Veamos un ejemplo:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -80,7 +80,7 @@ int main()
     {
         std::cout << contador << ' '; // Se ejecuta para 
                                       // siempre, porque `5 <= 10`
-                                      // evalua siempre a `true` 
+                                      // evalúa siempre a `true` 
         // ++contador; // El incremento es un comentario, ya no
                        // se ejecuta. 
     } // El programa nunca avanza más allá de este bloque de código.
@@ -94,7 +94,7 @@ Como `contador` inicia con el valor `5` y `5 <= 10` es siempre `true`, el ciclo 
 
 ### Ciclos `while` infinitos hechos de manera intencional
 Si tenemos la explícita intención de crear un ciclo `while` infinito, podemos hacerlo de la siguiente manera:
-```
+```c++
 while (true)
 {
   // Este ciclo se va a ejecutar para siempre.
@@ -109,7 +109,7 @@ Las únicas formas de salir de un ciclo `while` son:
 * El usuario mata directamente al programa.
 
 Veamos un pequeño ejemplo de cómo salir de un ciclo `while` infinito hecho de manera intencional:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -149,7 +149,7 @@ Las variables de bucle más comunes son aquellas que sirven de contadores (la va
 Cada vez que un ciclo se ejecuta, decimos que iteró una vez.
 
 A menudo, queremos hacer algo cada 2, 3, 4 ó N iteraciones. Esto se puede hacer mediante el uso del operador residuo (`%`, también llamado módulo) aplicado a nuestro contador:
-```
+```c++
 #include <iostream>
 
 // Vamos a iterar por todos los enteros del 1 al 50
@@ -190,7 +190,7 @@ En el programa anterior, usamos el operador `%` para hacer un salto de línea ca
 ```
 
 El operador `%` se usa para obtener el residuo de una división entre dos números enteros. Por ejemplo, si hacemos:
-```
+```c++
 int residuo{10 % 3};
 ```
 El valor de `residuo` sería `1`, porque al dividir `10` entre `3`, el cociente es `3` y el **residuo** es `1`.
@@ -205,7 +205,7 @@ Por ejemplo: `int residuo{-10 % 3};` y `int residuo{-10 % -3};` definen e inicia
 Al igual que en funciones y declaraciones condicionales, es posible anidar bucles.
 
 Veamos un ejemplo de un programa que imprime la carita `ლ(́◉◞౪◟◉‵ლ)` en forma de un rectángulo de medidas dadas por el usuario:
-```
+```c++
 #include <iostream>
 
 int main() 
