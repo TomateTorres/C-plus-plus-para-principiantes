@@ -16,11 +16,11 @@ Los 3 que siguen son de C++11 para adelante, las 3 son 'de tipo lista' y aparent
 * `int d { 7 };`: El valor inicial está entre {} (inicialización de lista directa).
 * `int e = { 8 };`: Esta se llama inicialización de copiado de lista.
 * `int f {};`: El inicializador son corchetes vacíos (inicializador de valor).
-La principal ventaje de usar este tipo de inicialización es que si intentas asignarle a la variable un valor que no es correcto (por ejemplo, si intentas `int w2 { 4.5 };`), el compilador nos da un error de diagnóstico. Cosa que no pasaría si intentamos `int w2 = 4.5;`, ahí la variable sólo se guardaría con el valor 4 y no nos daríamos cuenta del error porque el compilador podría o no darnos una advertencia.
+La principal ventaja de usar este tipo de inicialización es que si intentas asignarle a la variable un valor que no es correcto (por ejemplo, si intentas `int w2 { 4.5 };`), el compilador nos da un error de diagnóstico. Cosa que no pasaría si intentamos `int w2 = 4.5;`, ahí la variable sólo se guardaría con el valor 4 y no nos daríamos cuenta del error porque el compilador podría o no darnos una advertencia.
 
 Los espacios dentro de { } y ( ) son una cuestión puramente estética.
 
-**Ojo**: En general, lo mejor es incializar nuestras variables al momento de crearlas.
+**Ojo**: En general, lo mejor es inicializar nuestras variables al momento de crearlas.
 
 
 Se pueden inicializar varias variables en una misma línea.
