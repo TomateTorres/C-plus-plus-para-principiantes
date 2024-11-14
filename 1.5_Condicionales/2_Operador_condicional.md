@@ -1,7 +1,7 @@
 El **operador condicional** `?:` (también llamado 'operador ternario' por ser el único operador en C++ que tiene 3 operandos) es un operador que proporciona un método compacto para realizar un tipo particular de declaración `if`-`else`.
 
 Recordemos que una declaración `if`-`else` tiene la siguiente forma:
-```
+```c++
 if (condición)
 {    
     declaración1
@@ -15,7 +15,7 @@ else
 Si la `condición` se verifica, entonces la `declaración1` es ejecutada, en caso contrario `declaración2` es ejecutada. El `else` y `declaración2` son opcionales.
 
 El operador `?:` toma la siguiente forma:
-```
+```c++
 condición ? expresión1 : expresión2;
 ```
 Si la `condición` se verifica, entonces la `expresión1` es evaluada, en otro caso la `expresión2` es evaluada. El `:` (que hace el papel del `else`) y `expresión2` (que hace el papel de la `declaración2`) **no** son opcionales.
@@ -25,7 +25,7 @@ El operador condicional tiene algunas diferencias importantes con las declaracio
 ### 1. El operador condicional es más conciso
 
 Esto:
-```
+```c++
 int max{}; // definimos a la variable entera `max`
 
 if (a > b) 
@@ -41,7 +41,7 @@ guardamos el valor de 'a' en la variable `max` y guardamos el
 valor de 'b' en `max` en otro caso */ 
 ```
 y esto:
-```
+```c++
 int max {}; // definimos a la variable entera `max`
 max = ( (a > b) ? a : b );
 ```
@@ -55,7 +55,7 @@ En C++ (entre muchas otras cosas) tenemos **expresiones** y **declaraciones**.
 
 Una **expresión** es cualquier combinación de variables, operadores y valores que se evalúa para producir un valor. Las expresiones pueden ser tan simples como un número o una variable, o tan complejas como una combinación de operadores y funciones.
 Los siguientes:
-```
+```c++
 5              // Un valor literal, una expresión simple.
 a              // Una variable, que es una expresión.
 a + b          // Suma de dos variables, una expresión aritmética.
@@ -66,7 +66,7 @@ son todos ejemplos de expresiones.
 
 Una **declaración**  es una instrucción completa que realiza alguna acción. Las declaraciones pueden definir variables, ejecutar expresiones, entre otras cosas. Una declaración generalmente termina con un punto y coma (;).
 Los siguientes:
-```
+```c++
 int a{5};                   // Declaración de una variable con inicialización.
 x = y + 2;                  // Declaración de asignación.
 if (a > 3)                  // Declaración `if` (no termina con punto y coma)
@@ -80,8 +80,8 @@ Una declaración puede contener una o más expresiones. Por ejemplo, `int a{5};`
 
 Una diferencia clave entre las expresiones y declaraciones es que las declaraciones **no** pueden ser usadas en lugares donde una expresión es requerida.
 
-Por ejemplo, si queremos incializar una variable (aquí necesitamos de una **expresión**):
-```
+Por ejemplo, si queremos inicializar una variable (aquí necesitamos de una **expresión**):
+```c++
 #include <iostream>
 
 int main()
@@ -109,7 +109,7 @@ int main()
 
 Como **no** podemos usar declaraciones para inicializar variables, no hay una manera directa de reemplazar el operador condicional por un `if`-`else` dentro de los corchetes `{}` donde inicializamos a la variable.
 Una forma (parecida, pero no igual) de hacer lo anterior, pero usando `if`-`else` es:
-```
+```c++
 #include <iostream>
 
 int daTamañoClase(bool enSalonGrande)
@@ -138,7 +138,7 @@ int main()
     /* Inicializamos a la variable entera `tamañoClase` con el valor
     dado por el output de la función `daTamañoClase()` al ser esta 
     evaluada con el parámetro `false` (o sea: `daTamañoClase(false)`).
-    Como la evaluación de una función es una expresión, se vale incializar
+    Como la evaluación de una función es una expresión, se vale inicializar
     variables de esta forma.
     */
 
@@ -153,7 +153,7 @@ Ambos códigos hacen en esencia lo mismo, pero el segundo tiene más líneas de 
 ## Uso de paréntesis en el operador condicional
 
 Como C++ prioriza la evaluación de la mayoría de los operadores por encima de la evaluación del operador condicional, es fácil escribir código usando el operador condicional que termina siendo evaluado de forma distinta a la que queremos. Por ejemplo:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -166,10 +166,10 @@ int main()
     return 0;
 }
 ```
-Uno podría esperar que `z` sea incializado con `10 - (x > y ? x : y)` (lo que haría que `z = 8`), pero en realidad se inicializa con `(10 - x) > y ? x : y` (lo que hace que `z = 2`).
+Uno podría esperar que `z` sea inicializado con `10 - (x > y ? x : y)` (lo que haría que `z = 8`), pero en realidad se inicializa con `(10 - x) > y ? x : y` (lo que hace que `z = 2`).
 
 Por esta razón, es necesario hacer uso de paréntesis cuando hagamos uso del operador condicional para ser claros en la forma en que deseamos que nuestras expresiones sean evaluadas:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -188,7 +188,7 @@ int main()
 ```
 
 Además, es buena práctica poner el operador condicional completo entre paréntesis `()` cuando lo usemos en una expresión compuesta:
-```
+```c++
 int z {(x > y) ? x : y} // Pusimos a la condición `x > y` entre 
                         // paréntesis, pero no es necesario poner
                         // al operador condicional completo entre
@@ -206,7 +206,7 @@ En el segundo ejemplo, si no usamos paréntesis, la expresión se evaluaría com
 ## El tipo de las expresiones debe coincidir (o ser convertible)
 
 Cuando hagamos uso del operador condicional:
-```
+```c++
 condición ? expresión1 : expresión2;
 ```
 una de las siguientes se debe cumplir:
@@ -216,7 +216,7 @@ una de las siguientes se debe cumplir:
 Las reglas de conversión que usa el compilador son algo complejas y pueden dar resultados inesperados. Por esa razón, no profundizaremos en ellas, pero mostraré un par de ejemplos para dar a entender a qué nos referimos con las reglas **1.** y **2.**
 
 Aquí se pudo hacer una conversión exitosa:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -236,7 +236,7 @@ int main()
 ```
 
 Aquí ya no se pudo:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -255,10 +255,10 @@ int main()
 ## ¿Cuándo uso el operador condicional?
 
 Es conveniente usar el operador condicional cuando:
-* Querramos inicializar un objeto con uno de dos valores.
-* Le querramos asignar a un objeto uno de dos valores.
-* Le querramos pasar uno de dos valores a una función.
-* Querramos imprimir uno de dos valores.
+* Queramos inicializar un objeto con uno de dos valores.
+* Le queramos asignar a un objeto uno de dos valores.
+* Le queramos pasar uno de dos valores a una función.
+* Queramos imprimir uno de dos valores.
 
 Todo lo anterior, considerando preferentemente valores del mismo tipo (ya que el compilador no siempre podrá hacer las conversiones necesarias).
 
