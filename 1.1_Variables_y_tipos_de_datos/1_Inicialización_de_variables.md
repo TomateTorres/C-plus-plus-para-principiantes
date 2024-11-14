@@ -26,7 +26,7 @@ Los espacios dentro de { } y ( ) son una cuestión puramente estética.
 Se pueden inicializar varias variables en una misma línea.
 
 Esto está permitido:
-```
+```c++
 int a = 5, b = 6;          // inicialización de copia
 int c( 7 ), d( 8 );        // inicialización directa
 int e { 9 }, f { 10 };     // inicialización de corchete directa
