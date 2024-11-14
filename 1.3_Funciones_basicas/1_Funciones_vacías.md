@@ -1,5 +1,5 @@
 En la introducción de esta sección, ya vimos que la sintaxis más básica de una función definida por el usuario es:
-```
+```c++
 Tipo_de_output Nombre_de_la_función() // Este es el encabezado de la función (le avisa al compilador que la función existe)
 {
     // Este es el cuerpo de la función (le dice al compilador lo que la función hace)
@@ -12,7 +12,7 @@ Aunque mencionamos la existencia de funciones tipo `void` y vimos un ejemplo, no
 
 ## Valores de retorno de tipo void
 Estrictamente hablando, una función no está obligada a devolver un valor al ser llamada. Para decirle a la computadora que una función no va a devolver un valor, debemos definirla como tipo `void`. Veamos un ejemplo:
-```
+```c++
 #include <iostream>
 
 // 'void' significa que la función no va a devolver un valor al ser llamada
@@ -39,7 +39,7 @@ Una función que no regresa valores es llamada _función que no devuelve valores
 Como vimos en nuestro ejemplo, las funciones vacías regresan de manera automática al llamador (en el caso de nuestro ejemplo, `main()`) una vez que terminan su ejecución, no es necesario agregarles la instrucción `return`.
 
 Podemos agregar la instrucción al final del código de una función vacía, pero esto es redundante:
-```
+```c++
 #include <iostream>
 
 // 'void' significa que la función no va a devolver un valor al ser llamada
@@ -65,7 +65,7 @@ int main()
 ```
 
 Las funciones vacías no se pueden usar en expresiones que requieren algún valor, para entender la razón consideremos el siguiente ejemplo:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -80,7 +80,7 @@ int main()
 El código anterior produce un error porque para el segundo `std::cout` no hubo ningún valor provisto.
 
 Ahora consideremos el siguiente programa:
-```
+```c++
 #include <iostream>
 
 // 'void' significa que la función no va a devolver un valor al ser llamada
@@ -106,7 +106,7 @@ int main()
 Puede parecer tentador querer 'arreglar' el error obtenido arriba cambiando la definición de la función `diHola()` para pedirle que ahora nos de un valor. Sin embargo, esto resulta aún peor porque pedirle a una función vacía que nos regrese un valor **siempre** produce un error al compilar.
 
 O sea, hacer esto:
-```
+```c++
 void diHola()
 {
     std::cout << "¡Buenos días estrellitas, " 
