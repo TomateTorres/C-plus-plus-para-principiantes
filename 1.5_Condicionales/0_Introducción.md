@@ -3,11 +3,11 @@ En C++ **las condicionales** se usan para tomar decisiones basadas en el valor d
 La estructura básica de una condicional es el uso de la **declaración `if`** que nos permite ejecutar una (o más) línea de código sólo si una condición es verdadera.
 
 La forma más simple de la declaración `if` tiene la siguiente forma:
-```
+```c++
 if (condición) declaración_verdadera;
 ```
 Para que sea más fácil para nosotros los humanos leer lo anterior (sobre todo cuando la `declaración_verdadera` es muy larga), es mejor escribirla así:
-```
+```c++
 if (condición)
     declaración_verdadera;
 ```
@@ -17,7 +17,7 @@ Una **condición** (también llamada **expresión condicional**) es una expresi�
 **Nota:** El indentado de `declaración_verdadera` tendremos que ponerlo nosotros de forma manual (lo recomendable es usar la tecla *Tab*). Aunque éste no es necesario, sí es recomendable ponerlo porque nos ayuda a distinguir fácilmente cuál es la instrucción que se ejecutará si se cumple la condición.
 
 Veamos un ejemplo de un programa simple que usa la declaración `if`:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -43,7 +43,7 @@ Una vez que el usuario ha dado un entero, la condición entre paréntesis `x==0`
 Dado el ejemplo anterior, puede que el usuario se desconcierte un poco si inmediatamente después de que introduce un entero distinto del cero, el programa termine sin más aviso.
 
 Para remediar esta situación podríamos hacer algo así:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -63,7 +63,7 @@ int main()
 ```
 
 O (si queremos complicar nuestro programa de manera innecesaria) así:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -73,7 +73,7 @@ int main()
     std::cin >> x;
 
     bool cero {(x == 0)}; 
-    // `cero` es una variable booleana que gardará `true` si el
+    // `cero` es una variable booleana que guardará `true` si el
     // entero que nos dio el usuario es 0 y `false` en otro caso.
 
     if (cero) // si `cero` vale `true`
@@ -86,7 +86,7 @@ int main()
 }
 ```
 En realidad (aunque ambos programas nos dan lo que queremos y por tanto son correctos), hay una manera más sencilla de hacer las cosas usando una forma alternativa de la declaración `if` llamada **`if-else`**. La **declaración `if-else`** tiene la siguiente forma:
-```
+```c++
 if (condición)
     declaración_verdadera
 else 
@@ -97,7 +97,7 @@ else
 Si la `condición` es evaluada al valor booleano `true`, la `declaración_verdadera` se ejecuta, en otro caso el programa salta a la `declaración_falsa` y ejecuta ésta en su lugar.
 
 Arreglemos nuestro ejemplo usando `if-else`:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -119,7 +119,7 @@ int main()
 ## Encadenamiento de condiciones `if`
 
 A veces queremos evaluar el valor de verdad de varios enunciados en una secuencia. Esto lo podemos hacer encadenando una declaración `if` (o una `if-else`) a una `if` anterior. Por ejemplo:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -142,7 +142,7 @@ int main()
 ```
 
 Una pregunta que puede surgir es *¿por qué usamos `else if` para la segunda condición en vez de solamente `if`?*. La cuestión es que si hacemos:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -180,7 +180,7 @@ Cuando usamos `if` varias veces, C++ los interpreta como 'bloques' independiente
 
 Cuando usamos `if` seguido de `else if`, el flujo del programa se detiene en cuanto se encuentra una condición verdadera. O sea, **sólo se ejecuta un 'bloque' de código**, incluso si alguna de las condiciones subsecuentes podrían ser verdaderas también. 
 Por ejemplo:
-```
+```c++
 #include <iostream>
 
 int main() 
@@ -212,7 +212,7 @@ Es mayor que 5.
 Como ya vimos en [la sección sobre funciones](../1.3_Funciones_basicas/0_Introducción.md), usualmente, una declaración `return` es la última instrucción de una función; a una declaración `return` que no es la última instrucción de una función la llamamos **devolución anticipada** (*early return*). Una declaración de este tipo hará que la función vuelva a su llamador una vez que lleguemos a la línea donde está `return` aún si después de esta hay más instrucciones.
 
 Una *devolución anticipada* sin un condicional no es de mucha utilidad:
-```
+```c++
 #include <iostream>
 
 void print()
@@ -241,7 +241,7 @@ int main()
 La línea `std::cout << "B" << '\n';` jamás se va a ejecutar, bien podríamos borrarla. Si lo hacemos, nuestra declaración `return` ya no será anticipada (pues será la última instrucción de la función).
 
 Por sí solas, las devoluciones anticipadas no se ven muy útiles, pero si las combinamos con las declaraciones `if` podemos condicionalizar el valor de retorno de nuestras funciones:
-```
+```c++
 #include <iostream>
 
 // devuelve el valor absoluto de un entero `x`
