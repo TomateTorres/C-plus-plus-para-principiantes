@@ -1,7 +1,7 @@
 Los ciclos `do-while` en C++ son una variante de los ciclos `while`, pero con una diferencia fundamental: en un ciclo `do-while`, **el bloque de código siempre se ejecuta al menos una vez** antes de que se evalúe la condición. Esto sucede porque la condición se verifica después de ejecutar el bloque de código, lo que asegura que la primera iteración siempre ocurra.
 
 La sintaxis de este tipo de ciclos es:
-```
+```c++
 do {
     // Bloque de código a ejecutar
 } while (condición);
@@ -12,7 +12,7 @@ La estructura `do-while` sigue estos pasos:
 2. Evalúa la condición en el `while`. Si la condición es verdadera, el ciclo se repite. Si es falsa, el ciclo termina.
 
 Veamos un ejemplo:
-```
+```c++
 #include <iostream>
 
 int main() {
@@ -47,7 +47,7 @@ Es conveniente usar `do-while` si necesitamos ejecutar el bloque de código al m
 
 Algunas situaciones donde sería mejor usar un `do-while` en vez de un `while` son:
 * **Menús interactivos:** Al mostrar un menú al usuario, se puede usar `do-while` para asegurarnos de que el menú se muestra al menos una vez, y luego repetirlo mientras el usuario quiera continuar.
-```
+```c++
 #include <iostream>
 
 int main() {
@@ -67,7 +67,7 @@ int main() {
 }
 ```
 * **Validar la entrada de un usuario:** Asegurándonos de que el usuario ingrese un valor válido, y repetir la solicitud hasta que se cumplan ciertas condiciones. Por ejemplo, supongamos que necesitamos pedirle al usuario que ingrese un número entre 1 y 10:
-```
+```c++
 #include <iostream>
 
 int main() {
