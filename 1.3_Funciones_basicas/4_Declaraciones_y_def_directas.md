@@ -1,7 +1,7 @@
 Hasta ahora, cuando usamos funciones en nuestros programas, hemos sido cuidadosos de definir nuestras funciones en líneas anteriores a su llamador. Lo cual es deseable porque el contenido de los archivos de código es compilado de manera secuencial.
 
 Sin embargo, es válido preguntarse qué pasa si hacemos las cosas en un orden distinto. Consideremos el siguiente código:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -33,17 +33,17 @@ Para escribir una declaración directa, usamos una **declaración de función pr
 4. Un `;`.
 
 Por ejemplo, para la función `doble()` las declaraciones:
-```
+```c++
 int doble(int x);
 ```
 y
-```
+```c++
 int doble(int);
 ```
 son igual de válidas. Aunque es preferible dejar los nombres de los parámetros (o sea, `int doble(int x)` es 'mejor' que `int doble(int)`) ya que estos hacen más fácil la lectura del código para nosotros los humanos (además de que la manera más fácil de declarar una función prototipo es copiar y pegar la primera línea de código de la función en cuestión y agregar `;` al final).
 
 Ahora, este es nuestro programa original que no compilaba usando declaración directa para la función `doble()`:
-```
+```c++
 #include <iostream>
 
 int doble(int x); //Declaramos a la función en una (o más) línea
@@ -63,7 +63,7 @@ int doble(int x)
 Una pregunta que puede surgir es qué pasa si declaramos de manera directa una función, pero al final no la definimos nunca (no hay una sección de código con la función con todo y cuerpo). Como con todo en esta vida: depende. Si declaramos una función a la que nunca llamamos, no importa, el programa correrá sin problemas, aunque probablemente (dependiendo de nuestro IDE y su configuración) recibamos un mensaje de advertencia similar al que aparece cuando declaramos una variable que no se usa.
 
 Donde sí importa es cuando declaramos una función a la que **sí** llamamos, pero no la definimos nunca. Por ejemplo:
-```
+```c++
 #include <iostream>
 
 int doble(int x); //Declaramos a la función en una (o más) línea
@@ -88,7 +88,7 @@ Una **declaración** le avisa al compilador sobre la existencia de un identifica
 Una **definición** es una declaración que implementa (en el caso de funciones y tipos) o inicializa (en el caso de variables) al identificador.
 
 Por ejemplo:
-```
+```c++
 int doble(int x); //es una declaración que le avisa al compilador
                   //que existe una función llamada 'doble' que 
                   //recibe un parámetro entero.
@@ -108,13 +108,13 @@ int x{3}; //es una definición porque inicializa a la variable 'x'
           //con el valor 3.
 ```
 
-En C++ todas las definiciones son declaraciones, pero no todas las declaraciones son definiciones. A las declaraciones que no son definiciones les llamamos **declaraciones puras** (por ejemplo, una declaración directa de una función, es una declaraciópn pura).
+En C++ todas las definiciones son declaraciones, pero no todas las declaraciones son definiciones. A las declaraciones que no son definiciones les llamamos **declaraciones puras** (por ejemplo, una declaración directa de una función, es una declaración pura).
 
 En el 'lenguaje coloquial', lo más común es referirnos a las declaraciones puras simplemente como 'declaraciones'.
 
 ## La regla de una definición
 **The one definition rule (ODR)** es una regla bien conocida en C++:
-1. *En un mismo archivo*, cada función, variable, template (base prediseñada para estructurar el contenido de una aplicación o página web) en un cierto alcance (ver: *Intro_a_alcance_local.md*) sólo puede tener una definición. Mismas definiciones ocurriendo en diferentes alcances (ej.: Variables locales definidas en el cuerpo de distintas funciones), no rompen esta regla.
+1. *En un mismo archivo*, cada función, variable, template (base pre-diseñada para estructurar el contenido de una aplicación o página web) en un cierto alcance (ver: *Intro_a_alcance_local.md*) sólo puede tener una definición. Mismas definiciones ocurriendo en diferentes alcances (ej.: Variables locales definidas en el cuerpo de distintas funciones), no rompen esta regla.
 2. *Dentro de un programa*, cada función o variable sólo puede tener una definición. Esta regla existe porque un solo programa puede estar conformado por más de un archivo.
 3. Tipos (*types*), templates, funciones en línea (*inline functions*) y variables en línea (*inline variables*) tienen permitido tener definiciones duplicadas en distintos archivos, siempre y cuando cada definición sea idéntica. 
 
