@@ -1,7 +1,7 @@
 1. 'primos.cpp' es un programa que le pide al usuario un entero en el intervalo [0, 9] y le dice si éste es primo o no.
 
 2. Supongamos que tenemos el siguiente código:
-```
+```c++
 #include <iostream>
 
 bool sePuedeSubir()
@@ -33,7 +33,7 @@ int main()
 y queremos acortarlo un poco haciendo cambios mínimos. El programa 'cambio.cpp' trae un ejemplo de como podríamos hacerlo.
 
 Como 'moraleja': Nunca necesitamos de una declaración `if` de la forma:
-```
+```c++
 if (condición)
   return true;
 else
