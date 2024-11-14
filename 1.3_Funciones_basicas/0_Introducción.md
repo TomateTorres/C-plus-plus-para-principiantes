@@ -16,7 +16,7 @@ En el encabezado de la función tenemos: `Tipo_de_output Nombre_de_la_función()
 
 ## 'Llamar' funciones
 Un ejemplo de un programa que muestra como 'llamar' a una función en C++:
-```
+```c++
 #include <iostream> // para std::cout
 
 // Vamos a definir una función llamada imprime()
@@ -39,7 +39,7 @@ int main()
 }
 ```
 El programa (como cualquiera en C++) inicia su ejecución en la función `main()`.
-Cuando 'llamamos' a la función `ìmprime` debemos poner un par de paréntesis al final de su nombre, si no lo hacemos el programa no compilará y si lo hace, no llamará a la función.
+Cuando 'llamamos' a la función `imprime` debemos poner un par de paréntesis al final de su nombre, si no lo hacemos el programa no compilará y si lo hace, no llamará a la función.
 
 Como llamamos a una función, la ejecución de `main()` fue momentáneamente suspendida y la ejecución del programa salta hasta la línea que dice _imprime_ (más arriba en el código) y ejecuta la tarea dentro del cuerpo de la función, una vez que termina (en este caso, sólo imprime la línea: _Estamos en imprime()_), volvemos a `main()` y seguimos con las líneas que falten (en este caso, sólo se imprime la última línea: _Termina main()_).
 
@@ -49,7 +49,7 @@ Las funciones también pueden ser llamadas más de una vez y podemos definir fun
 
 A diferencia de otros lenguajes de programación (Python por ejemplo), C++ no permite definir funciones anidadas (no se puede definir una función dentro de otra función).
 Por ejemplo, esto no es legal:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -64,7 +64,7 @@ int main()
 }
 ```
 La forma correcta de escribir el código anterior es:
-```
+```c++
 #include <iostream>
 
 void foo() // ya no está anidada dentro de main()
@@ -81,7 +81,7 @@ int main()
 
 ## Funciones que regresan valores
 Consideremos un programa que le pida al usuario dos números enteros y le de como resultado la suma entre ellos:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -102,7 +102,7 @@ int main()
 }
 ```
 Aunque este programa es sencillo y no necesitamos dividirlo en múltiples funciones, veamos un ejemplo de cómo podríamos implementar una función creada por el usuario para obtener el mismo output:
-```
+```c++
 #include <iostream> 
 
 int suma()
@@ -133,7 +133,7 @@ Cuando este programa es ejecutado, `main` crea una variable entera llamada `num`
 Decimos que una _función regresa un valor_ (en inglés: _value returning function_) si al terminar su ejecución devuelve algún valor de tipo distinto a `void`. Una vez que hemos definido el tipo de una función (`int`, `double`,...), el valor devuelto (llamado: 'valor de retorno') debe ser del mismo tipo que la función, de otro modo nuestro programa tendrá comportamientos inesperados (suponiendo que sí compile). 
 
 Una _función que devuelve valores_ sólo puede dar un sólo valor cada vez que es llamada. Por ejemplo:
-```
+```c++
 int suma()
 {
     return 3 + 4;
@@ -143,10 +143,10 @@ La función suma sólo devuelve un valor a través de `return` (la suma de 3 y 4
 
 El hecho de que, en principio, una función sólo pueda devolvernos un valor, es una limitación porque a veces puede sernos útil que una función devuelva múltiples resultados a la vez (por ejemplo, si queremos codificar una función de $f:\mathbb{R}^2 \to \mathbb{R}^2$ no podemos hacerlo con un solo `return`). Hay maneras de trabajar aún con esta limitación, las veremos más adelante.
 
-El significado del valor devuelto por una función es determinado por el autor de ésta. Algunas funciones devuelven valores de _estados de código_ para inidicar si fueron exitosas o fallaron, algunas devuelven un valor calculado o seleccionado, algunas no devuelven nada...
+El significado del valor devuelto por una función es determinado por el autor de ésta. Algunas funciones devuelven valores de _estados de código_ para indicar si fueron exitosas o fallaron, algunas devuelven un valor calculado o seleccionado, algunas no devuelven nada...
 
 Considerando lo anterior, es buena práctica comentar en el código de la función para que quien sea que lo lea (que bien podemos ser nosotros mismos en el futuro), sepa qué propósito tiene el valor devuelto por la función. Por ejemplo:
-```
+```c++
 // La función le pide al usuario que ingrese un valor.
 // El valor devuelto por la función es el entero ingresado por
 // el usuario mediante el teclado. 
@@ -161,7 +161,7 @@ int obtenValorDeUsuario()
 ```
 
 Más atrás habíamos mencionado que es posible llamar a una función más de una vez al ejecutar un código. Veamos un ejemplo:
-```
+```c++
 #include <iostream>
 
 int obtenValorDeUsuario()
