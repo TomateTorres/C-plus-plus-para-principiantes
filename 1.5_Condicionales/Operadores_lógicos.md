@@ -12,7 +12,7 @@ En C++ tenemos 3 operadores lógicos:
 Al **operador de negación lógica** (también llamado *no lógico*) [ya lo habíamos visto](-1_Booleanos.md). En resumen: El operador de negación lógica cambia el valor de un booleano `true` a `false` y viceversa.
 
 El operador de negación lógica es usado frecuentemente en condicionales:
-```
+```c++
 bool muyGrande { x > 100 }; // `muyGrande` es `true` si `x > 100`
 
 if (!muyGrande) // si `muyGrande` es `false`
@@ -29,7 +29,7 @@ else // si `muyGrande` es `true`
 ```
 
 Es importante mencionar que el *no lógico* tiene un nivel de precedencia muy alto (a menos que en el código especifiquemos lo contrario, es de las primeras cosas que se evalúan en una expresión). Veamos algunos ejemplos:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -54,7 +54,7 @@ int main()
     return 0;
 }
 ```
-```
+```c++
 #include <iostream>
 
 int main()
@@ -81,14 +81,14 @@ int main()
 * Los códigos anteriores no compilarán si usamos la configuración sugerida en la [Caja de herramientas](../Caja_de_herramientas/Configurar_el_compilador.md). Pero si la configuración es más permisiva, sucede lo que se menciona en los comentarios.
 * De manera general, en C++ [un entero se convierte en booleano automáticamente](-1_Booleanos.md) cuando se utiliza en contextos donde se espera un valor booleano, como en operadores lógicos. De ahí que `!a` sea igual a `0` (como `a` es un entero distinto de `0`, al evaluarlo como booleano le es asignado el valor de `1` en la memoria).
 
-Lo mejor es usar paréntesis para indicarle al compilador cómo queremos que evalúe nuestras expresiones. Usos simples del *no lógico* (del estilo `if (!bool)`) no necesitan del uso de parántesis porque aquí la precedencia del operador por encima de otros no importa.
+Lo mejor es usar paréntesis para indicarle al compilador cómo queremos que evalúe nuestras expresiones. Usos simples del *no lógico* (del estilo `if (!bool)`) no necesitan del uso de paréntesis porque aquí la precedencia del operador por encima de otros no importa.
 
 ## O lógico
 
 El **operador de disyunción lógica** (también llamado *o lógico*) sirve para verificar si una (o ambas) condición (condiciones) de dos se cumple. `||` nos dará `false` sólo en el caso donde ambos operandos se evalúen como `false`, en cualquier otro caso `||` nos dará `true`.
 
 Por ejemplo, en el siguiente programa:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -113,7 +113,7 @@ int main()
 Usamos el *o lógico* para verificar si la condición de la izquierda (`valor == 0`) o la de la derecha (`valor == 1`) se cumplen. Si alguna es cierta, `||` se evalúa como `true`, lo que quiere decir que se ejecuta la declaración `if` y en pantalla se imprime `Elegiste 0 ó 1`. Si ninguna es cierta, `||` se evalúa como `false`, se ejecuta `else` y en pantalla se imprime `No elegiste 0 ó 1`
 
 Es posible encadenar múltiples declaraciones *o lógicas*:
-```
+```c++
 if (valor == 0 || valor == 1 || valor == 2 || valor == 3)
     {
         std::cout << "Elegiste 0, 1, 2, ó 3\n";
@@ -126,7 +126,7 @@ if (valor == 0 || valor == 1 || valor == 2 || valor == 3)
 El **operador de conjunción lógica** (también llamado *y lógico*) es usado para verificar si ambos operandos son verdaderos. Si ambos operandos son verdaderos, `&&` nos da `true` y nos da `false` en cualquier otro caso.
 
 Por ejemplo, podríamos querer evaluar si una variable `x` está en cierto intervalo, digamos entre $\(0, 6\)$. Necesitamos verificar dos condiciones: Necesitamos verificar que `0 < x` y `x < 6`.
-```
+```c++
 #include <iostream>
 
 int main()
@@ -151,7 +151,7 @@ int main()
 ```
 
 Al igual que con las declaraciones *o lógicas*, es posible encadenar múltiples *y lógicas*:
-```
+```c++
 // Supongamos que tenemos un `valor` y queremos verificar si está
 // en (10, 20) pero no es igual a 16.
 
@@ -173,7 +173,7 @@ Para que el operador **y lógico** (`&&`) devuelva `true`, ambos operandos deben
 Similarmente, si el operando izquierdo del operador **o lógico** (`||`) vale `true`, entonces `||` devuelve automáticamente `true` sin evaluar el operando de la derecha.
 
 Esto último hace que usar el operador `||` o el operador `&&` en expresiones complejas pueda ser problemático si se depende de los efectos secundarios de una función o expresión. Veamos un ejemplo para explicar a qué nos referimos:
-```
+```c++
 #include <iostream>
 
 bool esMayorQueCero(int n) 
@@ -208,7 +208,7 @@ int main()
 }
 ```
 
-Lo esperado sería que (dado que `mostrarMensaje(b)` también vale `true`) se nos imprimera en pantalla lo siguiente:
+Lo esperado sería que (dado que `mostrarMensaje(b)` también vale `true`) se nos imprimiera en pantalla lo siguiente:
 ```
 Verificando si 3 es mayor que cero.
 Procesando el número: -5
@@ -225,7 +225,7 @@ La moraleja de todo esto es: Evita usar expresiones con efectos secundarios en e
 ## Combinar `&&`s y `||`s
 
 Podemos encadenar y combinar declaraciones `y lógicas` y `o lógicas`:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -251,7 +251,7 @@ int main()
 Es muy importante ser cuidadosos en indicarle al compilador con ayuda de paréntesis `()` como queremos que se evalúen nuestras expresiones ya que `valor1 || valor2 && valor3` se evalúa en automático como `valor1 || (valor2 && valor3)` porque `&&` tiene mayor precedencia que `||`. Además, el uso de paréntesis hace que otros humanos encuentren nuestro código más fácil de leer.
 
 Es probable que para este punto las lectoras y lectores ya se hayan encontrado con las **leyes de De Morgan** en sus cursos de Álgebra, estas leyes nos dicen como el operador `!` es distribuido con la conjunción y disyunción:
-```
+```c++
 !(x && y) es equivalente a !x || !y
 !(x || y) es equivalente a !x && !y
 ```
