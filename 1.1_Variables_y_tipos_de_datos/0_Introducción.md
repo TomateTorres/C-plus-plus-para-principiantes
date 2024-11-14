@@ -1,12 +1,12 @@
 # Variables y tipos de datos.
-Un programa produce resultados mediante la maniplación de _datos_, estos son cualquier tipo de información que puede ser procesada por la computadora.
+Un programa produce resultados mediante la manipulación de _datos_, estos son cualquier tipo de información que puede ser procesada por la computadora.
 
 Los datos con los que un programa puede trabajar pueden ser obtenidos mediante una base de datos, la red o mediante input del usuario.
 
 La unidad básica de los datos es conocida como _valor_, esta puede ser una letra (ej.: 'z'), un número (ej.: '256') o texto (ej.: 'HolaMundo').
 
 C++ es un lenguaje de programación orientado a objetos, un _objeto_ es una región de almacenamiento (léase: memoria) que puede guardar un valor y tiene ciertas propiedades asociadas. Dicho de manera muy burda: cuando trabajamos con C++, le estamos diciendo a la computadora _'dame el valor resguardado por este objeto'_, en vez de decirle _'dame el valor que se encuentra en el espacio de memoria número tal'_.
-De este modo, no tenemos que preocuparnos donde están nuestros objetos en la memoria, sino solamente en usarlos y recuperar valores.
+De este modo, no tenemos que preocuparnos sobre donde están nuestros objetos en la memoria, sino solamente en usarlos y recuperar valores.
 
 Un objeto con un nombre asociado se llama _variable_. Nombrar a nuestros objetos nos permite poder referirnos a ellos más adelante en nuestros programas.
 
@@ -15,8 +15,8 @@ Un objeto con un nombre asociado se llama _variable_. Nombrar a nuestros objetos
 ## Tipos de variables.
 Algunos tipos de variables que existen en C++ son:
 * _int_: Esta variable es usada para guardar números enteros.
-* _float_: Esta variable es usada para guardar números con punto decimal. Puede guadar cifras de hasta 7 espacios decimales.
-* _double_: Esta variable es usada para guardar números con punto decimal. Puede guadar cifras de hasta 15 espacios decimales.
+* _float_: Esta variable es usada para guardar números con punto decimal. Puede guardar cifras de hasta 7 espacios decimales.
+* _double_: Esta variable es usada para guardar números con punto decimal. Puede guardar cifras de hasta 15 espacios decimales.
 * _bool_: Es usada para guardar valores de tipo 'verdadero' o 'falso'.
 * _char_: Es usado para guardar un caracter, letra, número o valor de tipo ASCII. Lo que se almacena en la memoria es el código numérico del caracter en cierta codificación. 
 * _string_: Es usado para guardar texto, por ejemplo: "Hola Mundo". Este tipo de variables siempre empiezan y terminan con comillas dobles ("_____").
@@ -34,7 +34,7 @@ Algunos tipos de variables que existen en C++ son:
         * `double decimal = 6.66;` es una variable de tipo decimal llamada 'decimal' que guarda el valor 6.66.
     * La palabra clave `const` se utiliza para especificar que el objeto o variable no se puede modificar.
         * `const double VOL_LATA = 0.355;` es una variable de tipo número decimal (`double`), llamada 'VOL_LATA' a la que se le asignó el valor 0.355. Le pusimos el prefijo `const` porque no la vamos a modificar más adelante.
-        * Cuando vayamos a definir a una de nuestras variables usando la palabra reservada `const`, es buena práctica escribir su nombre usando sólo mayúsculas, para poider diferenciarla de variables regulares.
+        * Cuando vayamos a definir a una de nuestras variables usando la palabra reservada `const`, es buena práctica escribir su nombre usando sólo mayúsculas, para poder diferenciarla de variables regulares.
 
 * Observaciones:
     * Siempre que creemos una variable es necesario que especifiquemos su tipo.
