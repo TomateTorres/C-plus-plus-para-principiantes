@@ -13,7 +13,7 @@ Los conceptos de alcance local y **tiempo de vida de una variable local** están
 Cuando un objeto es destruido lo único que sucede es que éste se vuelve inválido y si intentamos seguirlo usando el resultado será comportamiento no definido. Una vez que un objeto ha sido destruido, la memoria usada por éste se libera para poder ser usada en otras cosas.
 
 Veamos un ejemplo de un programa que muestra el alcance de una variable `x`:
-```
+```c++
 #include <iostream>
 
 int doble(int x) // `x` es creada e inicializada aquí, para
@@ -48,7 +48,7 @@ int main()
 Más arriba mencionamos que en un mismo código podemos definir variables con el mismo nombre 'siempre que lo hagamos con cuidado'. EL anterior, es un ejemplo de como esto **sí** se puede hacer, veamos un ejemplo de como **no** se puede usar el mismo nombre para definir variables distintas en un mismo código:
 
 Supongamos que queremos calcular el volumen de un cubo de lado 2, podríamos hacerlo así:
-```
+```c++
 #include <iostream>
 
 double volumen_cubo(double longitud_lado)
@@ -68,7 +68,7 @@ int main()
 La variable `volumen` es definida dos veces, pero no hay problema porque cada definición está dentro de una función diferente (la primera dentro de `volumen_cubo()` y la segunda dentro de `main()`), de esta manera el alcance de la cada una de las variables locales `volumen` no se traslapa. 
 
 Ahora, supongamos que tenemos otro cubo, ahora de lado 4 y queremos saber también su volumen. Podríamos estar tentados a hacer esto:
-```
+```c++
 #include <iostream>
 
 double volumen_cubo(double longitud_lado)
@@ -101,7 +101,7 @@ Lo importante de lo anterior es:
 ## Parámetros de funciones vs. Variables locales
 
 Aunque a los parámetros de funciones también se les considera *variables locales*, en la práctica cuando nos referimos a una variable local, nos estamos refiriendo específicamente a algo dentro del cuerpo de una función:
-```
+```c++
 int suma(int x, int y) // `x` y `y` son parámetros
 {
     int z{ x + y }; `z` es una variable local
@@ -111,7 +111,7 @@ int suma(int x, int y) // `x` y `y` son parámetros
 Ambos (variables locales y parámetros) pueden usarse dentro del cuerpo de las funciones, puede llegar a ser confuso cuando debe usarse una variable local o un parámetro. Un parámetro debe usarse cuando existe un llamador (que puede ser otra función o directamente `main()`) que pasará algún valor (o valores) con el que queremos que la función haga algo. Cuando lo anterior no pase, es cuando debemos usar una variable local.
 
 Si usamos un parámetro donde debimos haber usado una variable local, tendremos resultados como este:
-```
+```c++
 // Este programa le pide un número al usuario y no hace
 // absolutamente nada con él.
 
@@ -137,7 +137,7 @@ En el ejemplo anterior, le pusimos un parámetro a la función `traeValor()` a p
 Hacer este tipo de cosas (agregar parámetros cuando no vamos a pasarle información a la función) sólo le agrega complejidad innecesaria a nuestros programas.
 
 Una mejor forma de escribir el programa anterior es:
-```
+```c++
 // Este programa le pide un número al usuario y no hace
 // absolutamente nada con él.
 
