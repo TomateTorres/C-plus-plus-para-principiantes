@@ -1,5 +1,5 @@
 En C++, los ciclos `for` se utilizan para repetir un bloque de código un número determinado de veces, y su sintaxis es la siguiente:
-```
+```c++
 for (inicialización; condición; expresión-final) {
     // Código a ejecutar en cada iteración
 }
@@ -11,7 +11,7 @@ for (inicialización; condición; expresión-final) {
 Una vez que la **expresión-final** se ha evaluado, la ejecución regresa al paso **2.** (es decir, se evalúa nuevamente a la condición).
 
 Veamos un ejemplo:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -38,7 +38,7 @@ De este modo, el programa anterior imprimió: `1 2 3 4 5 6 7 8 9 10`.
 Aunque es lo más común, la `expresión-final` no tiene por qué limitarse a sólo incrementar en 1 la variable que estemos usando para contar las iteraciones de nuestro ciclo.
 
 1. Podemos decrementar en vez de incrementar:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -57,7 +57,7 @@ Aquí `i` comienza en 5 y se va reduciendo hasta que la condición `i > 0` deja 
 2. Podemos modificar el valor de nuestra variable de bucle en más de una unidad por iteración:
 
 En este programa incrementamos en pasos de 2:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -73,7 +73,7 @@ int main()
 ```
 
 Y en este decrementamos en pasos de 3:
-```
+```c++
 #include <iostream>
 
 int main() {
@@ -96,7 +96,7 @@ En general, la `expresión-final` en un ciclo `for` no está limitada a simples 
 Es posible escribir ciclos `for` que omitan alguna (algunas o todas) de las 3 expresiones en su encabezado.
 
 Por ejemplo, aquí omitimos la `inicialización` y la `expresión-final`:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -120,7 +120,7 @@ En terminal se imprime: `0 1 2 3 4 5 6 7 8 9`.
 Nótese que nosotros hicimos de manera 'manual' la inicialización e incremento de la variable de bucle `i`, en vez de dejarlo en el encabezado del `for`. En este ejemplo, lo hicimos así con finalidad únicamente ilustrativa, pero hay situaciones donde no definir una variable de bucle en la `inicialización` (porque ya la hemos definido previamente) o no incrementarla en la `expresión-final` (porque queremos incrementarla de alguna forma especial) es preferible.
 
 Aunque no es común (y es preferible hacer esto usando un ciclo `while`) es posible hacer **ciclos `for` infinitos:**
-```
+```c++
 #include <iostream>
 
 int main()
@@ -136,7 +136,7 @@ int main()
   // explote...)
 ```
 Lo anterior es equivalente a:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -155,7 +155,7 @@ int main()
 Aunque por lo general los ciclos `for` iteran sobre una sola variable, a veces es necesario definir un ciclo `for` que trabaje con múltiples variables. Para ello, se definen las variables que se van a usar en la `inicialización` (separadas por comas) y la forma en que vamos a modificarlas en cada iteración en la `expresión-final` (nuevamente, separadas por comas). 
 
 Por ejemplo:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -188,7 +188,7 @@ En consola se imprime:
 Así como en otros tipos de ciclos, es posible hacer ciclos `for` anidados. 
 
 Por ejemplo:
-```
+```c++
 #include <iostream>
 
 int main() {
