@@ -15,12 +15,12 @@ La **recursión** en programación es una técnica donde una función se llama a
 1. $n! = 1$, si $n=0$
 2. $n! = n \cdot (n-1)!$, si $n\geq 1$
 
-Siempre que querramos definir una función recursiva, necesitaremos definir:
+Siempre que queramos definir una función recursiva, necesitaremos definir:
 * **Caso base:** Este es el punto donde el problema deja de reducirse y podemos resolverlo directamente (en el ejemplo del factorial, el caso base es $n=0$).
 * **Paso recursivo:** La función se llama a sí misma con un conjunto de datos más pequeño o reducido (en el ejemplo del factorial, el paso recursivo es pasar de $n!$ a $n \cdot (n-1)!$).
 
 Un programa que nos ayude a calcular el factorial de un número podría verse así:
-```
+```c++
 #include <iostream>
 
 // Función recursiva para calcular el factorial de un número
@@ -65,7 +65,7 @@ Hay 2 formas de usar al operador `++`: **pre-incremento** y **post-incremento**.
 Dado que el objetivo de esta sección no es explicar a detalle el funcionamiento de estos dos operadores, vamos a centrarnos solamente en el **pre-incremento (`++i`) y pre-decremento (`--i`)**, que son las variantes más relevantes para bucles.
 
 1. El **operador pre-incremento (`++i`):** Dada una variable entera `i`, `++i` incrementa el valor de `i` en 1 antes de que sea utilizada en cualquier otra operación.
-```
+```c++
 #include <iostream>
 
 int main()
@@ -80,7 +80,7 @@ int main()
 En el ejemplo anterior, la variable `x` fue incrementada antes de ser impresa en consola.
 
 2. El **operador pre-decremento (`--i`):** De manera muy similar a `++i`, dada una variable entera `i`, `--i` decrementa el valor de `i` en 1 antes de que sea utilizada en cualquier otra operación.
-```
+```c++
 #include <iostream>
 
 int main() {
@@ -97,7 +97,7 @@ int main() {
 En el contexto de bucles, los operadores pre-incremento y pre-decremento se utilizan principalmente para manejar contadores, pero también pueden tener usos en la manipulación de índices, parámetros y condiciones.
 
 En algunos casos, nos veremos en la necesidad de usar a los operadores **post-incremento** `i++` y **post-decremento** `i--`. Estos operadores incrementan o decrementan una variable, respectivamente, después de usar su valor actual en una expresión. Por ejemplo:
-```
+```c++
 int i{5}; // i es definida e inicializada con el valor 5
 int x{i++};  // x = 5, luego i se convierte en 6
 ```
