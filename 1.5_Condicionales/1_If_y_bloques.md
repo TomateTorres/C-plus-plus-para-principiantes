@@ -6,7 +6,7 @@ Eventualmente vamos a encontrarnos en situaciones donde vamos a requerir que una
 
 Un primer intento (con base en lo que sabemos hasta ahora), podría verse así:
 
-```
+```c++
 #include <iostream>
 
 int minEstaturaCM { 140 }; // La estatura mínima para subir a
@@ -21,7 +21,7 @@ int main()
     if (x >= minEstaturaCM)
         std::cout << "Eres lo suficientemente alto para subir.\n";
     else
-        std::cout << "No tienes la estatura sufiente para subir.\n";
+        std::cout << "No tienes la estatura suficiente para subir.\n";
         std::cout << "Lo siento, pequeño amigo Lannister.\n"; 
         // Prestémosle atención a la última línea.
 
@@ -35,7 +35,7 @@ this 'else' clause does not guard... [-Werror=misleading-indentation]gcc
 Lo anterior es sólo para avisarnos que, aunque hemos 'agrupado' la segunda línea que queremos que se imprima si alguien es muy bajo para subir (`Lo siento, pequeño amigo Lannister.`), en realidad esta última línea se ejecuta de manera independiente a la declaración condicional `if`-`else`.
 
 O sea, es como si hubiéramos escrito:
-```
+```c++
 #include <iostream>
 
 int minEstaturaCM { 140 };
@@ -49,7 +49,7 @@ int main()
     if (x >= minEstaturaCM)
         std::cout << "Eres lo suficientemente alto para subir.\n";
     else
-        std::cout << "No tienes la estatura sufiente para subir.\n";
+        std::cout << "No tienes la estatura suficiente para subir.\n";
     
     std::cout << "Lo siento, pequeño amigo Lannister.\n"; 
     // Prestémosle atención a la última línea.
@@ -67,7 +67,7 @@ Para poder ejecutar varias declaraciones basadas en alguna condición, necesitar
 Un **bloque** en C++ es un conjunto de declaraciones agrupadas por llaves `{}` que se tratan como una sola unidad.
 
 Si hubiéramos escrito:
-```
+```c++
 #include <iostream>
 
 int minEstaturaCM { 140 };
@@ -82,7 +82,7 @@ int main()
         std::cout << "Eres lo suficientemente alto para subir.\n";
     else
     {
-        std::cout << "No tienes la estatura sufiente para subir.\n";
+        std::cout << "No tienes la estatura suficiente para subir.\n";
         std::cout << "Lo siento, pequeño amigo Lannister.\n"; 
     }
 
@@ -93,10 +93,10 @@ El programa ahora sí funciona como esperábamos porque las declaraciones dentro
 
 Aunque en la [introducción de este capítulo](/1.5_Condicionales/0_Introducción.md) vimos que la estructura básica de una condicional `if`-`else` no requiere de bloques (`{}`), hay varias razones por las cuales sí conviene usarlos aún cuando dentro de nuestra condicional sólo haya una declaración a ejecutar:
 
-1. Siempre existe la posibilidad de que necesitemos modificar el programa y querramos agregar una nueva instrucción dentro de una condicional. Si ya hemos puesto llaves `{}` desde un inicio, es menos probable que cometamos el error expuesto más arriba y acabemos con una declaración que se ejecuta sin importar lo que pasa en la condicional.
+1. Siempre existe la posibilidad de que necesitemos modificar el programa y queramos agregar una nueva instrucción dentro de una condicional. Si ya hemos puesto llaves `{}` desde un inicio, es menos probable que cometamos el error expuesto más arriba y acabemos con una declaración que se ejecuta sin importar lo que pasa en la condicional.
 
 2. Supongamos que tenemos un programa al que estamos depurando:
-```
+```c++
 if (edad >= mayoriaEdad)
     agregaPistoACarrito(); // esta línea sólo se ejecuta si se 
                            // cumple la condición.
@@ -104,7 +104,7 @@ if (edad >= mayoriaEdad)
 pagaEnCaja(); // esta línea se ejecuta siempre
 ```
 Y tenemos la sospecha de que hay un error en la función `agregaPistoACarrito()`, entonces la comentamos para ver si el resto del programa corre bien sin ella (esto confirmaría que en efecto hay un problema en esa función).
-```
+```c++
 if (edad >= mayoriaEdad)
     /*agregaPistoACarrito(); // esta línea ya no se ejecuta, es 
                              // un comentario
@@ -117,7 +117,7 @@ Aunque el indentado nos pueda engañar, la llamada a la función `pagaEnCaja()` 
 3. Al menos en VSCode (probablemente esto también sea así en otros IDE) si usamos bloques al escribir condicionales, ya no tenemos que preocuparnos por poner el indentado de forma manual. Aunque indentar nuestro código no es necesario para que el compilador lo entienda, hacerlo es muy útil para que nosotros los humanos podamos leerlo con mayor facilidad.
 
 Así que la recomendación es considerar a:
-```
+```c++
 if (condición)
 {    
     declaración_verdadera
@@ -133,7 +133,7 @@ como nuestra forma 'canónica' para las declaraciones `if`-`else`.
 ## Bloques implícitos
 
 Para el compilador, esto
-```
+```c++
 if (condición)    
     declaración_verdadera
 
@@ -141,7 +141,7 @@ else
     lo_que_pasa_si_(condición)_no_se_cumple
 ```
 y esto
-```
+```c++
 if (condición)
 {    
     declaración_verdadera
@@ -155,7 +155,7 @@ else
 son equivalentes. Cuando nosotros no ponemos los bloques, el compilador lo hace implícitamente por nosotros.
 
 La mayoría de las veces esto no importa. Pero olvidar este tipo de detalles nos puede llevar a intentar definir variables dentro los bloques implícitos:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -172,7 +172,7 @@ int main()
 ```
 
 El programa anterior no compila, el error generado nos dice que el identificador `x` no está definido. Esto es porque para el compilador lo que hicimos fue:
-```
+```c++
 #include <iostream>
 
 int main()
@@ -197,7 +197,7 @@ En este contexto, la variable `x` tiene alcance sólo dentro de cada bloque dond
 ## Declaraciones `if` anidadas
 
 En C++ está permitido hacer declaraciones `if` dentro de declaraciones `if`:
-```
+```c++
 /*
 Supongamos que queremos clasificar a una persona según su edad:
 1. Si es menor de edad.
