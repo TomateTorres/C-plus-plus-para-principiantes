@@ -50,4 +50,4 @@ Nos interesa aprender a utilizar estos distintos tipos de arrays ya que son úti
 
 Algo interesante de los arrays en C++ es que, a pesar de sus diferencias, comparten algunas características similares que facilitan el trabajo con ellos una vez que se entiende el uso de uno de los tipos. De aquí que ocasionalmente usemos la palabra "array" en vez de `std::vector`, `std::array` o C-style array.
 
-Nosotros empezaremos con `std::vector`.
+Nosotros empezaremos con `std::vector` y aunque también abordaremos brevemente a los otros dos tipos, es a éste al que le daremos más desarrollo porque permite realizar prácticamente todas las operaciones posibles con los otros dos tipos de arrays, pero con mayor flexibilidad y menos complicaciones.
