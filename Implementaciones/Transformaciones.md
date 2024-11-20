@@ -197,7 +197,8 @@ La matriz de transformación es:
 0.707107  0.707107  
 -0.707107  0.707107  
 ```
-Y al vector $\begin{pmatrix} 1 \\ 1 \end{pmatrix}$ lo manda a:
+Y al vector ![image](https://github.com/user-attachments/assets/0472a128-3b15-4c04-aa6b-68be9922924e)
+ lo manda a:
 ```
 ( 1.41421  0  )
 ```
