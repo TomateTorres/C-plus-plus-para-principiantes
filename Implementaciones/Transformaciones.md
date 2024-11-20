@@ -89,9 +89,14 @@ $T:\mathbb{R}^2 \to \mathbb{R}^2$ dada por
 
 es la transformación lineal que rota al plano $\theta$ radianes en sentido positivo.
 
-Su matriz de transformación es: $A = \begin{bmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{bmatrix}$.
+Su matriz de transformación es: 
 
-Así, $T\begin{pmatrix} x \\ y \end{pmatrix} = \begin{bmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{bmatrix} \begin{pmatrix} x \\ y \end{pmatrix}$.
+![image](https://github.com/user-attachments/assets/d3226a29-bdb8-49e4-957a-19baf9de2e6e)
+
+
+Así, 
+![image](https://github.com/user-attachments/assets/1d5bb7d6-b098-433f-9220-e81cd26956ce)
+
 
 Si consideramos $\theta = \frac{\pi}{4}$:
 ```c++
