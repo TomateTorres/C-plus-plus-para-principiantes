@@ -14,7 +14,7 @@ Las transformaciones lineales no son las únicas que se pueden representar media
 
 ## Encontrar la matriz de una transformación lineal
 
-Si $T:\mathbb{R}^n \to \mathbb{R}^m$ es una transformación lineal, su matriz de transformación $A$ se puede obtener transformando cada uno de los vectores de la [base canónica](https://es.wikipedia.org/wiki/Base_can%C3%B3nica) (en $\mathbb{R}^2$ esta es $\{\bar{e}_1, \bar{e}_2\}=\{(1,0), (0,1)\}$) e insertando el resultado en las columnas correspondientes de la matriz.
+Si $T:\mathbb{R}^n \to \mathbb{R}^m$ es una transformación lineal, su matriz de transformación $A$ se puede obtener transformando cada uno de los vectores de la [base canónica](https://es.wikipedia.org/wiki/Base_can%C3%B3nica) (en $\mathbb{R}^2$ esta es ${\bar{e}_1, \bar{e}_2}={(1,0), (0,1)}$) e insertando el resultado en las columnas correspondientes de la matriz.
 
 O sea, $A=[T(\bar{e}_1)\quad T(\bar{e}_2) \quad...\quad T(\bar{e}_n)]$.
 
