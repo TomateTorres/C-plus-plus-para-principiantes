@@ -21,6 +21,7 @@ O sea, $A=[T(\bar{e}_1)\quad T(\bar{e}_2) \quad...\quad T(\bar{e}_n)]$.
 **Por ejemplo:** $T:\mathbb{R}^2 \to \mathbb{R}^2$ dada por $T(\bar{x})=2\bar{x}$ es una transformación lineal.
 
 Su matriz de transformación $A$ es: 
+
 ![image](https://github.com/user-attachments/assets/c9d2111b-7be8-46ba-a4b5-b508280cbf9b)
 
 
