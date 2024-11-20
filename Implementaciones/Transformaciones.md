@@ -83,7 +83,11 @@ Las transformaciones geométricas más comunes son aquellas que mantienen fijo a
 
 Sea $\theta$ un ángulo de rotación en sentido positivo (en contra de las manecillas del reloj) con respecto al origen. 
 
-$T:\mathbb{R}^2 \to \mathbb{R}^2$ dada por $T\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} x\cos\theta-y\sin\theta \\ x\sin\theta+y\cos\theta \end{pmatrix}$ es la transformación lineal que rota al plano $\theta$ radianes en sentido positivo.
+$T:\mathbb{R}^2 \to \mathbb{R}^2$ dada por 
+
+![image](https://github.com/user-attachments/assets/e0470570-1be6-4438-8415-e2960679e18f)
+
+es la transformación lineal que rota al plano $\theta$ radianes en sentido positivo.
 
 Su matriz de transformación es: $A = \begin{bmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{bmatrix}$.
 
