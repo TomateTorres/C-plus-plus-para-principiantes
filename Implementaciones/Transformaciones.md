@@ -20,7 +20,8 @@ O sea, $A=[T(\bar{e}_1)\quad T(\bar{e}_2) \quad...\quad T(\bar{e}_n)]$.
 
 **Por ejemplo:** $T:\mathbb{R}^2 \to \mathbb{R}^2$ dada por $T(\bar{x})=2\bar{x}$ es una transformación lineal.
 
-Su matriz de transformación $A$ es: $$A=\biggl[ 2\begin{pmatrix} 1 \\ 0 \end{pmatrix}\quad 2\begin{pmatrix} 0 \\ 1 \end{pmatrix} \biggr] = \begin{bmatrix} 2 & 0 \\ 0 & 2 \end{bmatrix}$$
+Su matriz de transformación $A$ es: 
+
 
 Esto podemos hacerlo en C++:
 ```c++
