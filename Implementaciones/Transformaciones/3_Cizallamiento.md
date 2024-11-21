@@ -15,3 +15,59 @@ Un cizallamiento horizontal $(x, y) \mapsto (x, mx+y)$ tiene por matriz asociada
 ![image](https://github.com/user-attachments/assets/9ac33d02-6b81-44fb-80bf-cc869589bdfc)
 
 El siguiente programa le permite al usuario dar $m$ y $m'$ factores de cizallamiento horizontal y vertical (respectivamente) y ayuda a calcular a dónde son enviados un cierto conjunto de puntos.
+```c++
+#include <iostream>
+#include <vector>
+
+// Aplica el cizallamiento dado por el usuario a un conjunto de puntos
+// (que es un "vector de vectores" puesto que cada punto es por sí mismo
+// un vector).
+void cizallamiento(std::vector<std::vector<double>>& puntos, double factorX, double factorY)
+{
+    for (auto& punto: puntos){
+        // `punto[0]` es la coordenada `x`, `punto[1]` es la coordenada
+        // `y`
+        double nuevoX{punto[0] + factorX * punto[1]};
+        double nuevoY{factorY * punto[0] + punto[1]};
+        
+        // Cambiamos las coordenadas:
+        punto[0] = nuevoX;
+        punto[1] = nuevoY;
+    }
+}
+
+int main()
+{
+    // Lista de puntos (cada punto es un vector de 2 elementos: {x, y}):
+    std::vector<std::vector<double>> puntos {{1, 1}, {2, 1}, {2, 2}, {1, 2}};
+
+    // Le pedimos al usuario los factores de cizallamiento:
+    double factorX{};
+    std::cout << "Da el factor de cizallamiento horizontal: ";
+    std::cin >> factorX;
+
+    double factorY{};
+    std::cout << "Da el factor de cizallamiento vertical: ";
+    std::cin >> factorY;
+
+    // Aplicamos la transformación a nuestro conjunto de puntos:
+    cizallamiento(puntos, factorX, factorY);
+
+    // Imprimimos nuestros puntos transformados:
+    for (std::size_t i{0}; i<puntos.size(); ++i){
+        std::cout << "Punto " << i+1 << ": (" << puntos[i][0] << ", " << puntos[i][1]
+                  << ")\n";
+    }
+
+    return 0;
+}
+```
+En terminal nos imprime cosas del estilo:
+```
+Da el factor de cizallamiento horizontal: 0.5
+Da el factor de cizallamiento vertical: 0
+Punto 1: (1.5, 1)
+Punto 2: (2.5, 1)
+Punto 3: (3, 2)
+Punto 4: (2, 2)
+```
