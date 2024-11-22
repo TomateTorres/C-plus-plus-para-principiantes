@@ -38,3 +38,59 @@ Despejando...
 ![image](https://github.com/user-attachments/assets/aa06688c-1fa7-49c5-98a3-f1024e057cd4)
 
 Dada la pendiente de una recta que pasa por el origen, el siguiente programa nos da la matriz asociada a la transformación lineal que refleja al plano con respecto a dicha recta:
+```c++
+#include <iostream>
+#include <vector>
+#include <cmath> // Para la función `pow()`
+
+
+void rellenarMatriz(std::vector<std::vector<double>>& matriz, double& pendiente, double& constante){
+    
+    matriz[0][0] = constante *(1-pow(pendiente, 2));
+    matriz[0][1] = constante *(2*pendiente);
+    matriz[1][0] = constante *(2*pendiente);
+    matriz[1][1] = constante * (pow(pendiente, 2)-1);
+}
+
+// Función para mostrar la matriz:
+void mostrarMatriz(const std::vector<std::vector<double>>& matriz) {
+    for (const auto& fila : matriz) {
+        for (const auto& elem : fila) {
+            std::cout << elem << " ";
+        }
+        std::cout << '\n';
+    }
+
+}
+
+int main()
+{
+    // Le pedimos al usuario la pendiente de su recta que pasa por el origen:
+    double pendiente{};
+    std::cout << "Da la pendiente de la recta: ";
+    std::cin >> pendiente;
+
+    std::vector<std::vector<double>> matriz(2, std::vector<double>(2)); 
+    // Crea una matriz de 2x2 (rellena de puros ceros)
+
+    // `constante` = 1/(1+m^2)
+    double constante{1/(1+pow(pendiente, 2))}; // La función `pow(número, potencia)` nos ayuda
+                                               // a elevar un `número` a una `potencia`.
+
+    // Rellenamos a la matriz:
+    rellenarMatriz(matriz, pendiente, constante);
+
+    // Mostramos la matriz:
+    std::cout << "La matriz asociada a la transformación es:\n";
+    mostrarMatriz(matriz);    
+
+    return 0;
+}
+```
+En terminal imprime algo del estilo:
+```
+Da la pendiente de la recta: 0.5
+La matriz asociada a la transformación es:
+0.6 0.8
+0.8 -0.6
+```
