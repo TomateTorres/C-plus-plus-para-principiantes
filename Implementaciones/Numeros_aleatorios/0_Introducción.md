@@ -3,3 +3,5 @@ La generación de números aleatorios (RNG, por sus siglas en inglés) es un con
 En los videojuegos, el RNG es un motor esencial para la rejugabilidad, ya que asegura experiencias únicas en cada partida. 
 
 Por ejemplo, juegos como *Enter the Gungeon* dependen profundamente del RNG para generar mazmorras, enemigos, cofres y recompensas de manera procedural. Esto garantiza que cada nivel sea diferente y que los jugadores tengan que adaptarse continuamente a lo inesperado.
+
+![0](https://github.com/user-attachments/assets/85901d83-f30e-4af6-9af7-c4d57258fde8)
