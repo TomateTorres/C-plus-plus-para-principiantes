@@ -4,4 +4,5 @@ En los videojuegos, el RNG es un motor esencial para la rejugabilidad, ya que as
 
 Por ejemplo, juegos como *Enter the Gungeon* dependen profundamente del RNG para generar mazmorras, enemigos, cofres y recompensas de manera procedural. Esto garantiza que cada nivel sea diferente y que los jugadores tengan que adaptarse continuamente a lo inesperado.
 
-![0](https://github.com/user-attachments/assets/85901d83-f30e-4af6-9af7-c4d57258fde8)
+
+![steamuserimages-a akamaihd](https://github.com/user-attachments/assets/8a8aad26-89ae-4bb1-9966-80144f49bdb9)
