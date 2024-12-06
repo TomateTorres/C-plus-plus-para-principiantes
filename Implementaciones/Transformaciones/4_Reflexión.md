@@ -33,7 +33,7 @@ O sea:
 ![image](https://github.com/user-attachments/assets/7325b5ad-5ef0-44ce-848b-149656f0d465)
 
 
-Despejando...
+Multiplicando por la matriz inversa del lado derecho y factorizando $\frac{1}{1+m^2}$...
 
 ![image](https://github.com/user-attachments/assets/aa06688c-1fa7-49c5-98a3-f1024e057cd4)
 
