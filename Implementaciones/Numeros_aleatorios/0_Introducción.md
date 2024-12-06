@@ -6,4 +6,3 @@ Por ejemplo, juegos como *Enter the Gungeon* dependen profundamente del RNG para
 
 ![maxresdefault](https://github.com/user-attachments/assets/0cbc8b12-f60b-4ad5-b550-0888b8dea919)
 
-gfhttrh
