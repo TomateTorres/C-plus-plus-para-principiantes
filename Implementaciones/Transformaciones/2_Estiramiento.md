@@ -48,7 +48,7 @@ double lectoraDeFracciones(const std::string& input) {
                                             // como el tipo que venimos usando para índices.
 
     // Si no se encuentra '/', asumimos que es un número normal
-    if (slashPos == std::string::npos) { // En C++ `std::string::npos``es un valor especial 
+    if (slashPos == std::string::npos) { // En C++ `std::string::npos`es un valor especial 
                                          // de tipo `std::size_t` que se usa como indicador
                                          // de "no encontrado" cuando se utiliza en una
                                          // búsqueda en una cadena (`std::string`).
