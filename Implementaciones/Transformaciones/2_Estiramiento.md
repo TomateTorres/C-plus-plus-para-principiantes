@@ -26,7 +26,7 @@ Sean dos estiramientos $T$ y $T'$ con factores $k$ y $k'$ respectivamente, su co
 
 ![image](https://github.com/user-attachments/assets/0f6f5968-a4e6-46ba-82d6-c01a79d30609)
 
-Si $k'=\frac{1}{k}$ entonces decimos que $L = T \circ T' $ es una **contracción.** Las contracciones son un tipo especial de transformaciones, puesto que no alteran el valor del área de la figura sobre la que se aplican.
+Si $k'=\frac{1}{k}$ entonces decimos que $L = T$ o $T'$ es una **contracción.** Las contracciones son un tipo especial de transformaciones, puesto que no alteran el valor del área de la figura sobre la que se aplican.
 
 El siguiente programa recibe las matrices asociadas de dos estiramientos (uno sobre el eje-x y otro sobre el eje-y), hace el producto entre ellas y nos dice si el resultado es una contracción o no.
 ```c++
