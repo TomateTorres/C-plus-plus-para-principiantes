@@ -33,7 +33,7 @@ O sea:
 ![image](https://github.com/user-attachments/assets/7325b5ad-5ef0-44ce-848b-149656f0d465)
 
 
-Multiplicando a la derecha de ambos lados de la ecuación por la matriz inversa y factorizando $\frac{1}{1+m^2}$...
+Multiplicando a la derecha de ambos lados de la ecuación por la matriz inversa y factorizando $\frac{1}{1+m^2}$ (una explicación más profunda de este tema requiere herramientas de Álgebra Lineal y esto va más allá del objetivo de este material)...
 
 ![image](https://github.com/user-attachments/assets/aa06688c-1fa7-49c5-98a3-f1024e057cd4)
 
