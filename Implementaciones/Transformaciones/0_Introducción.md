@@ -4,7 +4,7 @@ Decimos que $T$ es una **transformación lineal** si para cualesquiera $\bar{u}$
 1. $T(\bar{u}+\bar{v})=T(\bar{u})+T(\bar{v})$ y
 2. $T(\alpha \cdot \bar{u})=\alpha \cdot T(\bar{u})$
 
-Una [transformación lineal](https://www.youtube.com/watch?v=kYB8IZa5AuE) puede ser representada con una matriz. Para esta sección nos interesarán las transformaciones lineales entre los $\mathbb{R}^n$*s* (en concreto, aquellas entre espacios de dimensión 2).
+Una [transformación lineal](https://www.youtube.com/watch?v=kYB8IZa5AuE) puede ser representada con una matriz (esto es válido cuando los espacios vectoriales entre los que está definida son $\mathbb{R}^n$). Para esta sección nos interesarán las transformaciones lineales entre los $\mathbb{R}^n$*s* (en concreto, aquellas entre espacios de dimensión 2).
 
 Si $T:\mathbb{R}^n \to \mathbb{R}^m$ es una transformación lineal y $\bar{v}$ es un vector columna en $\mathbb{R}^n$, entonces: $T(x)=Ax$ para alguna matriz $A$ de tamaño $n \times m$. A la matriz $A$ le llamamos **matriz de transformación de $T$**.
 
@@ -75,6 +75,5 @@ Matriz de transformación A:
 2 0
 0 2
 ```
-## Ejemplos en 2D:
 
 Las transformaciones geométricas más comunes son aquellas que mantienen fijo al origen (propiedad que tienen las transformaciones lineales). Entre ellas destacan: la rotación, el estiramiento, cizallamiento, la reflexión y proyección ortogonal. En dos dimensiones, las transformaciones lineales se pueden representar utilizando una matriz de transformación de $2 \times 2$.
