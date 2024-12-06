@@ -77,4 +77,4 @@ Matriz de transformación A:
 ```
 ## Ejemplos en 2D:
 
-Las transformaciones geométricas más comunes son aquellas que mantienen fijo al origen (propiedad que tienen las transformaciones lineales). Entre ellas destacan: la rotación, el estiramiento, cizallamiento, la reflexión y proyección ortogonal. Si una transformación afín no es una traslación pura, mantiene algún punto fijo, y ese punto puede elegirse como origen para hacer que la transformación sea lineal. En dos dimensiones, las transformaciones lineales se pueden representar utilizando una matriz de transformación de $2 \times 2$.
+Las transformaciones geométricas más comunes son aquellas que mantienen fijo al origen (propiedad que tienen las transformaciones lineales). Entre ellas destacan: la rotación, el estiramiento, cizallamiento, la reflexión y proyección ortogonal. En dos dimensiones, las transformaciones lineales se pueden representar utilizando una matriz de transformación de $2 \times 2$.
