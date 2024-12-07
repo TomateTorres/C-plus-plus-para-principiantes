@@ -1,4 +1,4 @@
-La **generación de números aleatorios** (*RNG*, por sus siglas en inglés) es un concepto fundamental tanto en programación, particularmente en videojuegos, programas de modelación estadística y aplicaciones en criptografía. El RNG se utiliza para introducir elementos de incertidumbre, variabilidad o simulación, replicando de manera programada el comportamiento aleatorio que observamos en la vida real.
+La **generación de números aleatorios** (*RNG*, por sus siglas en inglés) es un concepto fundamental en programación, particularmente en videojuegos, programas de modelación estadística y aplicaciones en criptografía. El RNG se utiliza para introducir elementos de incertidumbre, variabilidad o simulación, replicando de manera programada el comportamiento aleatorio que observamos en la vida real.
 
 En los videojuegos, el RNG es un motor esencial para la rejugabilidad, ya que asegura experiencias únicas en cada partida. 
 
@@ -22,7 +22,7 @@ Para simular la aleatoriedad, los programas típicamente usan **generadores de n
    1. La **semilla** es el valor de entrada inicial que utiliza el PRNG para generar la secuencia de números. Cambiar la semilla cambia completamente la secuencia resultante.
    2. Dado un PRNG, al correrlo con una misma semilla, éste generará la misma secuencia de números sin importar cuántas veces lo corramos. Esto es lo que lo hace determinista. 
 2. Fórmula matemática:
-   1. Los PRNGs utilizan funciones matemáticas, como multiplicaciones, divisiones y sumas, para producir la siguiente salida basada en la semilla actual. Un ejemplo simple es el **Generador Congruencial Lineal** (*LCG* por sus siglas en inglés): 
+   1. Los PRNGs utilizan funciones matemáticas, como multiplicaciones, divisiones y sumas, para producir la siguiente salida basada en la semilla actual. Un ejemplo simple es el **Generador Congruencial Lineal** (*LCG* por sus siglas en inglés):
    $X_{n+1}=(a \cdot X_n + c)$ mod $m$
    Donde:
    * $X_n$ es el número generado en el paso $n$.
