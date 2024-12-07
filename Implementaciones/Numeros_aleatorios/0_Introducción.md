@@ -1,4 +1,4 @@
-La generación de números aleatorios (RNG, por sus siglas en inglés) es un concepto fundamental tanto en programación, particularmente en videojuegos, programas de modelación estadística y aplicaciones en criptografía. El RNG se utiliza para introducir elementos de incertidumbre, variabilidad o simulación, replicando de manera programada el comportamiento aleatorio que observamos en la vida real.
+La **generación de números aleatorios** (*RNG*, por sus siglas en inglés) es un concepto fundamental tanto en programación, particularmente en videojuegos, programas de modelación estadística y aplicaciones en criptografía. El RNG se utiliza para introducir elementos de incertidumbre, variabilidad o simulación, replicando de manera programada el comportamiento aleatorio que observamos en la vida real.
 
 En los videojuegos, el RNG es un motor esencial para la rejugabilidad, ya que asegura experiencias únicas en cada partida. 
 
