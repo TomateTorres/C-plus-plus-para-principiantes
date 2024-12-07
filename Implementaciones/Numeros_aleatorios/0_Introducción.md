@@ -28,3 +28,8 @@ Para simular la aleatoriedad, los programas típicamente usan **generadores de n
    * $X_n$ es el número generado en el paso $n$.
    * $a$, $c$ y $m$ son constantes.
    * $X_0$ es la semilla inicial.
+
+La semilla es esencial para el funcionamiento del PRNG porque:
+1. Usar la misma semilla garantiza la misma secuencia de números. Esto es útil en simulaciones o videojuegos, donde necesitamos reproducir escenarios idénticos (como en *Minecraft*).
+2. Si no se especifica una semilla, los sistemas suelen usar una basada en el reloj del sistema para garantizar una secuencia "impredecible".
+3. En programación, podemos fijar una semilla para depurar programas que usan números aleatorios, ya que permite reproducir los mismos resultados.
