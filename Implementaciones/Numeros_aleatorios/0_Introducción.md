@@ -30,6 +30,46 @@ Para simular la aleatoriedad, los programas típicamente usan **generadores de n
    * $X_0$ es la semilla inicial.
 
 La semilla es esencial para el funcionamiento del PRNG porque:
-1. Usar la misma semilla garantiza la misma secuencia de números. Esto es útil en simulaciones o videojuegos, donde necesitamos reproducir escenarios idénticos (como en *Minecraft*).
+1. Usar la misma semilla garantiza la misma secuencia de números. Esto es útil en simulaciones o videojuegos, donde necesitamos reproducir escenarios idénticos (como en *Minecraft*, si dos o más jugadores usan una misma semilla, tendrán generado el mismo mundo).
 2. Si no se especifica una semilla, los sistemas suelen usar una basada en el reloj del sistema para garantizar una secuencia "impredecible".
 3. En programación, podemos fijar una semilla para depurar programas que usan números aleatorios, ya que permite reproducir los mismos resultados.
+
+Existen muchos algoritmos PRNG; por razones en las que no profundizaremos aquí, muchos de ellos son considerados obsoletos bajo estándares modernos. Más adelante en este material sólo profundizaremos en aquellos (en realidad *aquel*) que funciona de manera decente y es sencillo de utilizar. 
+
+## Proporcionar una semilla
+
+Como ya se mencionó anteriormente, la secuencia de "números aleatorios" generada por un PRNG no es aleatoria en lo absoluto (pues queda determinada por su semilla).
+
+Para que un PRNG nos retorne secuencias distintas, su **estado inicial** (configuración interna del algoritmo cuando comienza a generar números pseudo-aleatorios) debe ser variado. El valor (o conjunto de valores) usado para establecer el estado inicial de un PRNG es llamado **semilla aleatoria** (o simplemente *semilla*). Cuando el estado inicial de un PRNG ha sido determinado usando una semilla, decimos que ha sido sembrado (*seeded*). 
+
+Lamentablemente, no podemos usar un PRNG para generar semillas aleatorias. O sea, *es posible* pero no es recomendable. Supongamos que tenemos un PRNG1 que hace uso de un PRNG 2 para la generación de semillas aleatorias:
+
+1. Si conocemos la semilla o estado interno de PRNG2, podemos predecir las semillas que se generarán para ser usadas en PRNG1... Lo cual nos da las herramientas necesarias para predecir las secuencias generadas por PRNG1.
+2. PRNG1 depende completamente de PRNG2. Cualquier defecto que tenga PRNG2 se propaga a PRNG1 (por ejemplo, si PRNG2 siempre genera la misma semilla debido a un mal diseño, PRNG1 generará siempre la misma secuencia aún si PRNG1 sí está bien diseñado).
+
+
+
+## Aleatorización en C++
+
+El encabezado (*header*) `<random>` de la librería estándar de C++ es aquel que nos permite acceder a las capacidades de aleatorización de este lenguaje. Dentro de la biblioteca `random` hay 6 familias de PRNGs disponibles:
+
+1. Linear Congruential Generators (LCG)
+2. Mersenne Twister (MT19937)
+3. Subtractive Generators
+4. Lagged Fibonacci Generators
+5. Xorshift Generators
+6. PCG (Permuted Congruential Generator)
+
+De ellos, el más destacado es **Mersenne Twister** y es ampliamente utilizado porque:
+* Tiene un periodo gigantesco ($2^{19937}-1$), esto para fines prácticos quiere decir que suele garantizar la generación de secuencias largas sin repetición.
+* Produce números con distribución uniforme ("todos los números tienen la misma probabilidad de aparecer") y cumple con muchas pruebas estadísticas de calidad.
+* Es ideal para simulaciones científicas, videojuegos, y tareas que requieren alta calidad en la aleatoriedad, pero no son críticas en tiempo real o seguridad.
+
+Aunque para los fines de este material Mersenne Twister *está bien*, esto no significa que sea el mejor PRNG. Fuera de la biblioteca estándar, tenemos opciones como:
+* La [familia Xoshiro](https://prng.di.unimi.it/) y [Wyrand](https://github.com/wangyi-fudan/wyhash) para PRNGs no criptográficos.
+* La [familia Chacha](https://cr.yp.to/chacha.html) para PRNGs criptográficos y no-predecibles.
+
+Aunque estas herramientas no son necesarias por el momento. 
+
+## Mersenne Twister
+
