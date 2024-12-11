@@ -24,6 +24,7 @@ Para simular la aleatoriedad, los programas típicamente usan **generadores de n
 2. Fórmula matemática:
    1. Los PRNGs utilizan funciones matemáticas, como multiplicaciones, divisiones y sumas, para producir la siguiente salida basada en la semilla actual. Un ejemplo simple es el **Generador Congruencial Lineal** (*LCG* por sus siglas en inglés):
    $X_{n+1}=(a \cdot X_n + c)$ mod $m$
+   
    Donde:
    * $X_n$ es el número generado en el paso $n$.
    * $a$, $c$ y $m$ son constantes.
