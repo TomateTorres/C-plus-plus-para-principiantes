@@ -52,10 +52,10 @@ Supongamos que tenemos un PRNG1 que hace uso de un PRNG2 para la generación de 
 
 Teóricamente, el número máximo de secuencias únicas que puede generar un PRNG está determinado por el *número de bits en en el estado* de dicho PRNG.
 
-Un **bit** es la unidad más pequeña de información en la computación. Solo puede tener uno de dos valores posibles: 0 o 1. Podemos pensar en un bit como un interruptor: puede estar apagado (0) o encendido (1). 
+Un **bit** es la unidad más pequeña de información en la computación. Sólo puede tener uno de dos valores posibles: 0 ó 1. Podemos pensar en un bit como un interruptor: puede estar apagado (0) o encendido (1). 
 
 El estado de un PRNG se representa con un conjunto de bits. Por ejemplo: 
-* Si un PRNG tiene un estado de 32 bits, significa que puede almacenar 32 interruptores, cada uno siendo 0 o 1.
+* Si un PRNG tiene un estado de 32 bits, significa que puede almacenar 32 interruptores, cada uno siendo 0 ó 1.
 * Como cada bit tiene dos valores posibles, el total de combinaciones únicas es $2^{32}$. Este número es el total de secuencias únicas que puede generar el PRNG... *En teoría.*
 
 El número real de secuencias únicas que puede generar un PRNG queda determinado por el número de semillas únicas que le podemos proveer. Por ejemplo, si usamos un algoritmo que sólo puede generar 4 semillas únicas para sembrar un PRNG, éste sólo puede generar (a lo más) 4 secuencias únicas.
@@ -81,5 +81,5 @@ Aunque para los fines de este material Mersenne Twister *está bien*, esto no si
 * La [familia Xoshiro](https://prng.di.unimi.it/) y [Wyrand](https://github.com/wangyi-fudan/wyhash) para PRNGs no criptográficos.
 * La [familia Chacha](https://cr.yp.to/chacha.html) para PRNGs criptográficos y no-predecibles.
 
-Aunque estas herramientas no son necesarias por el momento es bueno saber que existen. 
+Aunque estas herramientas no son necesarias por el momento es bueno saber que existen. i8
 
