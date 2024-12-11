@@ -24,7 +24,7 @@ Para simular la aleatoriedad, los programas típicamente usan **generadores de n
 2. Fórmula matemática:
    1. Los PRNGs utilizan funciones matemáticas, como multiplicaciones, divisiones y sumas, para producir la siguiente salida basada en la semilla actual. Un ejemplo simple es el **Generador Congruencial Lineal** (*LCG* por sus siglas en inglés):
    $X_{n+1}=(a \cdot X_n + c)$ mod $m$
-   
+
    Donde:
    * $X_n$ es el número generado en el paso $n$.
    * $a$, $c$ y $m$ son constantes.
@@ -43,11 +43,22 @@ Como ya se mencionó anteriormente, la secuencia de "números aleatorios" genera
 
 Para que un PRNG nos retorne secuencias distintas, su **estado inicial** (configuración interna del algoritmo cuando comienza a generar números pseudo-aleatorios) debe ser variado. El valor (o conjunto de valores) usado para establecer el estado inicial de un PRNG es llamado **semilla aleatoria** (o simplemente *semilla*). Cuando el estado inicial de un PRNG ha sido determinado usando una semilla, decimos que ha sido sembrado (*seeded*). 
 
-Lamentablemente, no podemos usar un PRNG para generar semillas aleatorias. O sea, *es posible* pero no es recomendable. Supongamos que tenemos un PRNG1 que hace uso de un PRNG 2 para la generación de semillas aleatorias:
+Lamentablemente, no podemos usar un PRNG para generar semillas aleatorias. O sea, *es posible* pero no es recomendable. 
+
+Supongamos que tenemos un PRNG1 que hace uso de un PRNG2 para la generación de semillas aleatorias:
 
 1. Si conocemos la semilla o estado interno de PRNG2, podemos predecir las semillas que se generarán para ser usadas en PRNG1... Lo cual nos da las herramientas necesarias para predecir las secuencias generadas por PRNG1.
-2. PRNG1 depende completamente de PRNG2. Cualquier defecto que tenga PRNG2 se propaga a PRNG1 (por ejemplo, si PRNG2 siempre genera la misma semilla debido a un mal diseño, PRNG1 generará siempre la misma secuencia aún si PRNG1 sí está bien diseñado).
+2. PRNG1 depende completamente de PRNG2. Cualquier defecto que tenga PRNG2 se propaga a PRNG1; por ejemplo, si PRNG2 siempre genera la misma semilla debido a un mal diseño, PRNG1 generará siempre la misma secuencia aún si PRNG1 sí está bien diseñado.
 
+Teóricamente, el número máximo de secuencias únicas que puede generar un PRNG está determinado por el *número de bits en en el estado* de dicho PRNG.
+
+Un **bit** es la unidad más pequeña de información en la computación. Solo puede tener uno de dos valores posibles: 0 o 1. Podemos pensar en un bit como un interruptor: puede estar apagado (0) o encendido (1). 
+
+El estado de un PRNG se representa con un conjunto de bits. Por ejemplo: 
+* Si un PRNG tiene un estado de 32 bits, significa que puede almacenar 32 interruptores, cada uno siendo 0 o 1.
+* Como cada bit tiene dos valores posibles, el total de combinaciones únicas es $2^{32}$. Este número es el total de secuencias únicas que puede generar el PRNG... *En teoría.*
+
+El número real de secuencias únicas que puede generar un PRNG queda determinado por el número de semillas únicas que le podemos proveer. Por ejemplo, si usamos un algoritmo que sólo puede generar 4 semillas únicas para sembrar un PRNG, éste sólo puede generar (a lo más) 4 secuencias únicas.
 
 
 ## Aleatorización en C++
