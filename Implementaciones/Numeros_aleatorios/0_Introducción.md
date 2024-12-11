@@ -81,7 +81,5 @@ Aunque para los fines de este material Mersenne Twister *está bien*, esto no si
 * La [familia Xoshiro](https://prng.di.unimi.it/) y [Wyrand](https://github.com/wangyi-fudan/wyhash) para PRNGs no criptográficos.
 * La [familia Chacha](https://cr.yp.to/chacha.html) para PRNGs criptográficos y no-predecibles.
 
-Aunque estas herramientas no son necesarias por el momento. 
-
-## Mersenne Twister
+Aunque estas herramientas no son necesarias por el momento es bueno saber que existen. 
 
