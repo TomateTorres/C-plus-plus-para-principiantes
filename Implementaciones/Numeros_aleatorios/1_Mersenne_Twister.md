@@ -203,14 +203,14 @@ Muchos PRNGs pueden ser resembrados (*reseeded*) después de la siembra inicial.
 
 Generalmente resembrar un PRNG no es una buena idea a menos que tengamos una razón específica para hacerlo ya que (entre otras razones):
 1. Si se siembra un PRNG una vez, se obtendrá una secuencia de números "aparentemente aleatorios" que sigue evolucionando conforme se realizan llamadas sucesivas al generador. Si re-sembramos el PRNG, esta secuencia se reinicia, lo que interrumpe su flujo natural. Esto puede generar patrones repetitivos o resultados no deseados, especialmente si la nueva semilla es parecida a la anterior.
-2. Con referencia al punto anterior, la semilla que se le proporciona al PRNG determina la secuencia que produce. Si re-siembras constantemente, dependes de que la fuente de entropía (aleatoriedad en las semillas) sea de alta calidad. Usar la hora del sistema garantiza semillas parecidas porque aún si esperamos "un buen rato" cada vez que corremos nuestro programa, hay partes de la semilla que se van a quedar fijas (la del año y el mes, por ejemplo), además de que en algunos sistemas `std::random_device` no es verdaderamente aleatorio, sino que genera valores basados en un contador, el tiempo del sistema, o un número limitado de estados internos. 
-3. Re-sembrar un PRNG constantemente es computacionalmente costoso porque inicializar estructuras internas, lo cual puede ser mucho más lento que simplemente usar el estado ya existente del generador.
+2. Con referencia al punto anterior, la semilla que se le proporciona al PRNG determina la secuencia que produce. Si re-siembras constantemente, dependes de que la fuente de **entropía** (aleatoriedad en las semillas) sea de alta calidad. Usar la hora del sistema garantiza semillas parecidas porque aún si esperamos "un buen rato" cada vez que corremos nuestro programa, hay partes de la semilla que se van a quedar fijas (la del año y el mes, por ejemplo), además de que en algunos sistemas `std::random_device` no es verdaderamente aleatorio, sino que genera valores basados en un contador, el tiempo del sistema, o un número limitado de estados internos. 
+3. Re-sembrar un PRNG constantemente es computacionalmente costoso porque inicializa estructuras internas, lo cual puede ser mucho más lento que simplemente usar el estado ya existente del generador.
 
 ## Mersenne Twister y problemas de sub-siembra
 
 El estado interno de Mersenne Twister contiene 624 valores enteros. Para `std::mt19937` (el que hemos estado usando) estos valores pueden tener un tamaño de 32 ó 64 bits. 
 
-En los ejemplos anteriores donde sembramos con del reloj del sistema o `std::random_device`, nuestra semilla era un único valor. Esto quiere decir que esencialmente estamos inicializando 624 valores usando un solo valor, lo que significativamente *sub-siembra* a nuestro PRNG.
+En los ejemplos anteriores donde sembramos con el reloj del sistema o `std::random_device`, nuestra semilla era un único valor. Esto quiere decir que esencialmente estamos inicializando 624 valores usando un solo valor, lo que significativamente *sub-siembra* a nuestro PRNG.
 
 La **sub-siembra** ocurre cuando se siembra un PRNG con una semilla que no tiene suficiente aleatoriedad para garantizar que las secuencias generadas sean realmente impredecibles o diversas.
 
