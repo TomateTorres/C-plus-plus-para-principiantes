@@ -1,6 +1,6 @@
 La biblioteca `random` admite dos tipos de Mersenne Twister:
 * `mt19937` es un Mersenne Twister que genera enteros sin signo de 32-bits.
-* `mt19937_64` es un Mersenne Twister que genera enteros signo de 64-bits.
+* `mt19937_64` es un Mersenne Twister que genera enteros sin signo de 64-bits.
 
 Para efectos prácticos, el que Mersenne Twister genere enteros sin signo quiere decir que los números generados son enteros no negativos: todo el espacio de bits disponibles se utiliza para representar valores positivos, sin reservar un bit para el signo (positivo o negativo). Si estamos usando `mt19937` los enteros generados son de tipo `unsigned int` y si estamos usando `mt19937_64` son de tipo `unsigned long long`.
 
@@ -51,7 +51,7 @@ Como los PRNGs sólo pueden generar números que usen el rango completo (es deci
 
 Por el momento, supongamos que este *rango más pequeño* son los enteros del 1 al 6 porque queremos simular el lanzamiento de un dado.
 
-Una forma básica de hacer la conversión del rango $0$ y $2^{32}-1=4,294,967,295$ al rango $1$ a $6$ sería usando el **módulo** (`%`) para reducirlos:
+Una forma básica de hacer la conversión del rango $0$ a $2^{32}-1=4,294,967,295$ al rango $1$ a $6$ sería usando el **módulo** (`%`):
 ```c++
 int numero_en_rango {(numero_grande % 6) + 1};
 ```
@@ -64,7 +64,7 @@ Aquí es donde las **distribuciones de números aleatorios** de la biblioteca `r
 
 Una **distribución de números aleatorios** es una regla o modelo que describe cómo deben generarse los números aleatorios para que sigan un patrón específico. En términos simples, una **distribución** decide qué números tienen más probabilidad de aparecer y cómo están distribuidos esos números en un intervalo.
 
-En el caso de un dado justo, todos los números tienen la misma probabilidad de aparecer ($\frac{1}{6}$). Esto sería una distribución uniforme: los números están distribuidos de manera equitativa. Por otro lado, si estamos jugando un juego donde ciertos números tienen más probabilidad de aparecer (por ejemplo: si nuestro dado está trucado y hay una cara que sale con mucha más frecuencia), entonces los números ya no tienen la misma probabilidad de aparecer, y tendríamos una distribución diferente.
+En el caso de un dado justo, todos los números tienen la misma probabilidad de aparecer: $\frac{1}{6}$. Esto sería una **distribución uniforme**: los números están distribuidos de manera equitativa. Por otro lado, si estamos jugando un juego donde ciertos números tienen más probabilidad de aparecer (por ejemplo: si nuestro dado está trucado y hay una cara que sale con mucha más frecuencia), entonces los números ya no tienen la misma probabilidad de aparecer, y tendríamos una distribución diferente.
 
 La biblioteca `random` tiene muchas distribuciones de números aleatorios, la más útil (a reserva de que se esté haciendo algún análisis estadístico o algo más sofisticado) es la **distribución uniforme** que dado un intervalo $(a,b)$ (puede ser abierto o cerrado) retorna números dentro de él con igual probabilidad.
 
@@ -112,7 +112,7 @@ Para garantizar que la secuencia de números generados sí cambie cada vez que c
 
 A menos que corramos un programa dos (o más) veces *exactamente* al mismo tiempo, la hora del día a la que es corrido va a ser distinta. 
 
-Mucho código existente utiliza la función `std::time()` para fijar semillas para PRNGs usando la hora del sistema. La librería `<chrono>` de C++ cuenta con varios relojes que podemos usar para generar una semilla. Para minimizar la probabilidad de que dos veces valores de tiempo sean idénticos si corremos el programa dos (o más) veces en sucesión rápida, lo ideal es utilizar una medida de tiempo que cambie lo más rápido posible. Para ello, podemos preguntarle al reloj qué tanto tiempo ha pasado desde el primer momento que puede medir. Este tiempo se mide en **"ticks"**, que es una unidad muy pequeña de tiempo (suelen ser nanosegundos, pero pueden ser milisegundos):
+Mucho código existente utiliza la función `std::time()` para fijar semillas para PRNGs usando la hora del sistema. La librería `<chrono>` de C++ cuenta con varios relojes que podemos usar para generar una semilla. Para minimizar la probabilidad de que dos valores de tiempo sean idénticos si corremos el programa dos (o más) veces en sucesión rápida, lo ideal es utilizar una medida de tiempo que cambie lo más rápido posible. Para ello, podemos preguntarle al reloj qué tanto tiempo ha pasado desde el primer momento que puede medir. Este tiempo se mide en **"ticks"**, que es una unidad muy pequeña de tiempo (suelen ser nanosegundos, pero pueden ser milisegundos):
 ```c++
 #include <iostream>
 #include <random> // Para `std::mt19937` y `std::uniform_int_distribution`
@@ -146,7 +146,7 @@ Este programa sólo tiene dos cambios respecto a su versión anterior:
 1. Incluimos la biblioteca `chrono` para acceder el reloj.
 2. Usamos el tiempo en la hora del sistema como semilla para nuestro Mersenne Twister.
 
-Con los cambios anteriores, ahora sí el programa genera una secuencia diferente cada vez que lo corremos.
+Con los cambios anteriores, ahora el programa sí genera una secuencia diferente cada vez que lo corremos.
 
 La desventaja de este enfoque es que si corremos el programa múltiples veces en sucesión rápida, las semillas generadas para cada ejecución no son muy diferentes (probablemente sólo difieran en la parte que corresponde a los segundos), lo que puede impactar la calidad de los resultados aleatorios desde un punto de vista estadístico. Para programas normales, esto no importa, pero para programas que requieran resultados independientes de alta calidad, este método de sembrado puede ser ineficiente.
 
