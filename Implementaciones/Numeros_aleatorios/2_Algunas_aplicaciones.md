@@ -109,3 +109,92 @@ Total de soles: 24 (60.00%)
 Conforme $n \to ∞$, tendremos proporciones más cercanas a la esperada (50/50).
 
 ## Generación de números aleatorios en un intervalo $[a,b]$:
+
+```c++
+/*
+El siguiente programa le pide al usuario los límites de un intervalo de la forma [a,b] 
+y una cantidad `n` de números a generar.
+*/
+
+#include <iostream>
+#include <random>
+#include <iomanip> // Para formatear la salida
+
+int main()
+{
+	std::random_device rd{};
+	
+	std::seed_seq ss{ rd(), rd(), rd(), rd(), rd(), rd(), rd(), rd() }; 
+	// Generamos 8 enteros aleatorios usando `std::random_device` y los usamos para
+	// generar nuestra semilla.
+	
+	std::mt19937 mt{ ss }; // Inicializamos nuestro Mersenne Twister con la semilla
+	                       // generada usando `std::seed_seq`
+
+	// Solicitamos al usuario los límites del intervalo:
+	double a{};
+	double b{};
+	std::cout << "\n*** Generador de números aleatorios ***\n";
+	std::cout << "Introduce el límite inferior del intervalo: ";
+	std::cin >> a;
+	std::cout << "Introduce el límite superior del intervalo: ";
+	std::cin >> b;
+
+	// Validamos que el intervalo esté bien dado (que a < b):
+	while (a >= b){
+		std::cout << "El límite inferior debe ser menor que el superior.\n";
+		std::cout << "Introduce el límite inferior del intervalo: ";
+		std::cin >> a;
+		std::cout << "Introduce el límite superior del intervalo: ";
+		std::cin >> b;
+	}
+
+	// Solicitamos al usuario que de la cantidad de números a generar:
+	int n{};
+	std::cout << "¿Cuántos números aleatorios deseas generar? ";
+	std::cin >> n;
+
+	/*
+	Crea un generador de números aleatorios (reusable) de `a` a `b` con probabilidad
+	uniforme. 
+	Cambiamos `std::uniform_int_distribution` por `std::uniform_real_distribution`
+	para poder generar números que no sólo sean enteros.
+	*/ 
+	std::uniform_real_distribution generarNumAleatorio(a,b); 
+
+	// Generamos y mostramos los números aleatorios:
+	std::cout << "\nNúmeros generados:\n";
+	for (int contador{ 1 }; contador <= n; ++contador)
+	{
+		double numAleatorio{generarNumAleatorio(mt)}; // Se genera un aleatorio.
+
+		// Imprimimos el número con salida formateada:
+		std::cout << std::fixed << std::setprecision(4) << std::setw(10) << numAleatorio;
+		/*
+		1. `std::fixed`: Garantiza que los números se impriman en formato fijo (sin notación 
+		   científica).
+		2. `std::setprecision(4)`: Limita la salida a 4 decimales.
+		3. `std::setw(10)`: Establece un ancho fijo de 10 caracteres para cada número, lo que 
+		   alinea la salida en columnas.
+		*/
+		
+		// Salto de línea cada 5 resultados.
+		if (contador % 5 == 0){
+			std::cout << '\n';}
+	}
+
+	return 0;
+}
+```
+
+En consola se imprimen cosas del estilo:
+```
+*** Generador de números aleatorios ***
+Introduce el límite inferior del intervalo: 0
+Introduce el límite superior del intervalo: 1
+¿Cuántos números aleatorios deseas generar? 10
+
+Números generados:
+    0.3621    0.0966    0.4606    0.6744    0.3282
+    0.6583    0.1510    0.3539    0.2304    0.4550
+```
