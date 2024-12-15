@@ -55,7 +55,7 @@ int main()
 			++contadorAguila;
 		}
 
-		if (resultadoDelLanzamiento == 1){
+		else {
 			std::cout << "Sol\t";
 			++contadorSol;
 		}
@@ -107,3 +107,5 @@ Total de soles: 24 (60.00%)
 ```
 
 Conforme $n \to ∞$, tendremos proporciones más cercanas a la esperada (50/50).
+
+## Generación de números aleatorios en un intervalo $[a,b]$:
