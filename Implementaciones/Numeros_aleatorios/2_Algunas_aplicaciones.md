@@ -89,4 +89,21 @@ int main()
 }
 ```
 
+Con 40 lanzamientos, se imprime en consola algo como:
+```
+*** Simulador de lanzamientos de moneda ***
+Introduce la cantidad de lanzamientos: 40
+
+Resultados de los lanzamientos:
+Águila  Águila  Águila  Águila  Águila  Sol     Sol     Sol     Sol     Águila
+Sol     Sol     Sol     Sol     Sol     Sol     Águila  Sol     Sol     Águila
+Sol     Águila  Sol     Águila  Águila  Sol     Sol     Sol     Sol     Sol
+Sol     Águila  Sol     Sol     Sol     Águila  Águila  Águila  Sol     Águila
+
+
+*** Resumen ***
+Total de águilas: 16 (40.00%)
+Total de soles: 24 (60.00%)
+```
+
 Conforme $n \to ∞$, tendremos proporciones más cercanas a la esperada (50/50).
