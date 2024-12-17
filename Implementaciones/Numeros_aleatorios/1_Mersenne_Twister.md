@@ -43,6 +43,45 @@ Utilizamos el encabezado `<random>` puesto que ahí "vive" Mersenne Twister, lue
 
 `mt()` **no** es una variable (a diferencia de `mt` en la declaración `std::mt19937 mt{};`), es una sintaxis concisa de la función `mt.operator()` que sirve para generar el siguiente número en la secuencia dado un PRNG.
 
+Si queremos proporcionarle una semilla conocida a nuestro Mersenne Twister (para replicar resultados o por cualquier otra razón), esta va dentro de los corchetes en: `std::mt19937 mt{};`
+
+Por ejemplo:
+```c++
+#include <iostream>
+#include <random> // Para `std::mt19937`
+
+int main()
+{
+	std::mt19937 mt{12345}; // Inicializa un Mersenne Twister de 32-bits
+				            // con la semilla 12345
+
+	// Se imprimen 40 números pseudo-aleatorios (determinados 
+	// completamente por la semilla 12345).
+	for (int contador{ 1 }; contador <= 40; ++contador)
+	{
+		std::cout << mt() << '\t'; // Se genera un número aleatorio.
+
+		// Si ya se imprimieron 5 números, hacemos salto de línea.
+		if (contador % 5 == 0){
+			std::cout << '\n';}
+	}
+
+	return 0;
+}
+```
+
+Imprime **siempre** la secuencia:
+```
+3992670690      3823185381      1358822685      561383553       789925284
+170765737       878579710       3549516158      2438360421      2285257250
+2557845021      4107320065      4142558326      1983958385      2805374267
+3967425166      3216529513      1605979227      2807061239      665605494
+3211410640      3832587122      4128781001      115061003       36027469
+1251993226      457175121       1712592594      1282922662      3467278599
+2819264555      2693349607      3478118423      3899507741      3745967032
+2389708215      4143129887      3607425725      3108204897      216844123
+```
+
 ## Lanzar un dado usando Mersenne Twister
 
 Si usamos `std::mt19937`, estamos inicializando un Mersenne Twister de 32-bits. Esto quiere decir que la secuencia de números puede tomar valores entre $0$ y $2^{32}-1=4,294,967,295$.
@@ -66,7 +105,7 @@ Una **distribución de números aleatorios** es una regla o modelo que describe 
 
 En el caso de un dado justo, todos los números tienen la misma probabilidad de aparecer: $\frac{1}{6}$. Esto sería una **distribución uniforme**: los números están distribuidos de manera equitativa. Por otro lado, si estamos jugando un juego donde ciertos números tienen más probabilidad de aparecer (por ejemplo: si nuestro dado está trucado y hay una cara que sale con mucha más frecuencia), entonces los números ya no tienen la misma probabilidad de aparecer, y tendríamos una distribución diferente.
 
-La biblioteca `random` tiene muchas distribuciones de números aleatorios, la más útil (a reserva de que se esté haciendo algún análisis estadístico o algo más sofisticado) es la **distribución uniforme** que dado un intervalo $(a,b)$ (puede ser abierto o cerrado) retorna números dentro de él con igual probabilidad.
+La biblioteca `random` tiene muchas distribuciones de números aleatorios.
 
 El siguiente programa simula el lanzamiento de un dado justo de 6 caras usando distribución uniforme:
 ```c++
@@ -154,7 +193,7 @@ Una elección popular en vez de `std::chrono::steady_clock` es `std::chrono::hig
 
 ## Sembrar usando random device
 
-Un **random device** de un sistema es una herramienta o mecanismo que genera números verdaderamente aleatorios basándose en la entropía del entorno físico del hardware. Esto quiere decir que proporciona datos aleatorios obtenidos de fenómenos impredecibles en el hardware de un sistema. Estos datos suelen usarse para tareas que requieren alta seguridad o aleatoriedad verdadera, como criptografía o generación de claves seguras.
+Un **random device** de un sistema es una herramienta o mecanismo que genera números más impredecibles sin el uso de un algoritmo determinista basándose en la entropía del entorno físico del hardware. Esto quiere decir que proporciona datos aleatorios obtenidos de fenómenos en el hardware de un sistema. Estos datos suelen usarse para tareas que requieren alta seguridad o aleatoriedad, como criptografía o generación de claves seguras.
 
 Algunas de las fuentes típicas de entropía en un sistema incluyen:
 1. Ruido térmico en circuitos electrónicos (generado por fluctuaciones de voltaje).
