@@ -1,4 +1,4 @@
-La **generación de números aleatorios** (*RNG*, por sus siglas en inglés) es un concepto fundamental en programación, particularmente en videojuegos, programas de modelación estadística y aplicaciones en criptografía. El RNG se utiliza para introducir elementos de incertidumbre, variabilidad o simulación, replicando de manera programada el comportamiento aleatorio que observamos en la vida real.
+La **generación de números aleatorios** (*RNG*, por sus siglas en inglés) es un concepto fundamental en programación, particularmente en videojuegos, programas de modelación estadística y aplicaciones en criptografía. El RNG se utiliza para introducir elementos de incertidumbre, variabilidad o ruido, replicando de manera programada el comportamiento aleatorio que observamos en la vida real.
 
 En los videojuegos, el RNG es un motor esencial para la rejugabilidad, ya que asegura experiencias únicas en cada partida. 
 
@@ -81,5 +81,4 @@ Aunque para los fines de este material Mersenne Twister *está bien*, esto no si
 * La [familia Xoshiro](https://prng.di.unimi.it/) y [Wyrand](https://github.com/wangyi-fudan/wyhash) para PRNGs no criptográficos.
 * La [familia Chacha](https://cr.yp.to/chacha.html) para PRNGs criptográficos y no-predecibles.
 
-Aunque estas herramientas no son necesarias por el momento es bueno saber que existen. i8
-
+Aunque estas herramientas no son necesarias por el momento es bueno saber que existen. 
