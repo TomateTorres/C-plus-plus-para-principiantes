@@ -1,4 +1,4 @@
-Supongamos que tenemos un programa que guarda las calificaciones de cada parcial de los alumnos de algún curso de Cálculo I para calcular el promedio del grupo. En la Facultad de Ciencias de la UNAM, los primeros cursos de Cálculo suelen tener muchos alumnos (por ejemplo: En el semestre 2025-1, el profesor Héctor Méndez Lango tuvo 56 alumnos inscritos).
+Supongamos que tenemos un programa que guarda las calificaciones de cada parcial de los alumnos de algún curso de Cálculo I para calcular el promedio del grupo. En la Facultad de Ciencias de la UNAM, los primeros cursos de Cálculo suelen tener muchos alumnos (por ejemplo: En el semestre 2025-1, el profesor Héctor Méndez Lango tuvo un total de 56 alumnos inscritos).
 
 Supongamos que tenemos 56 alumnos, con lo que sabemos hasta ahora, podemos empezar por definir 56 variables (una por alumno):
 ```c++
