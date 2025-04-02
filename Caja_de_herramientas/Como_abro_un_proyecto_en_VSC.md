@@ -1,6 +1,6 @@
 Una de las ventajas de usar un IDE (como lo es VSCode) es que podemos organizar nuestros códigos en carpetas y proyectos.
 
-**Nota:** Para todo lo que sigue, se asume que ya se ha instalado VSCode y se siguieron las instrucciones para descargar la extensión de C++ en él.
+**Nota:** Para todo lo que sigue, se asume que ya se ha instalado VSCode y se siguieron las instrucciones para descargar el compilador de C++ en él (en caso de que el sistema operativo en uso sea base Linux, es probable que ya haya un compilador por defecto y no sea necesario descargar uno).
 
 Aquí veremos como generar nuestro primer proyecto en VSCode:
 
