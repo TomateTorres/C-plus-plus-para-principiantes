@@ -1,6 +1,6 @@
 /*
 El siguiente programa contiene un ejemplo de una función 
-que le pide dos números al usuario y le da como resultado
+que pide dos números al usuario y le da como resultado
 el producto entre ellos.
 */
 
